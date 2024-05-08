@@ -30,3 +30,36 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 ---
 
 Happy coding!
+
+# Once Upon a Time...
+
+Once Upon a Time is a text based game, which is inspired by the popular American TV show "Once Upon a Time". The game recreates a pilot episode experience and allows the user to play out the sequence of events by choosing various multiple options. Additionally, it also includes interactivity by incorporating the user's input data, such as their name, gender and age. 
+
+## Table of Contents
+
+[How to play](#how-to-play)
+
+[Features](#features)
+- [Existing features](#existing-features)
+- [Features Left to Implement](#features-left-to-implement)
+
+[Data Model](#data-model)
+
+[Testing](#testing)
+
+[Deployment](#deployment)
+
+## How to play
+
+## Features
+
+### Existing features
+
+### Features left to implement
+
+## Data model
+
+## Testing
+
+## Deployment
+
