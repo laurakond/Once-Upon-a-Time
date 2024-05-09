@@ -5,16 +5,22 @@ def user_input():
     """
     Asks user to input relevant data and stores it for in game use.
     """
-    
-    user_name = input("What is your name? ").capitalize()
-    #user_gender = input("What is your gender? ")
-
-    print(user_name)
-    #print(user_gender)
-    
-    input_data_validation(user_name)
-    #input_data_validation(user_gender)
-
+    while True:
+        user_name = input("Please enter your name: ").capitalize()
+        print(user_name)
+        if input_data_validation(user_name):
+            print("works")
+            break
+    while True:    
+        user_gender = input("Please enter your gender: ")
+        print(user_gender)
+        if input_data_validation(user_gender):
+            if user_gender!="male" and user_gender!="female":
+                print("works?")
+            else:
+                input_data_validation(user_gender)
+                break
+        
 
 def input_data_validation(data):
     """
@@ -26,15 +32,17 @@ def input_data_validation(data):
     try:
         if data.isnumeric() or not data.isalpha():
             raise ValueError(
-                f"{data}")
-        elif len(data)<3 or len(data)>15:
+                f" {data}. Please use letters only to fill in the fields.")
+        elif len(data) < 3 or len(data) > 10:
             raise ValueError(
-                "Your entry must be between 3 to 15 characters long.")
+                "Your entry must be between 3 to 10 characters long")
     except ValueError as e:
         print(
-            f"Invalid input: {e}. Please use letters only to fill in the fields.")
+            f"Invalid input: {e}")
         print("Try again")
-        
+        return False
+
+    return True
 
 
 
