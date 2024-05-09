@@ -1,28 +1,65 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
 
-for sentence in story.intro:
-    print(sentence)
+def user_input():
+    """
+    Asks user to input relevant data and stores it for in game use.
+    """
+    user_name = input("What is your name? ").capitalize()
+    user_gender = input("What is your gender? ")
 
-for sentence in story.chapter1:
-    print(sentence)
+    print(user_name)
+    print(user_gender)
 
-for sentence in story.chapter1_cont:
-    print(sentence)
 
-for sentence in story.chapter2:
-    print(sentence)
 
-for sentence in story.chapter2_cont:
-    print(sentence)
+user_input()
 
-for sentence in story.chapter2_cont2:
-    print(sentence)
 
-for sentence in story.chapter2_cont3:
-    print(sentence)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#for sentence in story.intro:
+#    print(sentence)
+
+#for sentence in story.chapter1:
+#    print(sentence)
+
+#for sentence in story.chapter1_cont:
+#    print(sentence)
+
+#for sentence in story.chapter2:
+#    print(sentence)
+
+#for sentence in story.chapter2_cont:
+#    print(sentence)
+
+#for sentence in story.chapter2_cont2:
+#    print(sentence)
+
+#for sentence in story.chapter2_cont3:
+#    print(sentence)
 
 
 #print(story.intro)
