@@ -1,6 +1,16 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
 
+def game_start():
+    title_logo = [r"""
+  __   __ _   ___  ____    _  _  ____   __   __ _     __     ____  __  _  _  ____                      
+ /  \ (  ( \ / __)(  __)  / )( \(  _ \ /  \ (  ( \   / _\   (_  _)(  )( \/ )(  __)                     
+(  O )/    /( (__  ) _)   ) \/ ( ) __/(  O )/    /  /    \    )(   )( / \/ \ ) _)    _    _    _       
+ \__/ \_)__) \___)(____)  \____/(__)   \__/ \_)__)  \_/\_/   (__) (__)\_)(_/(____)  (_)  (_)  (_)      
+    """]
+
+    for line in title_logo:
+        print(line)
 
 
 def user_input():
@@ -56,9 +66,11 @@ def input_data_validation(data):
 
 
 
+game_start()
 
 test = user_input()
 print(test)
+
 
 
 
