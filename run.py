@@ -1,10 +1,14 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
 
+
+
 def user_input():
     """
     Asks user to input relevant data and stores it for in game use.
     """
+    user = {}
+
     while True:
         user_name = input("Please enter your name: ").capitalize()
         print(user_name)
@@ -20,6 +24,11 @@ def user_input():
             else:
                 input_data_validation(user_gender)
                 break
+    
+    user["name"] = user_name
+    user["gender"] = user_gender
+
+    return user
         
 
 def input_data_validation(data):
@@ -48,8 +57,8 @@ def input_data_validation(data):
 
 
 
-user_input()
-
+test = user_input()
+print(test)
 
 
 
