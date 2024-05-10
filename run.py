@@ -14,9 +14,14 @@ def game_start():
  \__/ \_)__) \___)(____)  \____/(__)   \__/ \_)__)  \_/\_/   (__) (__)\_)(_/(____)  (_)  (_)  (_)      
     """]
 
+    #prints Title of the game
     for line in title_logo:
         print(line)
-        
+
+    #prints game introduction with options
+    for line in story.game_intro:
+        print(line)
+
 
 def user_input():
     """
