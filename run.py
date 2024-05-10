@@ -23,6 +23,7 @@ def game_start():
         print(line)
 
 
+#User data, game play, and data validation functions
 def option_choice():
     """
     Runs every time the user has to choose
@@ -107,13 +108,25 @@ def input_data_validation(data):
     return True
 
 
+def game_text_generator(data):
+    """
+    Function that explains how to play.
+    """
+    for line in data:
+        print(line)
+    
+
+
+
 
 
 game_start()
-options = option_choice()
-
-test = user_input()
-print(test)
+option_choice()
+game_text_generator(story.game_instructions)
+#print(instruction)
+user_input()
+game_text_generator(story.story_intro)
+#print(test)
 
 
 
