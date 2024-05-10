@@ -1,8 +1,8 @@
 game_intro = ["Welcome to an interactive story-based game. ",
             "It was inspired by a popular TV Show 'Once Upon a Time'. "
-            "Please choose from the following options: ",
+            "Please choose from the following options. ",
             "1. Read instructions",
-            "2. Start the game"]
+            "2. Go to the story"]
 
 story_intro = ["Once upon a time in a far away land, ",
          "there lived Snow White with her prince charming. ",

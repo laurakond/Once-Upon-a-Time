@@ -22,6 +22,13 @@ def game_start():
     for line in story.game_intro:
         print(line)
 
+def option_choice():
+    """
+    Runs every time the user needs to select a choice
+    from given options during game play.
+    """
+    choice = input("Type '1' or '2' here to proceed: ")
+
 
 def user_input():
     """
@@ -77,6 +84,7 @@ def input_data_validation(data):
 
 
 game_start()
+option_choice()
 
 test = user_input()
 print(test)
