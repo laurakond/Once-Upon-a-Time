@@ -49,6 +49,8 @@ Once Upon a Time is a text based game, which is inspired by the popular American
 
 [Deployment](#deployment)
 
+[Credits](#credits)
+
 ## How to play
 
 ## Features
@@ -63,3 +65,13 @@ Once Upon a Time is a text based game, which is inspired by the popular American
 
 ## Deployment
 
+## Credits
+
+Data Validation resources:
+https://www.w3schools.com/python/python_try_except.asp
+https://www.w3schools.com/python/ref_string_isalpha.asp
+https://www.w3schools.com/python/ref_string_isnumeric.asp
+https://docs.python.org/3/library/exceptions.html
+https://docs.python.org/3/library/stdtypes.html#str.isdigit
+https://stackoverflow.com/questions/16399721/making-sure-no-integers-in-a-string
+https://p-kane.medium.com/input-validation-with-python-570953d5d297
