@@ -33,11 +33,22 @@ Happy coding!
 
 # Once Upon a Time...
 
-Once Upon a Time is a text based game, which is inspired by the popular American TV show "Once Upon a Time". The game recreates a pilot episode experience and allows the user to play out the sequence of events by choosing various multiple options. Additionally, it also includes interactivity by incorporating the user's input data, such as their name, gender and age. 
+Once Upon a Time is a text based game, which is inspired by the popular American TV show "Once Upon a Time". The game recreates a pilot episode experience and allows the user to play out the sequence of events by choosing various multiple options. 
+
+The game incorporates the user's data to make it more interactive and part of the game-play.
+
+The game is aimed at anyone aged 16 and over, who enjoys text-based adventures and is a fan of the TV Show and Disney fairytales.
+
+
 
 ## Table of Contents
 
 [How to play](#how-to-play)
+
+[Design](#design)
+- [Target audience](#target-audience)
+- [User Stories](#user-stories)
+- [Flowcharts](#wireframes)
 
 [Features](#features)
 - [Existing features](#existing-features)
@@ -75,3 +86,14 @@ https://docs.python.org/3/library/exceptions.html
 https://docs.python.org/3/library/stdtypes.html#str.isdigit
 https://stackoverflow.com/questions/16399721/making-sure-no-integers-in-a-string
 https://p-kane.medium.com/input-validation-with-python-570953d5d297
+
+
+Acsii resources:
+
+discussion thread that helped to make the design print: https://stackoverflow.com/questions/23623288/print-full-ascii-art
+
+Information on how to print ascii art: https://www.youtube.com/watch?v=arcFqEuV_XQ
+
+Once Upon a time TV show information and some of the content borrowed from there:
+https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time)
+
