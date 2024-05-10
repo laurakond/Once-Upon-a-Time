@@ -2,6 +2,11 @@
 import story
 
 def game_start():
+    """
+    Runs the Game logo and starts the application.
+    The logo was generated from https://patorjk.com/
+    """
+
     title_logo = [r"""
   __   __ _   ___  ____    _  _  ____   __   __ _     __     ____  __  _  _  ____                      
  /  \ (  ( \ / __)(  __)  / )( \(  _ \ /  \ (  ( \   / _\   (_  _)(  )( \/ )(  __)                     
