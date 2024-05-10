@@ -27,7 +27,30 @@ def option_choice():
     Runs every time the user needs to select a choice
     from given options during game play.
     """
-    choice = input("Type '1' or '2' here to proceed: ")
+    while True:
+        choice = input("Type '1' or '2' to make a choice: ")
+        print(choice)
+        if option_choice_validation(choice):
+            print("works")
+            break
+
+
+def option_choice_validation(options):
+    """
+    checks that the user entry is a number
+    """
+    try:
+        if options!= "1" and options!= "2":
+            raise ValueError(
+                "Please enter either 1 or 2."
+            )
+    except ValueError as e:
+        print(
+            f"Invalid input: {e}. Please try again."
+        )
+        return False
+
+    return True
 
 
 def user_input():
