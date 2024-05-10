@@ -16,7 +16,7 @@ def game_start():
 
     for line in title_logo:
         print(line)
-
+        
 
 def user_input():
     """
