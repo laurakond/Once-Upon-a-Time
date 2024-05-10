@@ -34,7 +34,9 @@ chapter1 = ["Chapter 1\n",
             "would be able to help, ",
             "however, Snow was aware of his 'deals'",
             "and was cautious to approach him. ",
-            "Should Snow and Charming:\n"]
+            "Should Snow and Charming:\n",
+            "1. Confront the Queen.",
+            "2. Speak to Rumpelstinskin.\n"]
 
 chapter1_cont = ["Snow decides to speak to Rumpel.",
                  "Upon the visit, Rumpel explains",
@@ -42,7 +44,9 @@ chapter1_cont = ["Snow decides to speak to Rumpel.",
                  "all was to hide Snow White in a magical wardrobe ",
                  "so she could be transported to the unknown land. ",
                  "However, there was a condition attached. ",
-                 "Rumpel asked for the baby’s name:\n"]
+                 "Rumpel asked for the baby’s name:\n",
+                 "1. Snow decides to tell the baby’s name.",
+                 "2. Snow does not disclose the name.\n"]
 
 chapter2 = ["Chapter 2\n",
             "On the day of the planned escape, a purple curse cloud arose…",
@@ -50,18 +54,24 @@ chapter2 = ["Chapter 2\n",
             "forcing Snow and Prince to rush to the wardrobe. ",
             "Alas their baby decided to come.\n",
             "The army is at the end of the corridor. ",
-            "Should Snow and Charming:\n"]
+            "Should Snow and Charming:\n",
+            "1. Fight the Queen's army.",
+            "2. Escape through the secret door.\n"]
 
 chapter2_cont = ["They run down the secret stairs a level below",
                  "where the wardrobe room is located. ",
                  "Snow and Charming are noticed by a soldier ",
-                 "and starts marching their way:\n"]
+                 "and starts marching their way:\n",
+                 "1. Charming fights the soldier.",
+                 "2. Charming locks the door.\n"]
 
 chapter2_cont2 = ["The soldier is behind the door trying to break in. ",
                   "Snow and the baby steps into the wardrobe ",
                   "but it does not work. ",
                   "The soldier manages to break through the door ",
-                  "and is marching towards them.\n"]
+                  "and is marching towards them:\n",
+                  "1. Snow places the baby in the wardrobe and closes the door.",
+                  "2. Charming fights the soldier.\n"]
 
 chapter2_cont3 = ["The curse is released and the fairytale characters ",
                   "find themselves in StoryBrooke, ",
