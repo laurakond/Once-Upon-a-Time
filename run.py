@@ -24,15 +24,17 @@ def game_start():
 
 def option_choice():
     """
-    Runs every time the user needs to select a choice
-    from given options during game play.
+    Runs every time the user has to choose
+    provided options for game play.
     """
     while True:
         choice = input("Type '1' or '2' to make a choice: ")
         print(choice)
         if option_choice_validation(choice):
-            print("works")
+            print("option choice")
             break
+
+    return choice
 
 
 def option_choice_validation(options):
@@ -70,7 +72,7 @@ def user_input():
         print(user_gender)
         if input_data_validation(user_gender):
             if user_gender!="male" and user_gender!="female":
-                print("works?")
+                print("Please enter 'male' or 'female'.")
             else:
                 input_data_validation(user_gender)
                 break
