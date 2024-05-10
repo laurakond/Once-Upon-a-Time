@@ -4,6 +4,13 @@ game_intro = ["Welcome to an interactive story-based game. ",
             "1. Read instructions",
             "2. Go to the story"]
 
+instructions = ["When you start the game, you will need to enter your ",
+                "name and gender. This will customise the game play.\n",
+                "Once inside the story, you will be prompted to choose",
+                "between two options to see the outcome of the game. ",
+                "Enter your preferred option and see if you win!\n",
+                "Good luck and enjoy!\n"]
+
 story_intro = ["Once upon a time in a far away land, ",
          "there lived Snow White with her prince charming. ",
          "After defeating the Evil Queen,",

@@ -22,6 +22,7 @@ def game_start():
     for line in story.game_intro:
         print(line)
 
+
 def option_choice():
     """
     Runs every time the user has to choose
@@ -109,7 +110,7 @@ def input_data_validation(data):
 
 
 game_start()
-option_choice()
+options = option_choice()
 
 test = user_input()
 print(test)
