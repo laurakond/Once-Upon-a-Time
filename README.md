@@ -54,6 +54,10 @@ The game is aimed at anyone aged 16 and over, who enjoys text-based adventures a
 - [Existing features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
 
+[Tools and Technologies](#tools-and-technologies)
+- [Languages used](#languages-used)
+- [Frameworks, Libraries and Programs used](#frameworks-libraries-and-programs-used)
+
 [Data Model](#data-model)
 
 [Testing](#testing)
