@@ -132,6 +132,7 @@ def yes_no_validation(data):
     return True
 
 
+#gameplay functions
 def end_game():
     """Generates a goodbye message"""
 
@@ -153,7 +154,6 @@ def proceed_to_game():
     return question
 
 
-#gameplay functions
 def instruction_or_game(data):
     if data == "1":
         print(game_text_generator(story.game_instructions))
@@ -177,6 +177,9 @@ def game_text_generator(data):
 
 
 
+
+
+
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
@@ -192,55 +195,3 @@ instruction_or_game(option)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#for sentence in story.intro:
-#    print(sentence)
-
-#for sentence in story.chapter1:
-#    print(sentence)
-
-#for sentence in story.chapter1_cont:
-#    print(sentence)
-
-#for sentence in story.chapter2:
-#    print(sentence)
-
-#for sentence in story.chapter2_cont:
-#    print(sentence)
-
-#for sentence in story.chapter2_cont2:
-#    print(sentence)
-
-#for sentence in story.chapter2_cont3:
-#    print(sentence)
-
-
-#print(story.intro)
-#print(story.chapter1)
-#print(story.chapter1_cont)
-#print(story.chapter2)
-#print(story.chapter2_cont)
-#print(story.chapter2_cont2)
-#print(story.chapter2_cont3)
