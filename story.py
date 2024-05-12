@@ -1,7 +1,7 @@
 game_intro = ["Welcome to an interactive story-based game. \n",
               "It was inspired by a popular TV Show 'Once Upon a Time'. \n",
               "Please choose from the following options. \n",
-              "1. Read instructions\n",
+              "1. Read instructions",
               "2. Go to the story\n"]
 
 game_instructions = ["When you start the game, you will need to enter your \n",
@@ -12,22 +12,18 @@ game_instructions = ["When you start the game, you will need to enter your \n",
                      "and see if you win!\n\n"
                      "Good luck and enjoy!\n"]
 
-story_intro = ["Once upon a time in a far away land, \n",
-               "there lived Snow White with her prince charming. \n",
-               "After defeating the Evil Queen,\n",
-               "peace was brought to their Kingdom. \n",
-               "Snow White and Prince Charming were happily expecting \n",
-               "an addition to their family - a little baby called {Emma}.\n",
-               "Alas, their joy was shortlived. \n",
-               "The Evil Queen announced she was brewing a curse. \n",
-               "The curse that would trap the whole kingdom \n",
-               "in her fantasy world in a far away land. \n",
-               "A city called StoryBrooke, Maine, USA… \n",
-               "where all fairytale characters would \n",
-               "be trapped in unhappy stories, \n",
-               "clueless of who they really are.\n",
-               "Worried about the hapless future, \n",
-               "Snow and Charming set out to stop the Evil Queen.\n"]
+story_intro = ["Once upon a time in a far away land, there lived Snow White\n",
+               "with her prince charming. After defeating the Evil Queen, \n",
+               "peace was brought to their Kingdom. Snow White and Prince \n",
+               "Charming were happily expecting an addition to their\n",
+               "family - a little baby called {Emma}.\n\n",
+               "Alas, their joy was shortlived. The Evil Queen announced \n",
+               "she was brewing a curse. The curse that would trap the \n",
+               "kingdom in her fantasy world in a far away land. \n",
+               "A city called StoryBrooke, in Maine, USA… where all \n",
+               "fairytale characters would be trapped in unhappy stories, \n",
+               "clueless of who they really are. Worried about the hapless \n",
+               "future, Snow and Charming set out to stop the Evil Queen.\n"]
 
 chapter1 = ["Chapter 1\n",
             "They searched for solutions and ways to stop her.\n",
