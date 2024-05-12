@@ -64,7 +64,7 @@ def user_input():
     
     user["name"] = user_name
     user["gender"] = user_gender
-
+    #print(user)
     return user
 
 #data validation functions
@@ -153,6 +153,7 @@ def proceed_to_game():
             break
     
     if question =="y":
+        user_input()
         return game_text_generator(story.story_intro)
     elif question =="n":
         return end_game()
@@ -163,17 +164,21 @@ def instruction_or_game(data):
         print(game_text_generator(story.game_instructions))
         print(proceed_to_game())
     elif data == "2":
-        print(game_text_generator(story.story_intro))
+        user_input()
+        #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
+        print(user_input)
+        #return game_text_generator(custom_name)
 
 
-def game_text_generator(data):
+def game_text_generator(story):
     """
-    Function that explains how to play.
+    generates the text for the game from the story.py.
     """
     
-    text=""
+    
 
-    for line in data:
+    text=""
+    for line in story:
         text+=line
         #print(text)
 
@@ -183,17 +188,16 @@ def game_text_generator(data):
 
 
 
-
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
-
+#game_text_generator(story.story_intro)
 #instruction_text = game_text_generator(story.game_instructions)
 #begin_story = game_text_generator(story.story_intro)
 #selection_generator(option, instruction_text, begin_story)
 
 #print(instruction)
-#user_input()
+#print(user_input())
 
 #print(test)
 
