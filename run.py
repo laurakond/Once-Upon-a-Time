@@ -117,6 +117,25 @@ def end_game():
     return bye_text
 
 
+def play_game():
+    """
+    This function runs after instructions and asks if the 
+    user wants to continue to play the game
+    """
+
+    question = input("Would you like to play the game (y/n)? \n").lower()
+
+    while True:
+        if question == "y":
+            return game_text_generator(story.story_intro)
+            break
+        elif question == "n":
+            return end_game()
+            break
+        else: 
+            return "Please enter 'y' or 'n'."
+
+
 #gameplay functions
 def instruction_or_game(data):
     if data == "1":
