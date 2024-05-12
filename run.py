@@ -1,7 +1,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
 
-def game_start():
+def welcome_screen():
     """
     Runs the Game logo and starts the application.
     The logo was generated from https://patorjk.com/
@@ -109,10 +109,19 @@ def input_data_validation(data):
     return True
 
 
+def end_game():
+    """Generates a goodbye message"""
+
+    bye_text = "Thanks for playing! See you next time."
+
+    return bye_text
+
+
 #gameplay functions
 def instruction_or_game(data):
     if data == "1":
         print(game_text_generator(story.game_instructions))
+        print(play_game())
     elif data == "2":
         print(game_text_generator(story.story_intro))
 
@@ -132,9 +141,10 @@ def game_text_generator(data):
 
 
 
-game_start()
+welcome_screen()
 option = option_choice()
 instruction_or_game(option)
+
 #instruction_text = game_text_generator(story.game_instructions)
 #begin_story = game_text_generator(story.story_intro)
 #selection_generator(option, instruction_text, begin_story)
