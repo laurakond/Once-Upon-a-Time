@@ -32,9 +32,9 @@ def option_choice():
     """
     while True:
         choice = input("Type '1' or '2' to make a choice: ")
-        print(choice)
+        #print(choice)
         if option_choice_validation(choice):
-            print("option choice")
+            #print("option choice")
             break
 
     return choice
@@ -109,6 +109,29 @@ def input_data_validation(data):
     return True
 
 
+def yes_no_validation(data):
+    """
+    This function validates y/n input field.
+    """
+
+    try:
+        if data.isnumeric() or not data.isalpha():
+            raise ValueError(
+                f"{data}. Please type 'y' or 'n'."
+            )
+        elif len(data)>1:
+            raise ValueError(
+                "Entry must be either 'y' or 'n'."
+            )
+    except ValueError as e:
+        print(
+            f"Invalid input {e}. Try again."
+        )
+        return False
+    
+    return True
+
+
 def end_game():
     """Generates a goodbye message"""
 
@@ -117,30 +140,24 @@ def end_game():
     return bye_text
 
 
-def play_game():
+def proceed_to_game():
     """
     This function runs after instructions and asks if the 
     user wants to continue to play the game
     """
-
-    question = input("Would you like to play the game (y/n)? \n").lower()
-
     while True:
-        if question == "y":
-            return game_text_generator(story.story_intro)
+        question = input("Would you like to play the game (y/n)? ").lower()
+        if yes_no_validation(question):
+            #print("yes no validation works")
             break
-        elif question == "n":
-            return end_game()
-            break
-        else: 
-            return "Please enter 'y' or 'n'."
+    return question
 
 
 #gameplay functions
 def instruction_or_game(data):
     if data == "1":
         print(game_text_generator(story.game_instructions))
-        print(play_game())
+        print(proceed_to_game())
     elif data == "2":
         print(game_text_generator(story.story_intro))
 
