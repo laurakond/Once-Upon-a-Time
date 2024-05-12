@@ -151,8 +151,12 @@ def proceed_to_game():
         if yes_no_validation(question):
             #print("yes no validation works")
             break
-    return question
-
+    
+    if question =="y":
+        return game_text_generator(story.story_intro)
+    elif question =="n":
+        return end_game()
+    
 
 def instruction_or_game(data):
     if data == "1":
