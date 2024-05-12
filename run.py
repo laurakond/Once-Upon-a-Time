@@ -131,8 +131,6 @@ def game_text_generator(data):
 
 
 
-
-
 game_start()
 option = option_choice()
 instruction_or_game(option)
