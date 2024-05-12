@@ -23,7 +23,7 @@ def game_start():
         print(line)
 
 
-#User data, game play, and data validation functions
+#User input functions
 def option_choice():
     """
     Runs every time the user has to choose
@@ -37,24 +37,6 @@ def option_choice():
             break
 
     return choice
-
-
-def option_choice_validation(options):
-    """
-    checks that the user entry is a number
-    """
-    try:
-        if options!= "1" and options!= "2":
-            raise ValueError(
-                "Please enter either 1 or 2."
-            )
-    except ValueError as e:
-        print(
-            f"Invalid input: {e}. Please try again."
-        )
-        return False
-
-    return True
 
 
 def user_input():
@@ -83,7 +65,25 @@ def user_input():
     user["gender"] = user_gender
 
     return user
-        
+
+#data validation functions
+def option_choice_validation(options):
+    """
+    checks that the user entry is a number
+    """
+    try:
+        if options!= "1" and options!= "2":
+            raise ValueError(
+                "Please enter either 1 or 2."
+            )
+    except ValueError as e:
+        print(
+            f"Invalid input: {e}. Please try again."
+        )
+        return False
+
+    return True
+
 
 def input_data_validation(data):
     """
@@ -108,24 +108,41 @@ def input_data_validation(data):
     return True
 
 
+#gameplay functions
+def instruction_or_game(data):
+    if data == "1":
+        print(game_text_generator(story.game_instructions))
+    elif data == "2":
+        print(game_text_generator(story.story_intro))
+
+
 def game_text_generator(data):
     """
     Function that explains how to play.
     """
-    for line in data:
-        print(line)
     
+    text=""
+
+    for line in data:
+        text+=line
+        #print(text)
+
+    return text
 
 
 
 
 
 game_start()
-option_choice()
-game_text_generator(story.game_instructions)
+option = option_choice()
+instruction_or_game(option)
+#instruction_text = game_text_generator(story.game_instructions)
+#begin_story = game_text_generator(story.story_intro)
+#selection_generator(option, instruction_text, begin_story)
+
 #print(instruction)
-user_input()
-game_text_generator(story.story_intro)
+#user_input()
+
 #print(test)
 
 
