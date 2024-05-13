@@ -134,14 +134,6 @@ def yes_no_validation(data):
 
 
 #gameplay functions
-def end_game():
-    """Generates a goodbye message"""
-
-    bye_text = "Thanks for playing! See you next time."
-
-    return bye_text
-
-    
 def instruction_or_game(data):
     if data == "1":
         print(game_text_generator(story.game_instructions))
@@ -149,6 +141,7 @@ def instruction_or_game(data):
     elif data == "2":
         user_input()
         print(game_text_generator(story.story_intro))
+        return run_chapter1()
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
 
@@ -166,11 +159,20 @@ def proceed_to_game():
     
     if question =="y":
         user_input()
-        return game_text_generator(story.story_intro)
+        print(game_text_generator(story.story_intro))
+        return run_chapter1()
     elif question =="n":
         return end_game()
 
 
+def end_game():
+    """Generates a goodbye message"""
+
+    bye_text = "Thanks for playing! See you next time."
+
+    return bye_text
+
+    
 def game_text_generator(story):
     """
     Returns the text line by line for the game from the story.py.
@@ -198,10 +200,6 @@ instruction_or_game(option)
 #begin_story = game_text_generator(story.story_intro)
 #selection_generator(option, instruction_text, begin_story)
 
-#print(instruction)
-#print(user_input())
-
-#print(test)
 
 
 
