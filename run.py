@@ -149,10 +149,7 @@ def instruction_or_game(data):
     elif data == "2":
         user_input()
         print(game_text_generator(story.story_intro))
-        #user_input()
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
-        #print(user_input)
-        #return game_text_generator(story.story_intro)
         #return game_text_generator(custom_name)
 
 
@@ -186,15 +183,16 @@ def game_text_generator(story):
     return text
 
 
+def run_chapter1():
+    chapter1 = game_text_generator(story.chapter1)
+    print(chapter1)
 
 
 
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
-chapter1 = game_text_generator(story.chapter1)
 #sleep(3)
-print(chapter1)
 #game_text_generator(story.story_intro)
 #instruction_text = game_text_generator(story.game_instructions)
 #begin_story = game_text_generator(story.story_intro)
