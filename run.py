@@ -1,5 +1,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
+from time import sleep
 
 def welcome_screen():
     """
@@ -140,6 +141,20 @@ def end_game():
 
     return bye_text
 
+    
+def instruction_or_game(data):
+    if data == "1":
+        print(game_text_generator(story.game_instructions))
+        print(proceed_to_game())
+    elif data == "2":
+        user_input()
+        print(game_text_generator(story.story_intro))
+        #user_input()
+        #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
+        #print(user_input)
+        #return game_text_generator(story.story_intro)
+        #return game_text_generator(custom_name)
+
 
 def proceed_to_game():
     """
@@ -157,26 +172,12 @@ def proceed_to_game():
         return game_text_generator(story.story_intro)
     elif question =="n":
         return end_game()
-    
-
-def instruction_or_game(data):
-    if data == "1":
-        print(game_text_generator(story.game_instructions))
-        print(proceed_to_game())
-    elif data == "2":
-        user_input()
-        #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
-        print(user_input)
-        #return game_text_generator(custom_name)
 
 
 def game_text_generator(story):
     """
-    generates the text for the game from the story.py.
-    """
-    
-    
-
+    Returns the text line by line for the game from the story.py.
+    """    
     text=""
     for line in story:
         text+=line
@@ -191,6 +192,9 @@ def game_text_generator(story):
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
+chapter1 = game_text_generator(story.chapter1)
+#sleep(3)
+print(chapter1)
 #game_text_generator(story.story_intro)
 #instruction_text = game_text_generator(story.game_instructions)
 #begin_story = game_text_generator(story.story_intro)
