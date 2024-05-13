@@ -187,7 +187,7 @@ def game_text_generator(story):
 
 def run_chapter1():
     chapter1 = game_text_generator(story.chapter1)
-    print(chapter1)
+    return chapter1
 
 
 
