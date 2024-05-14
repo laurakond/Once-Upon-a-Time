@@ -2,8 +2,8 @@
 import story
 from time import sleep
 
-user = ""
-#user_gender = ""
+user_name = ""
+user_gender = ""
 
 def welcome_screen():
     """
@@ -53,11 +53,10 @@ def user_input():
     while True:
         user_name = input("Please enter your name: ").capitalize()
         print(user_name)
-        user = user_name
         if input_data_validation(user_name):
             print("works")
             #break
-            return user
+            return user_name
     while True:    
         user_gender = input("Please enter your gender: ")
         print(user_gender)
@@ -69,8 +68,8 @@ def user_input():
                 #break
                 user_gender
     
-    #user["name"] = user_name
-    #user["gender"] = user_gender
+    user["name"] = user_name
+    user["gender"] = user_gender
     #print(user)
     return user
 
@@ -189,6 +188,9 @@ def game_text_generator(story):
         #print(text)
 
     return text
+
+    #for line in story:
+        #print(line)
 
 
 def run_chapter1():
