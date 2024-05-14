@@ -24,7 +24,7 @@ def welcome_screen():
         print(line)
 
     #prints game introduction with options
-    for line in story.game_intro:
+    for line in story.story_dict["game_intro"]:
         print(line)
 
 
@@ -141,11 +141,11 @@ def yes_no_validation(data):
 #gameplay functions
 def instruction_or_game(data):
     if data == "1":
-        print(game_text_generator(story.game_instructions))
+        print(game_text_generator(story.story_dict["game_instructions"]))
         print(proceed_to_game())
     elif data == "2":
         user_input()
-        print(game_text_generator(story.story_intro))
+        print(game_text_generator(story.story_dict["story_intro"]))
         return run_chapter1()
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
@@ -164,7 +164,7 @@ def proceed_to_game():
     
     if question =="y":
         user_input()
-        print(game_text_generator(story.story_intro))
+        print(game_text_generator(story.story_dict["story_intro"]))
         return run_chapter1()
     elif question =="n":
         return end_game()
@@ -191,14 +191,14 @@ def game_text_generator(story):
 
 
 def run_chapter1():
-    chapter1 = game_text_generator(story.chapter1)
+    chapter1 = game_text_generator(story.story_dict["chapter1"])
     return chapter1
 
 
 
-#welcome_screen()
-#option = option_choice()
-#instruction_or_game(option)
+welcome_screen()
+option = option_choice()
+instruction_or_game(option)
 
 
 
@@ -211,9 +211,7 @@ def run_chapter1():
 
 #print(story.story_dict)
 
-for value in story.story_dict["game_intro"]:
-    #for line in value:
-        #print(line)
-    print(value)
+#for value in story.story_dict["game_intro"]:
+    #print(value)
 
 
