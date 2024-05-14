@@ -17,3 +17,4 @@ By Laura Kondrataite
 
 - when testing the code after implementing run_chapter1() function, the code printed "None" output. This was because I used print() statement inside the function. 
     - I resolved this by changing print() with return statement. (see image - chapter1-None-error)
+    - this error came back again and to solve it temporarily I put return chapter1 below print(chapter1)
