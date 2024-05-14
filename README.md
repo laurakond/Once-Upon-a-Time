@@ -101,3 +101,6 @@ Information on how to print ascii art: https://www.youtube.com/watch?v=arcFqEuV_
 Once Upon a time TV show information and some of the content borrowed from there:
 https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time)
 
+Dictionary iteration:
+https://www.geeksforgeeks.org/python-accessing-items-in-lists-within-dictionary/
+https://realpython.com/iterate-through-dictionary-python/
