@@ -55,8 +55,8 @@ def user_input():
         print(user_name)
         if input_data_validation(user_name):
             print("works")
-            #break
-            return user_name
+            break
+            
     while True:    
         user_gender = input("Please enter your gender: ")
         print(user_gender)
@@ -65,13 +65,13 @@ def user_input():
                 print("Please enter 'male' or 'female'.")
             else:
                 input_data_validation(user_gender)
-                #break
-                user_gender
-    
-    user["name"] = user_name
-    user["gender"] = user_gender
+                break
+                #user_gender
+    return
+    #user["name"] = user_name
+    #user["gender"] = user_gender
     #print(user)
-    return user
+    #return user
 
 #data validation functions
 def option_choice_validation(options):
@@ -195,7 +195,8 @@ def game_text_generator(story):
 
 def run_chapter1():
     chapter1 = game_text_generator(story.story_dict["chapter1"])
-    return chapter1
+    print(chapter1)
+    return chapter1 #haven't removed chapter1 from return statement as otherwise when proceeding from "y" option it returns none
 
 
 
