@@ -2,6 +2,9 @@
 import story
 from time import sleep
 
+user_name = ""
+user_gender = ""
+
 def welcome_screen():
     """
     Runs the Game logo and starts the application.
@@ -45,14 +48,15 @@ def user_input():
     """
     Asks user to input relevant data and stores it for in game use.
     """
-    user = {}
+    #user = {}
 
     while True:
         user_name = input("Please enter your name: ").capitalize()
         print(user_name)
         if input_data_validation(user_name):
             print("works")
-            break
+            #break
+            return user_name
     while True:    
         user_gender = input("Please enter your gender: ")
         print(user_gender)
@@ -61,7 +65,8 @@ def user_input():
                 print("Please enter 'male' or 'female'.")
             else:
                 input_data_validation(user_gender)
-                break
+                #break
+                user_gender
     
     user["name"] = user_name
     user["gender"] = user_gender
@@ -191,9 +196,12 @@ def run_chapter1():
 
 
 
-welcome_screen()
-option = option_choice()
-instruction_or_game(option)
+#welcome_screen()
+#option = option_choice()
+#instruction_or_game(option)
+
+
+
 #sleep(3)
 #game_text_generator(story.story_intro)
 #instruction_text = game_text_generator(story.game_instructions)
@@ -201,5 +209,11 @@ instruction_or_game(option)
 #selection_generator(option, instruction_text, begin_story)
 
 
+#print(story.story_dict)
+
+for value in story.story_dict["game_intro"]:
+    #for line in value:
+        #print(line)
+    print(value)
 
 
