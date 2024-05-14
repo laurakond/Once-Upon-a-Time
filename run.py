@@ -196,7 +196,7 @@ def game_text_generator(story):
 def run_chapter1():
     chapter1 = game_text_generator(story.story_dict["chapter1"])
     print(chapter1)
-    return chapter1 #haven't removed chapter1 from return statement as otherwise when proceeding from "y" option it returns none
+    return #chapter1 #haven't removed chapter1 from return statement as otherwise when proceeding from "y" option it returns none
 
 
 
