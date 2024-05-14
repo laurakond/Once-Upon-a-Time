@@ -1,3 +1,4 @@
+import run
 story_dict = {
     "game_intro": ["Welcome to an interactive story-based game. It was \n",
                    "inspired by a popular TV Show 'Once Upon a Time'. \n",
@@ -16,7 +17,7 @@ story_dict = {
                     "Evil Queen, peace was brought to their Kingdom. Snow \n",
                     "White and Prince Charming were happily expecting an \n",
                     "addition to their family - a little baby \n",
-                    "called {emma}.\n\n",
+                    f"called {user}.\n\n",
                     "Alas, their joy was shortlived. The Evil Queen \n",
                     "announced she was brewing a curse. The curse that \n",
                     "would trap the kingdom in her fantasy world in \n",
