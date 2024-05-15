@@ -1,3 +1,9 @@
+user = {
+ "name": "",
+ "gender": "",
+}
+
+
 story_dict = {
     "game_intro": ["Welcome to an interactive story-based game. It was \n",
                    "inspired by a popular TV Show 'Once Upon a Time'. \n",
