@@ -48,7 +48,7 @@ def user_input():
     """
     Asks user to input relevant data and stores it for in game use.
     """
-    #user = {}
+    user = {}
 
     while True:
         user_name = input("Please enter your name: ").capitalize()
@@ -56,7 +56,7 @@ def user_input():
         if input_data_validation(user_name):
             print("works")
             break
-            
+            #return user_name
     while True:    
         user_gender = input("Please enter your gender: ")
         print(user_gender)
@@ -67,11 +67,11 @@ def user_input():
                 input_data_validation(user_gender)
                 break
                 #user_gender
-    return
-    #user["name"] = user_name
-    #user["gender"] = user_gender
-    #print(user)
-    #return user
+    
+    user["name"] = user_name
+    user["gender"] = user_gender
+    print(user)
+    return user
 
 #data validation functions
 def option_choice_validation(options):
@@ -140,13 +140,19 @@ def yes_no_validation(data):
 
 #gameplay functions
 def instruction_or_game(data):
+    """
+    takes the user to the instructions or
+    gameplay
+    """
     if data == "1":
         print(game_text_generator(story.story_dict["game_instructions"]))
-        print(proceed_to_game())
-    elif data == "2":
+        return continue_to_play(proceed_to_game())
+        #print(test)
+    else:
+    #elif data == "2":
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
-        return run_chapter1()
+        print(run_chapter1())
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
 
@@ -161,13 +167,24 @@ def proceed_to_game():
         if yes_no_validation(question):
             #print("yes no validation works")
             break
-    
-    if question =="y":
+        
+    return question
+
+
+def continue_to_play(data):
+    """
+    generates appropriate game play functions based
+    on user choice after reading instructions
+    """
+    if data =="y":
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
-        return run_chapter1()
-    elif question =="n":
-        return end_game()
+        print(run_chapter1())
+        #print(run_chapter1())
+        #return run_chapter1()
+        #return introduction
+    elif data =="n":
+        print(end_game())
 
 
 def end_game():
@@ -185,27 +202,31 @@ def game_text_generator(story):
     text=""
     for line in story:
         text+=line
-        #print(text)
+        #zprint(text)
 
     return text
-
-    #for line in story:
-        #print(line)
 
 
 def run_chapter1():
     chapter1 = game_text_generator(story.story_dict["chapter1"])
-    print(chapter1)
-    return #chapter1 #haven't removed chapter1 from return statement as otherwise when proceeding from "y" option it returns none
+    return test()
 
 
+def test():
 
+    return "test function"
+
+
+#test = run_chapter1()
+#print(test)
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
-
-
-
+#test = proceed_to_game()
+#print(test)
+#continue_to_play(proceed_to_game())
+#print(smth)
+#introduction = game_text_generator(story.story_dict["story_intro"])
 #sleep(3)
 #game_text_generator(story.story_intro)
 #instruction_text = game_text_generator(story.game_instructions)
@@ -213,9 +234,5 @@ instruction_or_game(option)
 #selection_generator(option, instruction_text, begin_story)
 
 
-#print(story.story_dict)
-
-#for value in story.story_dict["game_intro"]:
-    #print(value)
 
 
