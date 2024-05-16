@@ -18,3 +18,46 @@ By Laura Kondrataite
 - when testing the code after implementing run_chapter1() function, the code printed "None" output. This was because I used print() statement inside the function. 
     - I resolved this by changing print() with return statement. (see image - chapter1-None-error)
     - this error came back again and to solve it temporarily I put return chapter1 below print(chapter1)
+
+- I had difficulty to make the code generate appropriate text content and functionality. I realised that there was an error in proceed_go_game() function as it collated two separate steps in one. Therefore, I decided to separate into two functions, one responsible just for generating the user input and validating it using validation function. The other function, continue_to_play(data), I used to generate appropriate content based on user selection in the previous function.
+    - This part of the code proved challenging as I was still getting unintentional functionality. After trying multiple ways of displaying text, I finally managed to get the code working as intended by printing game text and returning another function to trigger user input in order to progress along the way. 
+
+            def  proceed_to_game():
+            """
+            This function runs after instructions and asks if the
+            user wants to continue to play the game
+            """
+            while  True:
+                question =  input("Would you like to play the game (y/n)? ").lower()
+                if yes_no_validation(question):
+            break
+            return question
+            
+            
+            def  continue_to_play(data):
+            """
+            generates appropriate game play functions based
+            on user choice after reading instructions
+            """
+            if data =="y":
+                user_input()
+                print(game_text_generator(story.story_dict["story_intro"]))
+                print(game_text_generator(story.story_dict["chapter1"]))
+            return path_selector()
+            
+            elif data =="n":
+            return end_game()
+            
+
+            def  path_selector():
+            """
+            generates a question for the user to select relative path
+            to progress the game accordingly.
+            """
+            while  True:
+                first_question =  input("Type '1' or '2' to make a choice: ")
+                if option_choice_validation(first_question)
+                break
+            return test(first_question)
+
+        - At this stage the game functionality seems to have worked. 
