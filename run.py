@@ -1,10 +1,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
-#import os
 from time import sleep
 
-#user_name = ""
-#user_gender = ""
 
 def welcome_screen():
     """
@@ -75,7 +72,6 @@ def user_input():
     print(story.user)
     return story.user
 
-#story.user = user_input
 
 #data validation functions
 def option_choice_validation(options):
@@ -157,8 +153,8 @@ def instruction_or_game(data):
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
-        return game_loop()
-        #return path_selector()
+        #return game_loop()
+        return chapter1(path_selector())
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
 
@@ -186,12 +182,8 @@ def continue_to_play(data):
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
-        #return path_selector()
-        return game_loop()
-        #return chapter1
-        #print(run_chapter1())
-        #return run_chapter1()
-        #return introduction
+        return path_selector()
+        #return game_loop()
     elif data =="n":
         return end_game()
 
@@ -220,14 +212,14 @@ def path_selector():
     to progress the game accordingly.
     """
     while True:
-        first_question = input("Type '1' or '2' to make a choice: ")
-        if option_choice_validation(first_question):
+        in_game_question = input("Type '1' or '2' to make a choice: ")
+        if option_choice_validation(in_game_question):
             break
 
-    return test(first_question)
+    return in_game_question
 
 
-def test(data):
+def chapter1(data):
     """
     generates appropriate game play based on option selection.
     """
@@ -236,11 +228,95 @@ def test(data):
         #print(test)
         return end_game()
     elif data == "2":
-        print(game_text_generator(story.story_dict["chapter1_cont"]))
+        print(game_text_generator(story.story_dict["rumpel"]))
         #print(game_text_generator(story.story_dict["chapter1_cont"]))
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
-        return #path_selector()
+        return rumpel(path_selector())
+
+
+def rumpel(data):
+    """
+    returns appropriate result after chapter1 continued.
+    """
+    if data == "1":
+        print(game_text_generator(story.story_dict["baby_name"]))
+        return baby_name(path_selector())
+    if data == "2":
+        print("chapter1_cont test option2")
+        print("curse comes, game over")
+        #print(test)
+        return end_game()
+
+
+def baby_name(data):
+    """
+    returns appropriate result after chapter2.
+    """
+    if data == "1":
+        print("chapter1_cont test option1")
+        print("curse comes, game over")
+        #print(test)
+        return end_game()
+    if data == "2":
+        print("chapter2 test option2")
+        print(game_text_generator(story.story_dict["secret_door"]))
+        return secret_door(path_selector())
+
+
+def secret_door(data):
+    """
+    returns appropriate result after chapter2.
+    """
+    if data == "1":
+        print("chapter2_cont test option1")
+        print("curse comes, game over")
+        #print(test)
+        return end_game()
+    if data == "2":
+        print("chapter2_cont test option2")
+        print(game_text_generator(story.story_dict["lock_door"]))
+        return lock_door(path_selector())
+
+
+def lock_door(data):
+    """
+    returns appropriate result after chapter2.
+    """
+    if data == "1":
+        print("you won!")
+        print(game_text_generator(story.story_dict["wardrobe"]))
+        return chapter3()
+    if data == "2":
+        print("chapter2_cont2 test option1")
+        print("curse comes, game over")
+        #print(test)
+        return end_game()
+
+
+def user_input_chpt3():
+    """
+    returns question if the user wants to carry on with the story.
+    """
+    question = input("Would you like to continue to Chapter 3 (y/n)? ")
+    if yes_no_validation(question):
+            #print("yes no validation works")
+            break
+        
+    return question
+
+
+def contninue_chapter3(data):
+    """
+    Executes appropriate actions based on user input for 
+    chapter 3.
+    """
+    if move_to_chapter3 =="y":
+        print("Coming soon - stay tuned, Deary!")
+        return end_game()
+    elif move_to_chapter3 =="n":
+        return end_game()
+
 
 def game_loop():
     """
@@ -253,6 +329,7 @@ def game_loop():
 
 welcome_screen()
 option = option_choice()
+move_to_chapter3 = user_input_chpt3()
 instruction_or_game(option)
 #sleep(3)
 #selection_generator(option, instruction_text, begin_story)
