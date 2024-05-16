@@ -153,7 +153,7 @@ def proceed_to_game():
     """
     while True:
         question = input("Would you like to play the game (y/n)? ").lower()
-        if yes_no_validation(question)
+        if yes_no_validation(question):
             break
         
     return question
