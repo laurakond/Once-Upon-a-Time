@@ -3,8 +3,8 @@ import story
 #import os
 from time import sleep
 
-user_name = ""
-user_gender = ""
+#user_name = ""
+#user_gender = ""
 
 def welcome_screen():
     """
@@ -49,7 +49,7 @@ def user_input():
     """
     Asks user to input relevant data and stores it for in game use.
     """
-    user = {}
+    #user = {}
 
     while True:
         user_name = input("Please enter your name: ").capitalize()
@@ -69,10 +69,13 @@ def user_input():
                 break
                 #user_gender
     
-    user["name"] = user_name
-    user["gender"] = user_gender
-    print(user)
-    return user
+    story.user["name"] = user_name#user["name"] = user_name
+    story.user["gender"] = user_name
+    #user["gender"] = user_gender
+    print(story.user)
+    return story.user
+
+#story.user = user_input
 
 #data validation functions
 def option_choice_validation(options):
@@ -149,12 +152,13 @@ def instruction_or_game(data):
         print(game_text_generator(story.story_dict["game_instructions"]))
         return continue_to_play(proceed_to_game())
         #print(test)
-    else:
-    #elif data == "2":
+    #else:
+    elif data == "2":
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
-        return path_selector()
+        return game_loop()
+        #return path_selector()
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
 
@@ -182,7 +186,8 @@ def continue_to_play(data):
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
-        return path_selector()
+        #return path_selector()
+        return game_loop()
         #return chapter1
         #print(run_chapter1())
         #return run_chapter1()
@@ -193,7 +198,6 @@ def continue_to_play(data):
 
 def end_game():
     """Generates a goodbye message"""
-
     bye_text = "Thanks for playing! See you next time."
     print(bye_text)
     #os.system('cls')
@@ -210,11 +214,6 @@ def game_text_generator(story):
     return text
 
 
-#def run_chapter1():
-    #chapter1 = game_text_generator(["chapter1"])
-    #return chapter1
-
-
 def path_selector():
     """
     generates a question for the user to select relative path
@@ -226,7 +225,6 @@ def path_selector():
             break
 
     return test(first_question)
-    #return chapter1
 
 
 def test(data):
@@ -234,34 +232,27 @@ def test(data):
     generates appropriate game play based on option selection.
     """
     if data == "1":
-        print("test text")
+        print("curse comes, game over")
         #print(test)
-        return #return appropriate text piece
+        return end_game()
     elif data == "2":
-        print("you lost")
+        print(game_text_generator(story.story_dict["chapter1_cont"]))
+        #print(game_text_generator(story.story_dict["chapter1_cont"]))
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
-        return #return appropriate text piece
+        return #path_selector()
+
+def game_loop():
+    """
+    generates text and options over and over
+    """
+    print("game loop works?")
+    return path_selector()
+    #path_selector()
 
 
-#test = run_chapter1()
-#print(test)
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
-#smth = path_selector
-#test(smth)
-#test = proceed_to_game()
-#print(test)
-#continue_to_play(proceed_to_game())
-#print(smth)
-#introduction = game_text_generator(story.story_dict["story_intro"])
 #sleep(3)
-#game_text_generator(story.story_intro)
-#instruction_text = game_text_generator(story.game_instructions)
-#begin_story = game_text_generator(story.story_intro)
 #selection_generator(option, instruction_text, begin_story)
-
-
-
-
