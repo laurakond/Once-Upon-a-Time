@@ -1,5 +1,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
+#import os
 from time import sleep
 
 user_name = ""
@@ -152,7 +153,8 @@ def instruction_or_game(data):
     #elif data == "2":
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
-        print(run_chapter1())
+        print(game_text_generator(story.story_dict["chapter1"]))
+        return path_selector()
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
 
@@ -179,20 +181,22 @@ def continue_to_play(data):
     if data =="y":
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
-        print(run_chapter1())
+        print(game_text_generator(story.story_dict["chapter1"]))
+        return path_selector()
+        #return chapter1
         #print(run_chapter1())
         #return run_chapter1()
         #return introduction
     elif data =="n":
-        print(end_game())
+        return end_game()
 
 
 def end_game():
     """Generates a goodbye message"""
 
     bye_text = "Thanks for playing! See you next time."
-
-    return bye_text
+    print(bye_text)
+    #os.system('cls')
 
     
 def game_text_generator(story):
@@ -202,19 +206,26 @@ def game_text_generator(story):
     text=""
     for line in story:
         text+=line
-        #zprint(text)
 
     return text
 
 
-def run_chapter1():
-    chapter1 = game_text_generator(story.story_dict["chapter1"])
-    return test()
+#def run_chapter1():
+    #chapter1 = game_text_generator(["chapter1"])
+    #return chapter1
 
 
-def test():
+def path_selector():
+    while True:
+        first_question = input("Type '1' or '2' to make a choice: ")
+        if option_choice_validation(first_question):
+            break
 
-    return "test function"
+    return test(first_question)
+    #return chapter1
+
+
+
 
 
 #test = run_chapter1()
@@ -222,6 +233,8 @@ def test():
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
+#smth = path_selector
+#test(smth)
 #test = proceed_to_game()
 #print(test)
 #continue_to_play(proceed_to_game())
