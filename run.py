@@ -1,4 +1,3 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import story
 from time import sleep
 
@@ -34,9 +33,7 @@ def option_choice():
     """
     while True:
         choice = input("Type '1' or '2' to make a choice: ")
-        #print(choice)
         if option_choice_validation(choice):
-            #print("option choice")
             break
 
     return choice
@@ -46,15 +43,12 @@ def user_input():
     """
     Asks user to input relevant data and stores it for in game use.
     """
-    #user = {}
-
     while True:
         user_name = input("Please enter your name: ").capitalize()
         print(user_name)
         if input_data_validation(user_name):
             print("works")
             break
-            #return user_name
     while True:    
         user_gender = input("Please enter your gender: ")
         print(user_gender)
@@ -64,12 +58,9 @@ def user_input():
             else:
                 input_data_validation(user_gender)
                 break
-                #user_gender
     
-    story.user["name"] = user_name#user["name"] = user_name
+    story.user["name"] = user_name
     story.user["gender"] = user_name
-    #user["gender"] = user_gender
-    print(story.user)
     return story.user
 
 
@@ -119,7 +110,6 @@ def yes_no_validation(data):
     """
     This function validates y/n input field.
     """
-
     try:
         if data.isnumeric() or not data.isalpha():
             raise ValueError(
@@ -147,13 +137,10 @@ def instruction_or_game(data):
     if data == "1":
         print(game_text_generator(story.story_dict["game_instructions"]))
         return continue_to_play(proceed_to_game())
-        #print(test)
-    #else:
     elif data == "2":
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
-        #return game_loop()
         return chapter1(path_selector())
         #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
         #return game_text_generator(custom_name)
@@ -166,8 +153,7 @@ def proceed_to_game():
     """
     while True:
         question = input("Would you like to play the game (y/n)? ").lower()
-        if yes_no_validation(question):
-            #print("yes no validation works")
+        if yes_no_validation(question)
             break
         
     return question
@@ -182,8 +168,7 @@ def continue_to_play(data):
         user_input()
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
-        return path_selector()
-        #return game_loop()
+        return chapter1(path_selector())
     elif data =="n":
         return end_game()
 
@@ -192,7 +177,6 @@ def end_game():
     """Generates a goodbye message"""
     bye_text = "Thanks for playing! See you next time."
     print(bye_text)
-    #os.system('cls')
 
     
 def game_text_generator(story):
@@ -225,13 +209,9 @@ def chapter1(data):
     """
     if data == "1":
         print("curse comes, game over")
-        #print(test)
         return end_game()
     elif data == "2":
         print(game_text_generator(story.story_dict["rumpel"]))
-        #print(game_text_generator(story.story_dict["chapter1_cont"]))
-        #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
-        #return game_text_generator(custom_name)
         return rumpel(path_selector())
 
 
@@ -243,9 +223,7 @@ def rumpel(data):
         print(game_text_generator(story.story_dict["baby_name"]))
         return baby_name(path_selector())
     if data == "2":
-        print("chapter1_cont test option2")
         print("curse comes, game over")
-        #print(test)
         return end_game()
 
 
@@ -254,12 +232,9 @@ def baby_name(data):
     returns appropriate result after chapter2.
     """
     if data == "1":
-        print("chapter1_cont test option1")
         print("curse comes, game over")
-        #print(test)
         return end_game()
     if data == "2":
-        print("chapter2 test option2")
         print(game_text_generator(story.story_dict["secret_door"]))
         return secret_door(path_selector())
 
@@ -269,12 +244,9 @@ def secret_door(data):
     returns appropriate result after chapter2.
     """
     if data == "1":
-        print("chapter2_cont test option1")
         print("curse comes, game over")
-        #print(test)
         return end_game()
     if data == "2":
-        print("chapter2_cont test option2")
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(path_selector())
 
@@ -286,11 +258,9 @@ def lock_door(data):
     if data == "1":
         print("you won!")
         print(game_text_generator(story.story_dict["wardrobe"]))
-        return chapter3()
+        return continue_chapter3()
     if data == "2":
-        print("chapter2_cont2 test option1")
         print("curse comes, game over")
-        #print(test)
         return end_game()
 
 
@@ -298,23 +268,23 @@ def user_input_chpt3():
     """
     returns question if the user wants to carry on with the story.
     """
-    question = input("Would you like to continue to Chapter 3 (y/n)? ")
-    if yes_no_validation(question):
-            #print("yes no validation works")
-            break
+    question1 = input("Would you like to continue to Chapter 3 (y/n)? ")
+    while True:
+        if yes_no_validation(question1):
+                break
         
-    return question
+    return question1
 
 
-def contninue_chapter3(data):
+def continue_chapter3():
     """
     Executes appropriate actions based on user input for 
     chapter 3.
     """
-    if move_to_chapter3 =="y":
+    if user_input_chpt3() =="y":
         print("Coming soon - stay tuned, Deary!")
         return end_game()
-    elif move_to_chapter3 =="n":
+    elif user_input_chpt3() =="n":
         return end_game()
 
 
@@ -324,12 +294,11 @@ def game_loop():
     """
     print("game loop works?")
     return path_selector()
-    #path_selector()
 
 
 welcome_screen()
 option = option_choice()
-move_to_chapter3 = user_input_chpt3()
 instruction_or_game(option)
+#move_to_chapter3 = user_input_chpt3()
 #sleep(3)
 #selection_generator(option, instruction_text, begin_story)
