@@ -216,6 +216,10 @@ def game_text_generator(story):
 
 
 def path_selector():
+    """
+    generates a question for the user to select relative path
+    to progress the game accordingly.
+    """
     while True:
         first_question = input("Type '1' or '2' to make a choice: ")
         if option_choice_validation(first_question):
@@ -225,7 +229,19 @@ def path_selector():
     #return chapter1
 
 
-
+def test(data):
+    """
+    generates appropriate game play based on option selection.
+    """
+    if data == "1":
+        print("test text")
+        #print(test)
+        return #return appropriate text piece
+    elif data == "2":
+        print("you lost")
+        #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
+        #return game_text_generator(custom_name)
+        return #return appropriate text piece
 
 
 #test = run_chapter1()
