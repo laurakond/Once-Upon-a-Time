@@ -22,7 +22,7 @@ story_dict = {
                     "Evil Queen, peace was brought to their Kingdom. Snow \n",
                     "White and Prince Charming were happily expecting an \n",
                     "addition to their family - a little baby \n",
-                    "called {user["name"]}.\n\n",
+                    "called {user}.\n\n",
                     "Alas, their joy was shortlived. The Evil Queen \n",
                     "announced she was brewing a curse. The curse that \n",
                     "would trap the kingdom in her fantasy world in \n",
@@ -74,6 +74,6 @@ story_dict = {
                  "stripped of their memories and living \n",
                  "hapless lives, while the Queen revels in her \n",
                  "accomplishment.\n\n",
-                 "But hope is not lost, as {user["name"]} has managed \n",
+                 "But hope is not lost, as {user} has managed \n",
                  "to escape. Will the curse be broken?\n"]
 }
