@@ -43,20 +43,20 @@ The game is aimed at anyone aged 16 and over, who enjoys text-based adventures a
 
 ## Table of Contents
 
-[How to play](#how-to-play)
+[How to Play](#how-to-play)
 
 [Design](#design)
-- [Target audience](#target-audience)
+- [Target Audience](#target-audience)
 - [User Stories](#user-stories)
 - [Flowcharts](#wireframes)
 
 [Features](#features)
-- [Existing features](#existing-features)
+- [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
 
 [Tools and Technologies](#tools-and-technologies)
-- [Languages used](#languages-used)
-- [Frameworks, Libraries and Programs used](#frameworks-libraries-and-programs-used)
+- [Languages Used](#languages-used)
+- [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 
 [Data Model](#data-model)
 
@@ -68,11 +68,20 @@ The game is aimed at anyone aged 16 and over, who enjoys text-based adventures a
 
 ## How to play
 
+## Design
+### Target Audience
+### User Stories
+### Flowcharts
+
 ## Features
+### Existing Features
+### Features Left to Implement
 
-### Existing features
+## Tools and Technologies
 
-### Features left to implement
+### Languages Used
+
+### Frameworks, Libraries and Programs Used
 
 ## Data model
 
