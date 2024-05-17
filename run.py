@@ -278,13 +278,14 @@ def user_input_chpt3():
 
 def continue_chapter3():
     """
-    Executes appropriate actions based on user input for 
-    chapter 3.
+    Takes the user to Chapter 3 or executes end_game() 
+    based on user input.
     """
-    if user_input_chpt3() =="y":
+    question_chpt3 = user_input_chpt3()
+    if question_chpt3 =="y":
         print("Coming soon - stay tuned, Deary!")
         return end_game()
-    elif user_input_chpt3() =="n":
+    elif question_chpt3 =="n":
         return end_game()
 
 
@@ -299,6 +300,7 @@ def game_loop():
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
+#test = user_input_chpt3()
 #move_to_chapter3 = user_input_chpt3()
 #sleep(3)
 #selection_generator(option, instruction_text, begin_story)
