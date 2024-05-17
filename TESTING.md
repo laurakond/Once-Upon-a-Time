@@ -61,3 +61,7 @@ By Laura Kondrataite
             return test(first_question)
 
         - At this stage the game functionality seems to have worked. 
+
+- At the end of the game, the questions "Would you like to continue to Chapter 3 (y/n)?" was displaying twice if option "n" was selected. 
+    - I resolved this by putting user_input_chpt3 into a variable and using it in the if statement inside continue_chapter3() function.
+
