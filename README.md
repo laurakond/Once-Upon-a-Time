@@ -71,6 +71,18 @@ The game is aimed at anyone aged 16 and over, who enjoys text-based adventures a
 ## Design
 ### Target Audience
 ### User Stories
+**First Time User**
+- As a first time user, I want to clearly see what the application is about.
+- As a first time user, I want to be able to read instructions.
+- As a first time user, I want to be able to decide whether to proceed with the game after reading instructions.
+
+<br>
+
+- As a user, I want to be able to skip the instructions and go straight to the game.
+- As a user, I want to see the game customised based on my name and gender.
+- As a user, I want to be able to decide to finish the game once reached a certain stage of the game.
+- As a user, I want to return to the main screen after the game has finished.
+
 ### Flowcharts
 
 ## Features
