@@ -69,7 +69,19 @@ The main target audience for the game is anyone aged 16 and over, who enjoys tex
 
 ### Languages Used
 
+- Python language was used for creating the gameplay. 
+- Markdown was used for creating the README file.
+
 ### Frameworks, Libraries and Programs Used
+
+The following resources were used to help implement the website:
+- [Lucidchart](https://lucid.app/) for creating flowchart of the game
+- [GitHub](https://github.com/) for creating and storing files and folders of the website
+- Git was used for version control
+- VScode editor for writing the code
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) for checking best code practices 
+
+ [Return to Table of Contents](#table-of-contents)
 
 ## Data model
 
