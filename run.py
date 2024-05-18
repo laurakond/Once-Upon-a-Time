@@ -60,7 +60,8 @@ def user_input():
                 break
     
     story.user["name"] = user_name
-    story.user["gender"] = user_name
+    story.user["gender"] = user_gender
+    print(story.user)
     return story.user
 
 
@@ -300,7 +301,5 @@ def game_loop():
 welcome_screen()
 option = option_choice()
 instruction_or_game(option)
-#test = user_input_chpt3()
-#move_to_chapter3 = user_input_chpt3()
 #sleep(3)
 #selection_generator(option, instruction_text, begin_story)
