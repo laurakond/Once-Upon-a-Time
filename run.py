@@ -165,7 +165,9 @@ def instruction_or_game(data):
         return continue_to_play(proceed_to_game())
     elif data == "2":
         user_input()
-        print(game_text_generator(story.story_dict["story_intro"]))
+        new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+        generated_text = game_text_generator(new_story)
+        print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(path_selector())
 
@@ -190,7 +192,9 @@ def continue_to_play(data):
     """
     if data =="y":
         user_input()
-        print(game_text_generator(story.story_dict["story_intro"]))
+        new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+        generated_text = game_text_generator(new_story)
+        print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(path_selector())
     elif data =="n":
@@ -270,7 +274,9 @@ def lock_door(data):
     """
     if data == "1":
         print("you won!")
-        print(game_text_generator(story.story_dict["wardrobe"]))
+        wardrobe_story = customise_story(story.story_dict["wardrobe"], story.user["name"])
+        wardrobe_text = game_text_generator(wardrobe_story)
+        print(wardrobe_text)
         return continue_chapter3()
     if data == "2":
         print("curse comes, game over")
@@ -310,15 +316,27 @@ def game_loop():
     return path_selector()
 
 
-#welcome_screen()
-#option = option_choice()
-#instruction_or_game(option)
+#reused variables
+#new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+#generated_text = game_text_generator(new_story)
 
-user_input()
 
-new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+#main functions to run the game
+def main():
+    """
+    main game function
+    """
+    welcome_screen()
+    option = option_choice()
+    instruction_or_game(option)
+
+
+#user_input()
+main()
+
 #print(new_story)
-print("pass through game text generator function\n")
-generated_text = game_text_generator(new_story)
-print(generated_text)
+#print("pass through game text generator function\n")
+
+#print(generated_text)
 #sleep(3)
+#selection_generator(option, instruction_text, begin_story)
