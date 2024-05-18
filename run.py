@@ -9,23 +9,32 @@ def welcome_screen():
     """
 
     title_logo = [r"""
-  __  __ _  ___ ____    _  _ ____  __  __ _     __     ____ __ _  _ ____         
- /  \(  ( \/ __|  __)  / )( (  _ \/  \(  ( \   / _\   (_  _|  | \/ |  __)        
-(  O )    ( (__ ) _)   ) \/ () __(  O )    /  /    \    )(  )(/ \/ \) _) _ _ _   
- \__/\_)__)\___|____)  \____(__)  \__/\_)__)  \_/\_/   (__)(__)_)(_(____|_|_|_)  
+      __  __ _  ___ ____    _  _ ____  __  __ _
+     /  \(  ( \/ __|  __)  / )( (  _ \/  \(  ( \
+    (  O )    ( (__ ) _)   ) \/ () __(  O )    /
+     \__/\_)__)\___|____) _\____(__)  \__/\_)__)
+     / _\   (_  _|  | \/ |  __)
+    /    \    )(  )(/ \/ \) _)
+    \_/\_/   (__)(__)_)(_(____)
 
-    """]
+      ___                _   _
+     / _ \ _ _  __ ___  | | | |_ __  ___ _ _
+    | (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
+     \___/|_||_\__\___|  \___/| .__/\___/_||_|
+     __ _  | |_(_)_ __  ___   |_|
+    / _` | |  _| | '  \/ -_)_ _ _
+    \__,_|  \__|_|_|_|_\___(_|_|_)"""]
 
-    #prints Title of the game
+    # prints Title of the game
     for line in title_logo:
         print(line)
 
-    #prints game introduction with options
+    # prints game introduction with options
     for line in story.story_dict["game_intro"]:
         print(line)
 
 
-#User input functions
+# User input functions
 def option_choice():
     """
     Runs every time the user has to choose
@@ -49,29 +58,29 @@ def user_input():
         if input_data_validation(user_name):
             print("works")
             break
-    while True:    
+    while True:
         user_gender = input("Please enter your gender: ")
         print(user_gender)
         if input_data_validation(user_gender):
-            if user_gender!="male" and user_gender!="female":
+            if user_gender != "male" and user_gender != "female":
                 print("Please enter 'male' or 'female'.")
             else:
                 input_data_validation(user_gender)
                 break
-    
+
     story.user["name"] = user_name
     story.user["gender"] = user_gender
-    print(story.user)
+    # print(story.user)
     return story.user
 
 
-#data validation functions
+# data validation functions
 def option_choice_validation(options):
     """
     checks that the user entry is a number
     """
     try:
-        if options!= "1" and options!= "2":
+        if options != "1" and options != "2":
             raise ValueError(
                 "Please enter either 1 or 2."
             )
@@ -116,7 +125,7 @@ def yes_no_validation(data):
             raise ValueError(
                 f"{data}. Please type 'y' or 'n'."
             )
-        elif len(data)>1:
+        elif len(data) > 1:
             raise ValueError(
                 "Entry must be either 'y' or 'n'."
             )
@@ -125,10 +134,11 @@ def yes_no_validation(data):
             f"Invalid input {e}. Try again."
         )
         return False
-    
+
     return True
 
-#text/storyline generating functions
+
+# Text/storyline generating functions
 def customise_story(story_text, user_name):
     """
     customises the storyline based on user provided data,
@@ -138,23 +148,23 @@ def customise_story(story_text, user_name):
     for line in story_text:
         updated_line = line.replace("{user_name}", user_name)
         updated_story.append(updated_line)
-    story_text = updated_story
+    # story_text = updated_story
 
-    return story_text
+    return updated_story
 
 
 def game_text_generator(story):
     """
     Returns the text line by line for the game from the story.py.
-    """    
-    text=""
+    """
+    text = ""
     for line in story:
-        text+=line
+        text += line
 
     return text
 
 
-#gameplay functions
+# gameplay functions
 def instruction_or_game(data):
     """
     takes the user to the instructions or
@@ -165,7 +175,8 @@ def instruction_or_game(data):
         return continue_to_play(proceed_to_game())
     elif data == "2":
         user_input()
-        new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+        new_story = customise_story(story.story_dict["story_intro"],
+                                    story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
@@ -174,14 +185,14 @@ def instruction_or_game(data):
 
 def proceed_to_game():
     """
-    This function runs after instructions and asks if the 
+    This function runs after instructions and asks if the
     user wants to continue to play the game
     """
     while True:
         question = input("Would you like to play the game (y/n)? ").lower()
         if yes_no_validation(question):
             break
-        
+
     return question
 
 
@@ -190,14 +201,15 @@ def continue_to_play(data):
     generates appropriate game play functions based
     on user choice after reading instructions
     """
-    if data =="y":
+    if data == "y":
         user_input()
-        new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+        new_story = customise_story(story.story_dict["story_intro"],
+                                    story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(path_selector())
-    elif data =="n":
+    elif data == "n":
         return end_game()
 
 
@@ -206,7 +218,7 @@ def end_game():
     bye_text = "Thanks for playing! See you next time."
     print(bye_text)
 
-    
+
 def path_selector():
     """
     generates a question for the user to select relative path
@@ -274,7 +286,8 @@ def lock_door(data):
     """
     if data == "1":
         print("you won!")
-        wardrobe_story = customise_story(story.story_dict["wardrobe"], story.user["name"])
+        wardrobe_story = customise_story(story.story_dict["wardrobe"],
+                                         story.user["name"])
         wardrobe_text = game_text_generator(wardrobe_story)
         print(wardrobe_text)
         return continue_chapter3()
@@ -290,38 +303,39 @@ def user_input_chpt3():
     question1 = input("Would you like to continue to Chapter 3 (y/n)? ")
     while True:
         if yes_no_validation(question1):
-                break
-        
+            break
+
     return question1
 
 
 def continue_chapter3():
     """
-    Takes the user to Chapter 3 or executes end_game() 
+    Takes the user to Chapter 3 or executes end_game()
     based on user input.
     """
     question_chpt3 = user_input_chpt3()
-    if question_chpt3 =="y":
+    if question_chpt3 == "y":
         print("Coming soon - stay tuned, Deary!")
         return end_game()
-    elif question_chpt3 =="n":
+    elif question_chpt3 == "n":
         return end_game()
 
 
-def game_loop():
+# def game_loop():
     """
     generates text and options over and over
     """
-    print("game loop works?")
-    return path_selector()
+# print("game loop works?")
+# return path_selector()
 
 
-#reused variables
-#new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
-#generated_text = game_text_generator(new_story)
+# reused variables
+# new_story = customise_story(story.story_dict["story_intro"],
+# story.user["name"])
+# generated_text = game_text_generator(new_story)
 
 
-#main functions to run the game
+# main functions to run the game
 def main():
     """
     main game function
@@ -331,12 +345,12 @@ def main():
     instruction_or_game(option)
 
 
-#user_input()
+# user_input()
 main()
 
-#print(new_story)
-#print("pass through game text generator function\n")
+# print(new_story)
+# print("pass through game text generator function\n")
 
-#print(generated_text)
-#sleep(3)
-#selection_generator(option, instruction_text, begin_story)
+# print(generated_text)
+# sleep(3)
+# selection_generator(option, instruction_text, begin_story)
