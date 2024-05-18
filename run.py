@@ -128,6 +128,31 @@ def yes_no_validation(data):
     
     return True
 
+#text/storyline generating functions
+def customise_story(story_text, user_name):
+    """
+    customises the storyline based on user provided data,
+    for example, name and (gender).
+    """
+    updated_story = []
+    for line in story_text:
+        updated_line = line.replace("{user_name}", user_name)
+        updated_story.append(updated_line)
+    story_text = updated_story
+
+    return story_text
+
+
+def game_text_generator(story):
+    """
+    Returns the text line by line for the game from the story.py.
+    """    
+    text=""
+    for line in story:
+        text+=line
+
+    return text
+
 
 #gameplay functions
 def instruction_or_game(data):
@@ -143,8 +168,6 @@ def instruction_or_game(data):
         print(game_text_generator(story.story_dict["story_intro"]))
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(path_selector())
-        #custom_name = [line.replace("{user_name}", user["name"]) for line in story.story_intro]
-        #return game_text_generator(custom_name)
 
 
 def proceed_to_game():
@@ -180,17 +203,6 @@ def end_game():
     print(bye_text)
 
     
-def game_text_generator(story):
-    """
-    Returns the text line by line for the game from the story.py.
-    """    
-    text=""
-    for line in story:
-        text+=line
-
-    return text
-
-
 def path_selector():
     """
     generates a question for the user to select relative path
@@ -298,8 +310,15 @@ def game_loop():
     return path_selector()
 
 
-welcome_screen()
-option = option_choice()
-instruction_or_game(option)
+#welcome_screen()
+#option = option_choice()
+#instruction_or_game(option)
+
+user_input()
+
+new_story = customise_story(story.story_dict["story_intro"], story.user["name"])
+#print(new_story)
+print("pass through game text generator function\n")
+generated_text = game_text_generator(new_story)
+print(generated_text)
 #sleep(3)
-#selection_generator(option, instruction_text, begin_story)
