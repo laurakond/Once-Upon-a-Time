@@ -9,7 +9,6 @@ def main():
     welcome_screen()
     option = option_choice()
     instruction_or_game(option)
-    #test = game_text_generator(story.story_dict["game_instructions"])
 
 
 def welcome_screen():
@@ -19,14 +18,6 @@ def welcome_screen():
     """
 
     title_logo = [r"""
-      __  __ _  ___ ____    _  _ ____  __  __ _
-     /  \(  ( \/ __|  __)  / )( (  _ \/  \(  ( \
-    (  O )    ( (__ ) _)   ) \/ () __(  O )    /
-     \__/\_)__)\___|____) _\____(__)  \__/\_)__)
-     / _\   (_  _|  | \/ |  __)
-    /    \    )(  )(/ \/ \) _)
-    \_/\_/   (__)(__)_)(_(____)
-
       ___                _   _
      / _ \ _ _  __ ___  | | | |_ __  ___ _ _
     | (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
@@ -51,7 +42,7 @@ def option_choice():
     provided options for game play.
     """
     while True:
-        choice = input("Type '1' or '2' to make a choice: ")
+        choice = input("Type '1' or '2' to make a proceed: ")
         if option_choice_validation(choice):
             break
 
@@ -190,7 +181,7 @@ def instruction_or_game(data):
         generated_text = game_text_generator(new_story)
         print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
-        return chapter1(path_selector())
+        return chapter1(option_choice())
 
 
 def proceed_to_game():
@@ -218,7 +209,7 @@ def continue_to_play(data):
         generated_text = game_text_generator(new_story)
         print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
-        return chapter1(path_selector())
+        return chapter1(option_choice())
     elif data == "n":
         return end_game(main)
 
@@ -233,19 +224,6 @@ def end_game(main_function):
     main_function()
 
 
-def path_selector():
-    """
-    generates a question for the user to select relative path
-    to progress the game accordingly.
-    """
-    while True:
-        in_game_question = input("Type '1' or '2' to make a choice: ")
-        if option_choice_validation(in_game_question):
-            break
-
-    return in_game_question
-
-
 def chapter1(data):
     """
     generates appropriate game play based on option selection.
@@ -255,7 +233,7 @@ def chapter1(data):
         return end_game(main)
     elif data == "2":
         print(game_text_generator(story.story_dict["rumpel"]))
-        return rumpel(path_selector())
+        return rumpel(option_choice())
 
 
 def rumpel(data):
@@ -264,7 +242,7 @@ def rumpel(data):
     """
     if data == "1":
         print(game_text_generator(story.story_dict["baby_name"]))
-        return baby_name(path_selector())
+        return baby_name(option_choice())
     if data == "2":
         print("curse comes, game over")
         return end_game(main)
@@ -279,7 +257,7 @@ def baby_name(data):
         return end_game(main)
     if data == "2":
         print(game_text_generator(story.story_dict["secret_door"]))
-        return secret_door(path_selector())
+        return secret_door(option_choice())
 
 
 def secret_door(data):
@@ -291,7 +269,7 @@ def secret_door(data):
         return end_game(main)
     if data == "2":
         print(game_text_generator(story.story_dict["lock_door"]))
-        return lock_door(path_selector())
+        return lock_door(option_choice())
 
 
 def lock_door(data):
@@ -343,7 +321,7 @@ def continue_chapter3():
 # return path_selector()
 
 
-# reused variables
+# Reused variables
 # new_story = customise_story(story.story_dict["story_intro"],
 # generated_text = game_text_generator(new_story)
 
