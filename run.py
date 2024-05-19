@@ -19,24 +19,21 @@ def welcome_screen():
     """
 
     title_logo = [r"""
-     
-      __   __ _   ___  ____    _  _  ____   __   __ _ 
-     /  \ (  ( \ / __)(  __)  / )( \(  _ \ /  \ (  ( \
-    (  O )/    /( (__  ) _)   ) \/ ( ) __/(  O )/    /
-     \__/ \_)__) \___)(____)  \____/(__)   \__/ \_)__)
-      __     ____  __  _  _  ____                     
-     / _\   (_  _)(  )( \/ )(  __)                    
-    /    \    )(   )( / \/ \ ) _)  _  _  _            
-    \_/\_/   (__) (__)\_)(_/(____)(_)(_)(_)           
-
-     
-      ___                _   _
-     / _ \ _ _  __ ___  | | | |_ __  ___ _ _
-    | (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
-     \___/|_||_\__\___|  \___/| .__/\___/_||_|
-     __ _  | |_(_)_ __  ___   |_|
-    / _` | |  _| | '  \/ -_)_ _ _
-    \__,_|  \__|_|_|_|_\___(_|_|_)"""]
+  __   __ _   ___  ____    _  _  ____   __   __ _ 
+ /  \ (  ( \ / __)(  __)  / )( \(  _ \ /  \ (  ( \
+(  O )/    /( (__  ) _)   ) \/ ( ) __/(  O )/    /
+ \__/ \_)__) \___)(____)  \____/(__)   \__/ \_)__)
+  __     ____  __  _  _  ____                     
+ / _\   (_  _)(  )( \/ )(  __)                    
+/    \    )(   )( / \/ \ ) _)  _  _  _            
+\_/\_/   (__) (__)\_)(_/(____)(_)(_)(_)           
+  ___                _   _
+ / _ \ _ _  __ ___  | | | |_ __  ___ _ _
+| (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
+ \___/|_||_\__\___|  \___/| .__/\___/_||_|
+  __ _  | |_(_)_ __  ___   |_|
+ / _` | |  _| | '  \/ -_)_ _ _
+ \__,_|  \__|_|_|_|_\___(_|_|_)"""]
 
     # prints Title of the game
     for line in title_logo:
@@ -67,13 +64,10 @@ def user_input():
     """
     while True:
         user_name = input("Please enter your name: ").capitalize()
-        #print(user_name)
         if input_data_validation(user_name):
-            #print("works")
             break
     while True:
         user_gender = input("Please enter your gender: ")
-        #print(user_gender)
         if input_data_validation(user_gender):
             if user_gender != "male" and user_gender != "female":
                 print("Please enter 'male' or 'female'.")
@@ -83,7 +77,6 @@ def user_input():
 
     story.user["name"] = user_name
     story.user["gender"] = user_gender
-    # print(story.user)
     return story.user
 
 
@@ -168,7 +161,7 @@ def yes_no_validation(data):
 def customise_story(story_text, user_name):
     """
     customises the storyline based on user provided data,
-    for example, name and (gender).
+    for example, name and (gender - future feature).
     """
     updated_story = []
     for line in story_text:
@@ -197,7 +190,8 @@ def instruction_or_game(data):
     """
     if data == "1":
         print(instructions)
-        return continue_to_play(proceed_to_game("Would you like to play the game (y/n)? "))
+        return continue_to_play(proceed_to_game(
+                                "Would you like to play the game (y/n)? "))
     elif data == "2":
         user_input()
         new_story = customise_story(story.story_dict["story_intro"],
@@ -304,11 +298,12 @@ def continue_chapter3():
     Takes the user to Chapter 3 or executes end_game()
     based on user input.
     """
-    question_chpt3 = proceed_to_game("Would you like to continue to Chapter 3 (y/n)? ")
-    if question_chpt3 == "y":
+    question = proceed_to_game(
+               "Would you like to continue to Chapter 3 (y/n)? ")
+    if question == "y":
         print("Coming soon - stay tuned, Deary!")
         return end_game(main)
-    elif question_chpt3 == "n":
+    elif question == "n":
         return end_game(main)
 
 
@@ -329,5 +324,4 @@ instructions = game_text_generator(story.story_dict["game_instructions"])
 
 main()
 
-# sleep(3)
 # selection_generator(option, instruction_text, begin_story)
