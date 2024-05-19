@@ -55,17 +55,18 @@ The main target audience for the game is anyone aged 16 and over, who enjoys tex
 - As a user, I want to be able to skip the instructions and go straight to the game.
 - As a user, I want to see the game customised based on my name and gender.
 - As a user, I want to be able to decide to finish the game once reached a certain stage of the game.
+As a user, I want to be able to proceed to the next stage of the game after the first part is finished.
 - As a user, I want to return to the main screen after the game has finished.
 
 ### Flowcharts
-I used [Lucidchart](https://lucid.app/) for creating logic and structure of the game. The flowchart of the projects were split between two screens due to limited use of blocks per one chart.
+I used [Lucidchart](https://lucid.app/) for creating logic and structure of the game. The flowchart of the project were split between two screens due to limited use of blocks per one chart.
 
-- MVP flowchart
+- MVP flowchart:
 
 ![flowchart-mvp](documentation/flowcharts/mvp-flowchart.jpeg)
 
 
-- Future feature flowchart
+- Future feature flowchart:
 
 ![flowchart-mvp](documentation/flowcharts/chapter3.jpeg)
 
