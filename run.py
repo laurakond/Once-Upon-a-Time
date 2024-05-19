@@ -55,7 +55,7 @@ def user_input():
     Asks user to input relevant data and stores it for in game use.
     """
     while True:
-        user_name = input("Please enter your name: ").capitalize()
+        user_name = input("\nPlease enter your name: ").capitalize()
         if input_data_validation(user_name):
             break
     while True:
@@ -182,6 +182,7 @@ def instruction_or_game(data):
     """
     if data == "1":
         print(instructions)
+        sleep(3)
         return continue_to_play(proceed_to_game(
                                 "Would you like to play the game (y/n)? "))
     elif data == "2":
@@ -190,6 +191,7 @@ def instruction_or_game(data):
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
+        sleep(5)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
 
@@ -205,6 +207,7 @@ def continue_to_play(data):
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
+        sleep(5)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
     elif data == "n":
@@ -215,7 +218,7 @@ def end_game(main_function):
     """Generates a goodbye message and
     returns the user to the welcome screen.
     """
-    bye_text = "Thanks for playing! See you next time."
+    bye_text = "\nThanks for playing! See you next time."
     print(bye_text)
     sleep(3)
     main_function()
@@ -229,6 +232,7 @@ def chapter1(data):
         print("curse comes, game over")
         return end_game(main)
     elif data == "2":
+        sleep(2)
         print(game_text_generator(story.story_dict["rumpel"]))
         return rumpel(option_choice())
 
@@ -238,6 +242,7 @@ def rumpel(data):
     returns appropriate result after chapter1 continued.
     """
     if data == "1":
+        sleep(2)
         print(game_text_generator(story.story_dict["baby_name"]))
         return baby_name(option_choice())
     if data == "2":
@@ -253,6 +258,7 @@ def baby_name(data):
         print("curse comes, game over")
         return end_game(main)
     if data == "2":
+        sleep(2)
         print(game_text_generator(story.story_dict["secret_door"]))
         return secret_door(option_choice())
 
@@ -265,6 +271,7 @@ def secret_door(data):
         print("curse comes, game over")
         return end_game(main)
     if data == "2":
+        sleep(2)
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(option_choice())
 
@@ -274,7 +281,8 @@ def lock_door(data):
     returns appropriate result after chapter2.
     """
     if data == "1":
-        print("you won!")
+        print("\nyou won!")
+        sleep(2)
         wardrobe_story = customise_story(story.story_dict["wardrobe"],
                                          story.user["name"])
         wardrobe_text = game_text_generator(wardrobe_story)
@@ -293,7 +301,7 @@ def continue_chapter3():
     question = proceed_to_game(
                "Would you like to continue to Chapter 3 (y/n)? ")
     if question == "y":
-        print("Coming soon - stay tuned, Deary!")
+        print("\nComing soon - stay tuned, Deary!")
         return end_game(main)
     elif question == "n":
         return end_game(main)
