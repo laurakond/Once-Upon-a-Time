@@ -10,8 +10,6 @@ Join us and relive the beginning of the popular American TV show "Once Upon A Ti
 The game incorporates the user's data to make it more interactive and make the user part of story-telling.
 
 
-
-
 ## Table of Contents
 
 [How to Play](#how-to-play)
@@ -60,6 +58,16 @@ The main target audience for the game is anyone aged 16 and over, who enjoys tex
 - As a user, I want to return to the main screen after the game has finished.
 
 ### Flowcharts
+I used [Lucidchart](https://lucid.app/) for creating logic and structure of the game. The flowchart of the projects were split between two screens due to limited use of blocks per one chart.
+
+- MVP flowchart
+
+![flowchart-mvp](documentation/flowcharts/mvp-flowchart.jpeg)
+
+
+- Future feature flowchart
+
+![flowchart-mvp](documentation/flowcharts/chapter3.jpeg)
 
 ## Features
 ### Existing Features
