@@ -287,7 +287,7 @@ def lock_door(data):
     returns appropriate result after chapter2.
     """
     if data == "1":
-        print("\nyou won!")
+        print("\nSuccess!")
         sleep(2)
         wardrobe_story = customise_story(story.story_dict["wardrobe"],
                                          story.user["name"])
