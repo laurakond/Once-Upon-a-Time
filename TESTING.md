@@ -65,3 +65,6 @@ By Laura Kondrataite
 - At the end of the game, the questions "Would you like to continue to Chapter 3 (y/n)?" was displaying twice if option "n" was selected. 
     - I resolved this by putting user_input_chpt3 into a variable and using it in the if statement inside continue_chapter3() function.
 
+- When trying to implement game restart once the end_game() function was triggered, it was throwing an error "NameError: name 'main' is not defined. Did you mean: 'min'?". This was because the main() function was defined at the bottom of the code, i.e. after it was called in the game.
+    - I resolved this by moving the main() to the top of the code, and calling it inside the end_game() function.
+
