@@ -1,6 +1,16 @@
 import story
 from time import sleep
 
+# Main function to run the game
+def main():
+    """
+    main game function
+    """
+    welcome_screen()
+    option = option_choice()
+    instruction_or_game(option)
+    #test = game_text_generator(story.story_dict["game_instructions"])
+
 
 def welcome_screen():
     """
@@ -77,7 +87,7 @@ def user_input():
 # data validation functions
 def option_choice_validation(options):
     """
-    checks that the user entry is a number
+    checks that the user entry is a number.
     """
     try:
         if options != "1" and options != "2":
@@ -164,14 +174,14 @@ def game_text_generator(story):
     return text
 
 
-# gameplay functions
+# Gameplay functions
 def instruction_or_game(data):
     """
     takes the user to the instructions or
-    gameplay
+    gameplay.
     """
     if data == "1":
-        print(game_text_generator(story.story_dict["game_instructions"]))
+        print(instructions)
         return continue_to_play(proceed_to_game())
     elif data == "2":
         user_input()
@@ -186,7 +196,7 @@ def instruction_or_game(data):
 def proceed_to_game():
     """
     This function runs after instructions and asks if the
-    user wants to continue to play the game
+    user wants to continue to play the game.
     """
     while True:
         question = input("Would you like to play the game (y/n)? ").lower()
@@ -199,7 +209,7 @@ def proceed_to_game():
 def continue_to_play(data):
     """
     generates appropriate game play functions based
-    on user choice after reading instructions
+    on user choice after reading instructions.
     """
     if data == "y":
         user_input()
@@ -210,13 +220,17 @@ def continue_to_play(data):
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(path_selector())
     elif data == "n":
-        return end_game()
+        return end_game(main)
 
 
-def end_game():
-    """Generates a goodbye message"""
+def end_game(main_function):
+    """Generates a goodbye message and
+    returns the user to the welcome screen.
+    """
     bye_text = "Thanks for playing! See you next time."
     print(bye_text)
+    sleep(3)
+    main_function()
 
 
 def path_selector():
@@ -238,7 +252,7 @@ def chapter1(data):
     """
     if data == "1":
         print("curse comes, game over")
-        return end_game()
+        return end_game(main)
     elif data == "2":
         print(game_text_generator(story.story_dict["rumpel"]))
         return rumpel(path_selector())
@@ -253,7 +267,7 @@ def rumpel(data):
         return baby_name(path_selector())
     if data == "2":
         print("curse comes, game over")
-        return end_game()
+        return end_game(main)
 
 
 def baby_name(data):
@@ -262,7 +276,7 @@ def baby_name(data):
     """
     if data == "1":
         print("curse comes, game over")
-        return end_game()
+        return end_game(main)
     if data == "2":
         print(game_text_generator(story.story_dict["secret_door"]))
         return secret_door(path_selector())
@@ -274,7 +288,7 @@ def secret_door(data):
     """
     if data == "1":
         print("curse comes, game over")
-        return end_game()
+        return end_game(main)
     if data == "2":
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(path_selector())
@@ -293,7 +307,7 @@ def lock_door(data):
         return continue_chapter3()
     if data == "2":
         print("curse comes, game over")
-        return end_game()
+        return end_game(main)
 
 
 def user_input_chpt3():
@@ -316,14 +330,14 @@ def continue_chapter3():
     question_chpt3 = user_input_chpt3()
     if question_chpt3 == "y":
         print("Coming soon - stay tuned, Deary!")
-        return end_game()
+        return end_game(main)
     elif question_chpt3 == "n":
-        return end_game()
+        return end_game(main)
 
 
 # def game_loop():
     """
-    generates text and options over and over
+    generates text and options over and over.
     """
 # print("game loop works?")
 # return path_selector()
@@ -331,26 +345,12 @@ def continue_chapter3():
 
 # reused variables
 # new_story = customise_story(story.story_dict["story_intro"],
-# story.user["name"])
 # generated_text = game_text_generator(new_story)
 
-
-# main functions to run the game
-def main():
-    """
-    main game function
-    """
-    welcome_screen()
-    option = option_choice()
-    instruction_or_game(option)
+instructions = game_text_generator(story.story_dict["game_instructions"])
 
 
-# user_input()
 main()
 
-# print(new_story)
-# print("pass through game text generator function\n")
-
-# print(generated_text)
 # sleep(3)
 # selection_generator(option, instruction_text, begin_story)
