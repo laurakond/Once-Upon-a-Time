@@ -15,9 +15,21 @@ def welcome_screen():
     """
     Runs the Game logo and starts the application.
     The logo was generated from https://patorjk.com/
+    Styles considered were 'Graceful' and 'Small'
     """
 
     title_logo = [r"""
+     
+      __   __ _   ___  ____    _  _  ____   __   __ _ 
+     /  \ (  ( \ / __)(  __)  / )( \(  _ \ /  \ (  ( \
+    (  O )/    /( (__  ) _)   ) \/ ( ) __/(  O )/    /
+     \__/ \_)__) \___)(____)  \____/(__)   \__/ \_)__)
+      __     ____  __  _  _  ____                     
+     / _\   (_  _)(  )( \/ )(  __)                    
+    /    \    )(   )( / \/ \ ) _)  _  _  _            
+    \_/\_/   (__) (__)\_)(_/(____)(_)(_)(_)           
+
+     
       ___                _   _
      / _ \ _ _  __ ___  | | | |_ __  ___ _ _
     | (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
@@ -55,13 +67,13 @@ def user_input():
     """
     while True:
         user_name = input("Please enter your name: ").capitalize()
-        print(user_name)
+        #print(user_name)
         if input_data_validation(user_name):
-            print("works")
+            #print("works")
             break
     while True:
         user_gender = input("Please enter your gender: ")
-        print(user_gender)
+        #print(user_gender)
         if input_data_validation(user_gender):
             if user_gender != "male" and user_gender != "female":
                 print("Please enter 'male' or 'female'.")
@@ -73,6 +85,19 @@ def user_input():
     story.user["gender"] = user_gender
     # print(story.user)
     return story.user
+
+
+def proceed_to_game(prompt):
+    """
+    This function runs after instructions and asks if the
+    user wants to continue to play the game.
+    """
+    while True:
+        question = input(prompt).lower()
+        if yes_no_validation(question):
+            break
+
+    return question
 
 
 # data validation functions
@@ -149,7 +174,6 @@ def customise_story(story_text, user_name):
     for line in story_text:
         updated_line = line.replace("{user_name}", user_name)
         updated_story.append(updated_line)
-    # story_text = updated_story
 
     return updated_story
 
@@ -173,7 +197,7 @@ def instruction_or_game(data):
     """
     if data == "1":
         print(instructions)
-        return continue_to_play(proceed_to_game())
+        return continue_to_play(proceed_to_game("Would you like to play the game (y/n)? "))
     elif data == "2":
         user_input()
         new_story = customise_story(story.story_dict["story_intro"],
@@ -182,19 +206,6 @@ def instruction_or_game(data):
         print(generated_text)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
-
-
-def proceed_to_game():
-    """
-    This function runs after instructions and asks if the
-    user wants to continue to play the game.
-    """
-    while True:
-        question = input("Would you like to play the game (y/n)? ").lower()
-        if yes_no_validation(question):
-            break
-
-    return question
 
 
 def continue_to_play(data):
@@ -288,24 +299,12 @@ def lock_door(data):
         return end_game(main)
 
 
-def user_input_chpt3():
-    """
-    returns question if the user wants to carry on with the story.
-    """
-    question1 = input("Would you like to continue to Chapter 3 (y/n)? ")
-    while True:
-        if yes_no_validation(question1):
-            break
-
-    return question1
-
-
 def continue_chapter3():
     """
     Takes the user to Chapter 3 or executes end_game()
     based on user input.
     """
-    question_chpt3 = user_input_chpt3()
+    question_chpt3 = proceed_to_game("Would you like to continue to Chapter 3 (y/n)? ")
     if question_chpt3 == "y":
         print("Coming soon - stay tuned, Deary!")
         return end_game(main)
