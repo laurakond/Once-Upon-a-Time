@@ -19,7 +19,7 @@ The game incorporates the user's data to make it more interactive and make the u
 [Design](#design)
 - [Target Audience](#target-audience)
 - [User Stories](#user-stories)
-- [Flowcharts](#wireframes)
+- [Flowcharts](#flowcharts)
 
 [Features](#features)
 - [Existing Features](#existing-features)
@@ -65,6 +65,7 @@ The main target audience for the game is anyone aged 16 and over, who enjoys tex
 ### Existing Features
 ### Features Left to Implement
 
+[Return to Table of Contents](#table-of-contents)
 ## Tools and Technologies
 
 ### Languages Used
@@ -85,10 +86,14 @@ The following resources were used to help implement the website:
 
 ## Data model
 
+[Return to Table of Contents](#table-of-contents)
 ## Testing
+[testing.md](TESTING.md)
 
+[Return to Table of Contents](#table-of-contents)
 ## Deployment
 
+[Return to Table of Contents](#table-of-contents)
 ## Credits
 
 Data Validation resources:
@@ -113,3 +118,5 @@ https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time)
 Dictionary iteration:
 https://www.geeksforgeeks.org/python-accessing-items-in-lists-within-dictionary/
 https://realpython.com/iterate-through-dictionary-python/
+
+[Return to Table of Contents](#table-of-contents)
