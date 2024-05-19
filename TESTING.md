@@ -1,7 +1,21 @@
 # Testing for Once Upon a Time 
 By Laura Kondrataite
 
-# Table of Contents
+## Contents
+
+[Testing](#testing)
+
+- [PEP8 Linter](#pep8-linter)
+- [Bugs](#bugs)
+	- [Fixed bugs](#fixed-bugs)
+	- [Unfixed bugs](#unfixed-bugs)
+- [Lighthouse](#lighthouse)
+- [User stories testing](#user-stories-testing)
+- [Accessibility](#accessibility)
+- [Browser testing](#browser-testing)
+- [Responsiveness testing](#responsiveness-testing)
+- [User testing](#user-testing)
+- [Manual testing](#manual-testing)
 
 ## Testing
 - When working on user input data validation, I had to include an additional if clause for the gender data in order to validate specific words that the user required to enter. 
@@ -68,3 +82,16 @@ By Laura Kondrataite
 - When trying to implement game restart once the end_game() function was triggered, it was throwing an error "NameError: name 'main' is not defined. Did you mean: 'min'?". This was because the main() function was defined at the bottom of the code, i.e. after it was called in the game.
     - I resolved this by moving the main() to the top of the code, and calling it inside the end_game() function.
 
+## PEP8 Linter
+
+## Bugs
+### Fixed bugs
+### Unfixed bugs
+
+## User stories testing
+
+### Accessibility
+### Browser testing
+### Responsiveness testing
+### User testing
+### Manual testing
