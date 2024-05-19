@@ -18,15 +18,7 @@ def welcome_screen():
     Styles considered were 'Graceful' and 'Small'
     """
 
-    title_logo = [r"""
-  __   __ _   ___  ____    _  _  ____   __   __ _ 
- /  \ (  ( \ / __)(  __)  / )( \(  _ \ /  \ (  ( \
-(  O )/    /( (__  ) _)   ) \/ ( ) __/(  O )/    /
- \__/ \_)__) \___)(____)  \____/(__)   \__/ \_)__)
-  __     ____  __  _  _  ____                     
- / _\   (_  _)(  )( \/ )(  __)                    
-/    \    )(   )( / \/ \ ) _)  _  _  _            
-\_/\_/   (__) (__)\_)(_/(____)(_)(_)(_)           
+    title_logo = [r"""         
   ___                _   _
  / _ \ _ _  __ ___  | | | |_ __  ___ _ _
 | (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
@@ -51,7 +43,7 @@ def option_choice():
     provided options for game play.
     """
     while True:
-        choice = input("Type '1' or '2' to make a proceed: ")
+        choice = input("Type '1' or '2' to proceed: ")
         if option_choice_validation(choice):
             break
 
@@ -160,7 +152,7 @@ def yes_no_validation(data):
 # Text/storyline generating functions
 def customise_story(story_text, user_name):
     """
-    customises the storyline based on user provided data,
+    Customises the storyline based on user provided data,
     for example, name and (gender - future feature).
     """
     updated_story = []
