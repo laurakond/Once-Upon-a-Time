@@ -4,7 +4,7 @@ from time import sleep
 # Main function to run the game
 def main():
     """
-    main game function
+    Main game function
     """
     welcome_screen()
     option = option_choice()
@@ -25,7 +25,9 @@ def welcome_screen():
  \___/|_||_\__\___|  \___/| .__/\___/_||_|
   __ _  | |_(_)_ __  ___   |_|
  / _` | |  _| | '  \/ -_)_ _ _
- \__,_|  \__|_|_|_|_\___(_|_|_)"""]
+ \__,_|  \__|_|_|_|_\___(_|_|_)
+ 
+ """]
 
     # prints Title of the game
     for line in title_logo:
@@ -220,7 +222,7 @@ def end_game(main_function):
     """
     bye_text = "\nThanks for playing! See you next time."
     print(bye_text)
-    sleep(3)
+    sleep(5)
     main_function()
 
 
@@ -229,7 +231,8 @@ def chapter1(data):
     generates appropriate game play based on option selection.
     """
     if data == "1":
-        print("curse comes, game over")
+        sleep(3)
+        print(game_text_generator(story.story_dict["confront_queen"]))
         return end_game(main)
     elif data == "2":
         sleep(2)
@@ -246,7 +249,8 @@ def rumpel(data):
         print(game_text_generator(story.story_dict["baby_name"]))
         return baby_name(option_choice())
     if data == "2":
-        print("curse comes, game over")
+        sleep(3)
+        print(game_text_generator(story.story_dict["no_name"]))
         return end_game(main)
 
 
@@ -255,7 +259,8 @@ def baby_name(data):
     returns appropriate result after chapter2.
     """
     if data == "1":
-        print("curse comes, game over")
+        sleep(3)
+        print(game_text_generator(story.story_dict["fight_army"]))
         return end_game(main)
     if data == "2":
         sleep(2)
@@ -268,7 +273,8 @@ def secret_door(data):
     returns appropriate result after chapter2.
     """
     if data == "1":
-        print("curse comes, game over")
+        sleep(3)
+        print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
     if data == "2":
         sleep(2)
@@ -289,7 +295,8 @@ def lock_door(data):
         print(wardrobe_text)
         return continue_chapter3()
     if data == "2":
-        print("curse comes, game over")
+        sleep(3)
+        print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
 
 
@@ -316,12 +323,9 @@ def continue_chapter3():
 
 
 # Reused variables
-# new_story = customise_story(story.story_dict["story_intro"],
-# generated_text = game_text_generator(new_story)
-
 instructions = game_text_generator(story.story_dict["game_instructions"])
 
-
+# Runs the game:
 main()
 
 # selection_generator(option, instruction_text, begin_story)
