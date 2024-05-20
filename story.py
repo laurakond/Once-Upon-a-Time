@@ -10,14 +10,14 @@ story_dict = {
                    "Please choose from the following two options. \n",
                    "1. Read instructions",
                    "2. Go to the story\n\n"],
-    "game_instructions": ["When you start the game, you will need to enter \n",
+    "game_instructions": ["\nWhen you start the game, you will need to enter \n",
                           "your name and gender. This will customise the \n",
                           "game play. Once inside the story, you will be \n",
                           "prompted to choose between two options to see \n",
                           "the outcome of the game. Enter your preferred \n",
                           "option and see if you win!\n\n"
                           "Enjoy, and good luck!\n\n"],
-    "story_intro": ["\nOnce upon a time in a far away land, there lived \n",
+    "story_intro": ["\n...in a far away land, there lived \n",
                     "SnowWhite with her prince charming. After defeating \n",
                     "the Evil Queen, peace was brought to their Kingdom. \n",
                     "SnowWhite and Prince Charming were happily expecting \n",
@@ -31,7 +31,7 @@ story_dict = {
                     "in unhappy stories, clueless of who they really are. \n",
                     "Worried about the hapless future, Snow and Charming \n",
                     "set out to stop the Evil Queen.\n"],
-    "chapter1": ["Chapter 1\n\n",
+    "chapter1": [#"Chapter 1\n\n",
                  "They searched for solutions and ways to stop her.\n",
                  "Rumours reached that Rumpelstiltskin would be able\n",
                  "to help them. Yet, Snow was aware of his 'dealings', \n",
@@ -57,7 +57,7 @@ story_dict = {
                 "regardless. Unfortunately, they had no other solution.\n\n",
                 "The curse comes and everyone in the Kingdom is banished \n",
                 "for life.\n\nYou were unsuccessful!"],
-    "baby_name": ["\nChapter 2\n\n",
+    "chapter2": [#"\nChapter 2\n\n",
                   "On the day of the planned escape, a purple curse cloud \n",
                   "arose… The Queen’s Army has stormed the Castle, \n",
                   "forcing Snow and Charming to rush to the wardrobe. \n",
@@ -100,4 +100,42 @@ story_dict = {
                  "accomplishment.\n\nBut hope is not yet lost, ",
                  "as {user_name} has managed to escape. \nWill the curse ",
                  "be broken?\n"]
+}
+
+ascii_dict = {
+    "title_logo": [r"""         
+  ___                _   _
+ / _ \ _ _  __ ___  | | | |_ __  ___ _ _
+| (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
+ \___/|_||_\__\___|  \___/| .__/\___/_||_|
+  __ _  | |_(_)_ __  ___   |_|
+ / _` | |  _| | '  \/ -_)_ _ _
+ \__,_|  \__|_|_|_|_\___(_|_|_)
+ 
+ """],
+    "instructions": [r"""
+ _  _              _              _           
+| || |_____ __ __ | |_ ___   _ __| |__ _ _  _ 
+| __ / _ \ V  V / |  _/ _ \ | '_ \ / _` | || |
+|_||_\___/\_/\_/   \__\___/ | .__/_\__,_|\_, |
+                             |_|          |__/ 
+
+    """],
+    "chapter1": [r"""
+  ___ _              _             _ 
+ / __| |_  __ _ _ __| |_ ___ _ _  / |
+| (__| ' \/ _` | '_ \  _/ -_) '_| | |
+ \___|_||_\__,_| .__/\__\___|_|   |_|
+               |_|                   
+
+    """],
+    "chapter2": [r"""
+    
+  ___ _              _             ___ 
+ / __| |_  __ _ _ __| |_ ___ _ _  |_  )
+| (__| ' \/ _` | '_ \  _/ -_) '_|  / / 
+ \___|_||_\__,_| .__/\__\___|_|   /___|
+               |_|                     
+
+    """]
 }
