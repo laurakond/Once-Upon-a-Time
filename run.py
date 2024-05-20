@@ -220,15 +220,22 @@ def continue_to_play(data):
         print(game_text_generator(story.story_dict["chapter1"]))
         return execute_chapter1(option_choice())
     elif data == "n":
-        return end_game(main)
+        return end_game()
 
 
-def end_game(main_function):
+def end_game():
     """Generates a goodbye message and
     returns the user to the welcome screen.
     """
     bye_text = "\nThanks for playing! See you next time."
     print(bye_text)
+    
+
+def restart_game(main_function):
+    """
+    Restarts the gameplay & takes the user
+    to the beginning of the application.
+    """
     sleep(5)
     system("clear")
     main_function()
@@ -242,7 +249,7 @@ def execute_chapter1(data):
         sleep(3)
         system("clear")
         print(game_text_generator(story.story_dict["confront_queen"]))
-        return end_game(main)
+        return restart_game(main)
     elif data == "2":
         sleep(3)
         system("clear")
@@ -264,7 +271,7 @@ def execute_rumpel_section(data):
         sleep(3)
         system("clear")
         print(game_text_generator(story.story_dict["no_name"]))
-        return end_game(main)
+        return restart_game(main)
 
 
 def execute_baby_name_section(data):
@@ -275,7 +282,7 @@ def execute_baby_name_section(data):
         sleep(3)
         system("clear")
         print(game_text_generator(story.story_dict["fight_army"]))
-        return end_game(main)
+        return restart_game(main)
     if data == "2":
         sleep(3)
         system("clear")
@@ -291,7 +298,7 @@ def execute_secret_door_section(data):
         sleep(3)
         # system("clear")
         print(game_text_generator(story.story_dict["fight_soldier"]))
-        return end_game(main)
+        return restart_game(main)
     if data == "2":
         sleep(3)
         # system("clear")
@@ -316,7 +323,7 @@ def execute_lock_door_section(data):
         sleep(3)
         system("clear")
         print(game_text_generator(story.story_dict["fight_soldier"]))
-        return end_game(main)
+        return restart_game(main)
 
 
 def continue_to_chapter3():
@@ -328,9 +335,9 @@ def continue_to_chapter3():
                "Would you like to continue to Chapter 3 (y/n)? ")
     if question == "y":
         print("\nComing soon - stay tuned, Deary!")
-        return end_game(main)
+        return end_game()
     elif question == "n":
-        return end_game(main)
+        return end_game()
 
 
 # Reused variables
