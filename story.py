@@ -101,6 +101,9 @@ story_dict = {
                  "be broken?\n"]
 }
 
+
+# The logos were generated from https://patorjk.com/.
+# Style used was 'Small'.
 ascii_dict = {
     "title_logo": [r"""
   ___                _   _
@@ -128,7 +131,6 @@ ascii_dict = {
 
     """],
     "chapter2": [r"""
-
   ___ _              _             ___
  / __| |_  __ _ _ __| |_ ___ _ _  |_  )
 | (__| ' \/ _` | '_ \  _/ -_) '_|  / /
