@@ -9,6 +9,7 @@ Join us and relive the beginning of the popular American TV show "Once Upon A Ti
 
 The game incorporates the user's data to make it more interactive and make the user part of story-telling.
 
+The link to live gameplay can be found [here](https://once-upon-a-time-f214671524cd.herokuapp.com/).
 
 ## Table of Contents
 
@@ -101,6 +102,8 @@ The following resources were used to help implement the website:
 
 [Return to Table of Contents](#table-of-contents)
 ## Deployment
+
+The live link to the game can be found [here](https://once-upon-a-time-f214671524cd.herokuapp.com/).
 
 [Return to Table of Contents](#table-of-contents)
 ## Credits
