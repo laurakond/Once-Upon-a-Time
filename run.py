@@ -20,8 +20,6 @@ def main():
 def welcome_screen():
     """
     Runs the Game logo and starts the application.
-    The logo was generated from https://patorjk.com/
-    Styles considered were 'Graceful' and 'Small'
     """
 
     # prints main logo
