@@ -1,5 +1,10 @@
 import story
 from time import sleep
+from os import system
+# The idea of using the above system from os import and
+# system("clear") module was taken from fellow student's 
+# Georgina Carlisle project:
+# https://github.com/GeorginaCarlisle/detective-game-p3
 
 # Main function to run the game
 def main():
@@ -179,6 +184,7 @@ def instruction_or_game(data):
     gameplay.
     """
     if data == "1":
+        system("cls")
         #prints instruction logo
         logos(story.ascii_dict["instructions"])
         print(instructions)
@@ -187,12 +193,14 @@ def instruction_or_game(data):
                                 "Would you like to play the game (y/n)? "))
     elif data == "2":
         user_input()
+        system("cls")
         logos(story.ascii_dict["title_logo"])
         new_story = customise_story(story.story_dict["story_intro"],
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
         sleep(5)
+        system("cls")
         logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
@@ -205,12 +213,14 @@ def continue_to_play(data):
     """
     if data == "y":
         user_input()
+        system("cls")
         logos(story.ascii_dict["title_logo"])
         new_story = customise_story(story.story_dict["story_intro"],
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
         sleep(5)
+        system("cls")
         logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
@@ -225,6 +235,7 @@ def end_game(main_function):
     bye_text = "\nThanks for playing! See you next time."
     print(bye_text)
     sleep(5)
+    system("cls")
     main_function()
 
 
@@ -234,10 +245,12 @@ def chapter1(data):
     """
     if data == "1":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["confront_queen"]))
         return end_game(main)
     elif data == "2":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["rumpel"]))
         return rumpel(option_choice())
 
@@ -248,11 +261,13 @@ def rumpel(data):
     """
     if data == "1":
         sleep(3)
+        system("cls")
         logos(story.ascii_dict["chapter2"])
         print(game_text_generator(story.story_dict["chapter2"]))
         return baby_name(option_choice())
     if data == "2":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["no_name"]))
         return end_game(main)
 
@@ -263,10 +278,12 @@ def baby_name(data):
     """
     if data == "1":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["fight_army"]))
         return end_game(main)
     if data == "2":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["secret_door"]))
         return secret_door(option_choice())
 
@@ -277,10 +294,12 @@ def secret_door(data):
     """
     if data == "1":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
     if data == "2":
         sleep(3)
+        system("cls")
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(option_choice())
 
@@ -292,6 +311,7 @@ def lock_door(data):
     if data == "1":
         print("\nSuccess!")
         sleep(3)
+        system("cls")
         wardrobe_story = customise_story(story.story_dict["wardrobe"],
                                          story.user["name"])
         wardrobe_text = game_text_generator(wardrobe_story)
@@ -299,6 +319,7 @@ def lock_door(data):
         return continue_chapter3()
     if data == "2":
         sleep(3)
+        #system("cls")
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
 
