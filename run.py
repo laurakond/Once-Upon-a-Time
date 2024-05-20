@@ -294,12 +294,12 @@ def secret_door(data):
     """
     if data == "1":
         sleep(3)
-        system("clear")
+        #system("clear")
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
     if data == "2":
         sleep(3)
-        system("clear")
+        #system("clear")
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(option_choice())
 
