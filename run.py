@@ -14,7 +14,7 @@ def main():
     """
     welcome_screen()
     option = option_choice()
-    instruction_or_game(option)
+    choose_instruction_or_game(option)
 
 
 def welcome_screen():
@@ -87,7 +87,7 @@ def option_choice_validation(options):
     try:
         if options != "1" and options != "2":
             raise ValueError(
-                "Please enter either 1 or 2."
+                "Please enter either 1 or 2"
             )
     except ValueError as e:
         print(
@@ -126,22 +126,18 @@ def yes_no_validation(data):
     This function validates y/n input field.
     """
     try:
-        if data.isnumeric() or not data.isalpha():
+        if data != "y" and data !="n":
             raise ValueError(
-                f"{data}. Please type 'y' or 'n'."
-            )
-        elif len(data) > 1:
-            raise ValueError(
-                "Entry must be either 'y' or 'n'."
+                "Please type either 'y' or 'n'"
             )
     except ValueError as e:
         print(
-            f"Invalid input {e}. Try again."
+            f"Invalid input: {e}. Please try again."
         )
         return False
 
     return True
-
+    
 
 # Text/storyline generating functions
 def generate_logos(logo):
@@ -177,7 +173,7 @@ def game_text_generator(story):
 
 
 # Gameplay functions
-def instruction_or_game(data):
+def choose_instruction_or_game(data):
     """
     takes the user to the instructions or
     gameplay.
@@ -202,7 +198,7 @@ def instruction_or_game(data):
         system("clear")
         generate_logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
-        return chapter1(option_choice())
+        return execute_chapter1(option_choice())
 
 
 def continue_to_play(data):
@@ -222,7 +218,7 @@ def continue_to_play(data):
         system("clear")
         generate_logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
-        return chapter1(option_choice())
+        return execute_chapter1(option_choice())
     elif data == "n":
         return end_game(main)
 
@@ -238,7 +234,7 @@ def end_game(main_function):
     main_function()
 
 
-def chapter1(data):
+def execute_chapter1(data):
     """
     generates appropriate game play based on option selection.
     """
@@ -251,10 +247,10 @@ def chapter1(data):
         sleep(3)
         system("clear")
         print(game_text_generator(story.story_dict["rumpel"]))
-        return rumpel(option_choice())
+        return execute_rumpel_section(option_choice())
 
 
-def rumpel(data):
+def execute_rumpel_section(data):
     """
     Returns appropriate result after chapter1 continued.
     """
@@ -263,7 +259,7 @@ def rumpel(data):
         system("clear")
         generate_logos(story.ascii_dict["chapter2"])
         print(game_text_generator(story.story_dict["chapter2"]))
-        return baby_name(option_choice())
+        return execute_baby_name_section(option_choice())
     if data == "2":
         sleep(3)
         system("clear")
@@ -271,7 +267,7 @@ def rumpel(data):
         return end_game(main)
 
 
-def baby_name(data):
+def execute_baby_name_section(data):
     """
     Returns appropriate result after chapter2.
     """
@@ -284,10 +280,10 @@ def baby_name(data):
         sleep(3)
         system("clear")
         print(game_text_generator(story.story_dict["secret_door"]))
-        return secret_door(option_choice())
+        return execute_secret_door_section(option_choice())
 
 
-def secret_door(data):
+def execute_secret_door_section(data):
     """
     Returns appropriate result after secret door section.
     """
@@ -300,10 +296,10 @@ def secret_door(data):
         sleep(3)
         # system("clear")
         print(game_text_generator(story.story_dict["lock_door"]))
-        return lock_door(option_choice())
+        return execute_lock_door_section(option_choice())
 
 
-def lock_door(data):
+def execute_lock_door_section(data):
     """
     returns appropriate result after locked door section.
     """
@@ -315,7 +311,7 @@ def lock_door(data):
                                          story.user["name"])
         wardrobe_text = game_text_generator(wardrobe_story)
         print(wardrobe_text)
-        return continue_chapter3()
+        return continue_to_chapter3()
     if data == "2":
         sleep(3)
         system("clear")
@@ -323,7 +319,7 @@ def lock_door(data):
         return end_game(main)
 
 
-def continue_chapter3():
+def continue_to_chapter3():
     """
     Takes the user to Chapter 3 or executes end_game()
     based on user input.
@@ -337,18 +333,8 @@ def continue_chapter3():
         return end_game(main)
 
 
-# def game_loop():
-    """
-    generates text and options over and over.
-    """
-# print("game loop works?")
-# return path_selector()
-
-
 # Reused variables
 instructions = game_text_generator(story.story_dict["game_instructions"])
 
 # Runs the game:
 main()
-
-# selection_generator(option, instruction_text, begin_story)
