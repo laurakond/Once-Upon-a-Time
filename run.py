@@ -21,10 +21,9 @@ def welcome_screen():
     """
     Runs the Game logo and starts the application.
     """
-
     # prints main logo
     generate_logos(story.ascii_dict["title_logo"])
-
+    
     # prints game introduction with options
     for line in story.story_dict["game_intro"]:
         print(line)
@@ -194,8 +193,7 @@ def choose_instruction_or_game(data):
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
-        sleep(5)
-        system("clear")
+        sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return execute_chapter1(option_choice())
@@ -214,8 +212,7 @@ def continue_to_play(data):
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
-        sleep(5)
-        system("clear")
+        sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return execute_chapter1(option_choice())
@@ -224,8 +221,8 @@ def continue_to_play(data):
 
 
 def end_game():
-    """Generates a goodbye message and
-    returns the user to the welcome screen.
+    """
+    Generates a goodbye message.
     """
     bye_text = "\nThanks for playing! See you next time."
     print(bye_text)
@@ -236,9 +233,9 @@ def restart_game(main_function):
     Restarts the gameplay & takes the user
     to the beginning of the application.
     """
-    sleep(5)
+    sleep(10)
     system("clear")
-    main_function()
+    return main_function()
 
 
 def execute_chapter1(data):
@@ -247,12 +244,10 @@ def execute_chapter1(data):
     """
     if data == "1":
         sleep(3)
-        system("clear")
         print(game_text_generator(story.story_dict["confront_queen"]))
         return restart_game(main)
     elif data == "2":
         sleep(3)
-        system("clear")
         print(game_text_generator(story.story_dict["rumpel"]))
         return execute_rumpel_section(option_choice())
 
@@ -263,13 +258,11 @@ def execute_rumpel_section(data):
     """
     if data == "1":
         sleep(3)
-        system("clear")
         generate_logos(story.ascii_dict["chapter2"])
         print(game_text_generator(story.story_dict["chapter2"]))
         return execute_baby_name_section(option_choice())
     if data == "2":
         sleep(3)
-        system("clear")
         print(game_text_generator(story.story_dict["no_name"]))
         return restart_game(main)
 
@@ -280,12 +273,10 @@ def execute_baby_name_section(data):
     """
     if data == "1":
         sleep(3)
-        system("clear")
         print(game_text_generator(story.story_dict["fight_army"]))
         return restart_game(main)
     if data == "2":
         sleep(3)
-        system("clear")
         print(game_text_generator(story.story_dict["secret_door"]))
         return execute_secret_door_section(option_choice())
 
@@ -296,12 +287,10 @@ def execute_secret_door_section(data):
     """
     if data == "1":
         sleep(3)
-        # system("clear")
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return restart_game(main)
     if data == "2":
         sleep(3)
-        # system("clear")
         print(game_text_generator(story.story_dict["lock_door"]))
         return execute_lock_door_section(option_choice())
 
@@ -313,7 +302,6 @@ def execute_lock_door_section(data):
     if data == "1":
         print("\nSuccess!")
         sleep(3)
-        system("clear")
         wardrobe_story = customise_story(story.story_dict["wardrobe"],
                                          story.user["name"])
         wardrobe_text = game_text_generator(wardrobe_story)
@@ -321,7 +309,6 @@ def execute_lock_door_section(data):
         return continue_to_chapter3()
     if data == "2":
         sleep(3)
-        system("clear")
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return restart_game(main)
 
