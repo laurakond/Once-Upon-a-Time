@@ -187,12 +187,13 @@ def instruction_or_game(data):
                                 "Would you like to play the game (y/n)? "))
     elif data == "2":
         user_input()
+        logos(story.ascii_dict["title_logo"])
         new_story = customise_story(story.story_dict["story_intro"],
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
-        logos(story.ascii_dict["chapter1"])
         sleep(5)
+        logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
 
@@ -209,8 +210,8 @@ def continue_to_play(data):
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
-        logos(story.ascii_dict["chapter1"])
         sleep(5)
+        logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
     elif data == "n":
@@ -236,7 +237,7 @@ def chapter1(data):
         print(game_text_generator(story.story_dict["confront_queen"]))
         return end_game(main)
     elif data == "2":
-        sleep(2)
+        sleep(3)
         print(game_text_generator(story.story_dict["rumpel"]))
         return rumpel(option_choice())
 
@@ -246,8 +247,8 @@ def rumpel(data):
     returns appropriate result after chapter1 continued.
     """
     if data == "1":
+        sleep(3)
         logos(story.ascii_dict["chapter2"])
-        sleep(2)
         print(game_text_generator(story.story_dict["chapter2"]))
         return baby_name(option_choice())
     if data == "2":
@@ -265,7 +266,7 @@ def baby_name(data):
         print(game_text_generator(story.story_dict["fight_army"]))
         return end_game(main)
     if data == "2":
-        sleep(2)
+        sleep(3)
         print(game_text_generator(story.story_dict["secret_door"]))
         return secret_door(option_choice())
 
@@ -279,7 +280,7 @@ def secret_door(data):
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
     if data == "2":
-        sleep(2)
+        sleep(3)
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(option_choice())
 
@@ -290,7 +291,7 @@ def lock_door(data):
     """
     if data == "1":
         print("\nSuccess!")
-        sleep(2)
+        sleep(3)
         wardrobe_story = customise_story(story.story_dict["wardrobe"],
                                          story.user["name"])
         wardrobe_text = game_text_generator(wardrobe_story)

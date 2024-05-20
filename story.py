@@ -18,7 +18,7 @@ story_dict = {
                           "option and see if you win!\n\n"
                           "Enjoy, and good luck!\n\n"],
     "story_intro": ["\n...in a far away land, there lived \n",
-                    "SnowWhite with her prince charming. After defeating \n",
+                    "Snow White with her prince charming. After defeating \n",
                     "the Evil Queen, peace was brought to their Kingdom. \n",
                     "SnowWhite and Prince Charming were happily expecting \n",
                     "an addition to their family - a little baby \n",
@@ -119,7 +119,6 @@ ascii_dict = {
 | __ / _ \ V  V / |  _/ _ \ | '_ \ / _` | || |
 |_||_\___/\_/\_/   \__\___/ | .__/_\__,_|\_, |
                              |_|          |__/ 
-
     """],
     "chapter1": [r"""
   ___ _              _             _ 
