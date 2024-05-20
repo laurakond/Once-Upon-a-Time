@@ -18,20 +18,8 @@ def welcome_screen():
     Styles considered were 'Graceful' and 'Small'
     """
 
-    title_logo = [r"""         
-  ___                _   _
- / _ \ _ _  __ ___  | | | |_ __  ___ _ _
-| (_) | ' \/ _/ -_) | |_| | '_ \/ _ \ ' \
- \___/|_||_\__\___|  \___/| .__/\___/_||_|
-  __ _  | |_(_)_ __  ___   |_|
- / _` | |  _| | '  \/ -_)_ _ _
- \__,_|  \__|_|_|_|_\___(_|_|_)
- 
- """]
-
-    # prints Title of the game
-    for line in title_logo:
-        print(line)
+    #prints main logo
+    logos(story.ascii_dict["title_logo"])
 
     # prints game introduction with options
     for line in story.story_dict["game_intro"]:
@@ -152,6 +140,14 @@ def yes_no_validation(data):
 
 
 # Text/storyline generating functions
+def logos(logo):
+    """
+    prints ascii art
+    """
+    for line in logo:
+        print(line)
+
+
 def customise_story(story_text, user_name):
     """
     Customises the storyline based on user provided data,
@@ -183,6 +179,8 @@ def instruction_or_game(data):
     gameplay.
     """
     if data == "1":
+        #prints instruction logo
+        logos(story.ascii_dict["instructions"])
         print(instructions)
         sleep(3)
         return continue_to_play(proceed_to_game(
@@ -193,6 +191,7 @@ def instruction_or_game(data):
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
+        logos(story.ascii_dict["chapter1"])
         sleep(5)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
@@ -205,10 +204,12 @@ def continue_to_play(data):
     """
     if data == "y":
         user_input()
+        logos(story.ascii_dict["title_logo"])
         new_story = customise_story(story.story_dict["story_intro"],
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
+        logos(story.ascii_dict["chapter1"])
         sleep(5)
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
@@ -245,8 +246,9 @@ def rumpel(data):
     returns appropriate result after chapter1 continued.
     """
     if data == "1":
+        logos(story.ascii_dict["chapter2"])
         sleep(2)
-        print(game_text_generator(story.story_dict["baby_name"]))
+        print(game_text_generator(story.story_dict["chapter2"]))
         return baby_name(option_choice())
     if data == "2":
         sleep(3)
