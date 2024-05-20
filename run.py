@@ -2,9 +2,10 @@ import story
 from time import sleep
 from os import system
 # The idea of using the above system from os import and
-# system("clear") module was taken from fellow student's 
+# system("clear") module was taken from fellow student's
 # Georgina Carlisle project:
 # https://github.com/GeorginaCarlisle/detective-game-p3
+
 
 # Main function to run the game
 def main():
@@ -23,7 +24,7 @@ def welcome_screen():
     Styles considered were 'Graceful' and 'Small'
     """
 
-    #prints main logo
+    # prints main logo
     logos(story.ascii_dict["title_logo"])
 
     # prints game introduction with options
@@ -185,7 +186,7 @@ def instruction_or_game(data):
     """
     if data == "1":
         system("clear")
-        #prints instruction logo
+        # prints instruction logo
         logos(story.ascii_dict["instructions"])
         print(instructions)
         sleep(3)
@@ -294,12 +295,12 @@ def secret_door(data):
     """
     if data == "1":
         sleep(3)
-        #system("clear")
+        # system("clear")
         print(game_text_generator(story.story_dict["fight_soldier"]))
         return end_game(main)
     if data == "2":
         sleep(3)
-        #system("clear")
+        # system("clear")
         print(game_text_generator(story.story_dict["lock_door"]))
         return lock_door(option_choice())
 
