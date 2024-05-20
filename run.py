@@ -23,7 +23,7 @@ def welcome_screen():
     """
 
     # prints main logo
-    logos(story.ascii_dict["title_logo"])
+    generate_logos(story.ascii_dict["title_logo"])
 
     # prints game introduction with options
     for line in story.story_dict["game_intro"]:
@@ -144,7 +144,7 @@ def yes_no_validation(data):
 
 
 # Text/storyline generating functions
-def logos(logo):
+def generate_logos(logo):
     """
     prints ascii art
     """
@@ -185,7 +185,7 @@ def instruction_or_game(data):
     if data == "1":
         system("clear")
         # prints instruction logo
-        logos(story.ascii_dict["instructions"])
+        generate_logos(story.ascii_dict["instructions"])
         print(instructions)
         sleep(3)
         return continue_to_play(proceed_to_game(
@@ -193,14 +193,14 @@ def instruction_or_game(data):
     elif data == "2":
         user_input()
         system("clear")
-        logos(story.ascii_dict["title_logo"])
+        generate_logos(story.ascii_dict["title_logo"])
         new_story = customise_story(story.story_dict["story_intro"],
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
         sleep(5)
         system("clear")
-        logos(story.ascii_dict["chapter1"])
+        generate_logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
 
@@ -213,14 +213,14 @@ def continue_to_play(data):
     if data == "y":
         user_input()
         system("clear")
-        logos(story.ascii_dict["title_logo"])
+        generate_logos(story.ascii_dict["title_logo"])
         new_story = customise_story(story.story_dict["story_intro"],
                                     story.user["name"])
         generated_text = game_text_generator(new_story)
         print(generated_text)
         sleep(5)
         system("clear")
-        logos(story.ascii_dict["chapter1"])
+        generate_logos(story.ascii_dict["chapter1"])
         print(game_text_generator(story.story_dict["chapter1"]))
         return chapter1(option_choice())
     elif data == "n":
@@ -256,12 +256,12 @@ def chapter1(data):
 
 def rumpel(data):
     """
-    returns appropriate result after chapter1 continued.
+    Returns appropriate result after chapter1 continued.
     """
     if data == "1":
         sleep(3)
         system("clear")
-        logos(story.ascii_dict["chapter2"])
+        generate_logos(story.ascii_dict["chapter2"])
         print(game_text_generator(story.story_dict["chapter2"]))
         return baby_name(option_choice())
     if data == "2":
@@ -273,7 +273,7 @@ def rumpel(data):
 
 def baby_name(data):
     """
-    returns appropriate result after chapter2.
+    Returns appropriate result after chapter2.
     """
     if data == "1":
         sleep(3)
@@ -289,7 +289,7 @@ def baby_name(data):
 
 def secret_door(data):
     """
-    returns appropriate result after chapter2.
+    Returns appropriate result after secret door section.
     """
     if data == "1":
         sleep(3)
@@ -305,7 +305,7 @@ def secret_door(data):
 
 def lock_door(data):
     """
-    returns appropriate result after chapter2.
+    returns appropriate result after locked door section.
     """
     if data == "1":
         print("\nSuccess!")
