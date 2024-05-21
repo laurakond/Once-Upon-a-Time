@@ -13,7 +13,7 @@ story_dict = {
     "game_instructions": ["\nAt the start of the game, you will be prompted\n",
                           "to enter your name and gender. This will\n",
                           "customise the game play.\n\nOnce the game starts, ",
-                          "you will be prompted to choose\nbetween two",
+                          "you will be prompted to choose\nbetween two ",
                           "options to guess the progression of\nthe story. ",
                           "Enter your preferred option and see if you win!\n\n"
                           "Enjoy, and good luck!\n\n"],

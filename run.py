@@ -23,7 +23,7 @@ def welcome_screen():
     """
     # prints main logo
     generate_logos(story.ascii_dict["title_logo"])
-    
+
     # prints game introduction with options
     for line in story.story_dict["game_intro"]:
         print(line)
@@ -81,7 +81,7 @@ def proceed_to_game(prompt):
 # data validation functions
 def option_choice_validation(options):
     """
-    checks that the user entry is a number.
+    Checks that the user entry is a number.
     """
     try:
         if options != "1" and options != "2":
@@ -141,7 +141,7 @@ def yes_no_validation(data):
 # Text/storyline generating functions
 def generate_logos(logo):
     """
-    prints ascii art
+    Prints ascii art
     """
     for line in logo:
         print(line)
@@ -174,7 +174,7 @@ def game_text_generator(story):
 # Gameplay functions
 def choose_instruction_or_game(data):
     """
-    takes the user to the instructions or
+    Takes the user to the instructions or
     gameplay.
     """
     if data == "1":
@@ -201,7 +201,7 @@ def choose_instruction_or_game(data):
 
 def continue_to_play(data):
     """
-    generates appropriate game play functions based
+    Generates appropriate game play functions based
     on user choice after reading instructions.
     """
     if data == "y":
@@ -240,7 +240,7 @@ def restart_game(main_function):
 
 def execute_chapter1(data):
     """
-    generates appropriate game play based on option selection.
+    Generates appropriate game play based on option selection.
     """
     if data == "1":
         sleep(3)
@@ -297,7 +297,7 @@ def execute_secret_door_section(data):
 
 def execute_lock_door_section(data):
     """
-    returns appropriate result after locked door section.
+    Returns appropriate result after locked door section.
     """
     if data == "1":
         print("\nSuccess!")
