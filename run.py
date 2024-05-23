@@ -213,7 +213,6 @@ def choose_instruction_or_game(data):
     """
     if data == "1":
         system("clear")
-        # prints instruction logo
         generate_logos(story.ascii_dict["instructions"])
         generate_game_text(2)
         sleep(3)
@@ -223,14 +222,9 @@ def choose_instruction_or_game(data):
         user_input()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
-        #new_story = customise_story(story.story_dict["story_intro"],
-        #                            story.user["name"])
-        #generated_text = game_text_generator(new_story)
-        #print(generated_text)
         generate_game_text(3)
         sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
-        #print(game_text_generator(story.story_dict["chapter1"]))
         generate_game_text(4)
         return execute_chapter1(option_choice())
 
@@ -244,14 +238,9 @@ def continue_to_play(data):
         user_input()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
-        #new_story = customise_story(story.story_dict["story_intro"],
-         #                           story.user["name"])
-        #generated_text = game_text_generator(new_story)
-        #print(generated_text)
         generate_game_text(3)
         sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
-        #print(game_text_generator(story.story_dict["chapter1"]))
         generate_game_text(4)
         return execute_chapter1(option_choice())
     elif data == "n":
@@ -282,13 +271,11 @@ def execute_chapter1(data):
     """
     if data == "1":
         sleep(3)
-        #print(game_text_generator(story.story_dict["confront_queen"]))
         generate_game_text(5)
         return restart_game(main)
     elif data == "2":
         sleep(3)
         generate_game_text(6)
-        #print(game_text_generator(story.story_dict["rumpel"]))
         return execute_rumpel_section(option_choice())
 
 
@@ -299,13 +286,11 @@ def execute_rumpel_section(data):
     if data == "1":
         sleep(3)
         generate_logos(story.ascii_dict["chapter2"])
-        #print(game_text_generator(story.story_dict["chapter2"]))
         generate_game_text(8)
         return execute_baby_name_section(option_choice())
     if data == "2":
         sleep(3)
         generate_game_text(7)
-        #print(game_text_generator(story.story_dict["no_name"]))
         return restart_game(main)
 
 
@@ -316,12 +301,10 @@ def execute_baby_name_section(data):
     if data == "1":
         sleep(3)
         generate_game_text(9)
-        #print(game_text_generator(story.story_dict["fight_army"]))
         return restart_game(main)
     if data == "2":
         sleep(3)
         generate_game_text(10)
-        #print(game_text_generator(story.story_dict["secret_door"]))
         return execute_secret_door_section(option_choice())
 
 
@@ -332,12 +315,10 @@ def execute_secret_door_section(data):
     if data == "1":
         sleep(3)
         generate_game_text(11)
-        #print(game_text_generator(story.story_dict["fight_soldier"]))
         return restart_game(main)
     if data == "2":
         sleep(3)
         generate_game_text(12)
-        #print(game_text_generator(story.story_dict["lock_door"]))
         return execute_lock_door_section(option_choice())
 
 
@@ -348,16 +329,11 @@ def execute_lock_door_section(data):
     if data == "1":
         print("\nSuccess!")
         sleep(3)
-        #wardrobe_story = customise_story(story.story_dict["wardrobe"],
-         #                                story.user["name"])
-        #wardrobe_text = game_text_generator(wardrobe_story)
-        #print(wardrobe_text)
         generate_game_text(13)
         return continue_to_chapter3()
     if data == "2":
         sleep(3)
         generate_game_text(11)
-        #print(game_text_generator(story.story_dict["fight_soldier"]))
         return restart_game(main)
 
 
@@ -374,9 +350,6 @@ def continue_to_chapter3():
     elif question == "n":
         return end_game()
 
-
-# Reused variables
-#instructions = game_text_generator(story.story_dict["game_instructions"])
 
 # Runs the game:
 main()
