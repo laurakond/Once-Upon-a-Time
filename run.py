@@ -52,6 +52,8 @@ def option_choice():
     """
     while True:
         choice = input("\nType '1' or '2' to proceed: ")
+        print("BLANK0.1")
+        print("BLANK0.2")
         if option_choice_validation(choice):
             break
 
@@ -221,8 +223,6 @@ def choose_instruction_or_game(data):
     elif data == "2":
         user_input()
         system("clear")
-        print("BLANK1")
-        print("BLANK2")
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
@@ -230,6 +230,8 @@ def choose_instruction_or_game(data):
         print("BLANK4")
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
+        print("BLANK4.1")
+        print("BLANK4.2")
         return execute_chapter1(option_choice())
 
 
@@ -279,16 +281,16 @@ def execute_chapter1(data):
     """
     if data == "1":
         sleep(3)
-        print("BLANK9")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK9.1")
+        print("")
         generate_game_text(5)
         return restart_game(main)
     elif data == "2":
         sleep(3)
-        print("BLANK10")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK10.1")
+        print("")
         generate_game_text(6)
         return execute_rumpel_section(option_choice())
 
@@ -299,16 +301,14 @@ def execute_rumpel_section(data):
     """
     if data == "1":
         sleep(3)
-        print("BLANK12")
-        print("BLANK13")
         generate_logos(story.ascii_dict["chapter2"])
         generate_game_text(8)
         return execute_baby_name_section(option_choice())
     if data == "2":
         sleep(3)
-        print("BLANK15")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK15.1")
+        print("")
         generate_game_text(7)
         return restart_game(main)
 
@@ -319,16 +319,16 @@ def execute_baby_name_section(data):
     """
     if data == "1":
         sleep(3)
-        print("BLANK16")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK16.1")
+        print("")
         generate_game_text(9)
         return restart_game(main)
     if data == "2":
         sleep(3)
-        print("BLANK17")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK17.1")
+        print("")
         generate_game_text(10)
         return execute_secret_door_section(option_choice())
 
@@ -339,16 +339,16 @@ def execute_secret_door_section(data):
     """
     if data == "1":
         sleep(3)
-        print("BLANK18")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK18.1")
+        print("")
         generate_game_text(11)
         return restart_game(main)
     if data == "2":
         sleep(3)
-        print("BLANK19")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK20")
+        print("")
         generate_game_text(12)
         return execute_lock_door_section(option_choice())
 
@@ -360,16 +360,16 @@ def execute_lock_door_section(data):
     if data == "1":
         print("\nSuccess!")
         sleep(3)
-        print("BLANK22")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK22.1")
+        print("")
         generate_game_text(13)
         return continue_to_chapter3()
     if data == "2":
         sleep(3)
-        print("BLANK23")
+        print("")
         print("     ---------------------------------     ")
-        print("BLANK23.1")
+        print("")
         generate_game_text(11)
         return restart_game(main)
 
