@@ -1,3 +1,5 @@
+import gspread
+from google.oauth2.service_account import Credentials
 import story
 from time import sleep
 from os import system
@@ -5,6 +7,20 @@ from os import system
 # system("clear") module was taken from fellow student's
 # Georgina Carlisle project:
 # https://github.com/GeorginaCarlisle/detective-game-p3
+
+# Gspread part of code, including imports in lines 1-2 
+# was appropriated from Love Sandwiches walkthrough 
+# project by Code Institute.
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('once-upon-a-time')
 
 
 # Main function to run the game
@@ -36,7 +52,7 @@ def option_choice():
     provided options for game play.
     """
     while True:
-        choice = input("Type '1' or '2' to proceed: ")
+        choice = input("\nType '1' or '2' to proceed: ")
         if option_choice_validation(choice):
             break
 
