@@ -187,6 +187,24 @@ def game_text_generator(story):
     return text
 
 
+# This function replaced game_text_generator(story)
+# which was used when the story text was stored in 
+# story.py
+def generate_game_text(column_number):
+    """
+    Retrieves story text from imported gspread
+    and returns it line by line for the user 
+    to read.
+    Replaces user data(name/gender) by passing 
+    customise_story() function.
+    """
+    test = SHEET.worksheet("story")
+    data = test.col_values(column_number)[1:]
+
+    for line in data:
+        print(line)
+
+
 # Gameplay functions
 def choose_instruction_or_game(data):
     """
