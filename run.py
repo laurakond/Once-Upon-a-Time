@@ -175,15 +175,15 @@ def customise_story(story_text, user_name):
     return updated_story
 
 
-def game_text_generator(story):
-    """
-    Returns the text line by line for the game from the story.py.
-    """
-    text = ""
-    for line in story:
-        text += line
+#def game_text_generator(story):
+ #   """
+  #  Returns the text line by line for the game from the story.py.
+   # """
+    #text = ""
+    #for line in story:
+     #   text += line
 
-    return text
+    #return text
 
 
 # This function replaced game_text_generator(story)
@@ -217,13 +217,17 @@ def choose_instruction_or_game(data):
         generate_game_text(2)
         sleep(3)
         return continue_to_play(proceed_to_game(
-                                "Would you like to play the game (y/n)? "))
+                                "\nWould you like to play the game (y/n)? "))
     elif data == "2":
         user_input()
         system("clear")
+        print("BLANK1")
+        print("BLANK2")
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
+        print("BLANK3")
+        print("BLANK4")
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
         return execute_chapter1(option_choice())
@@ -237,9 +241,13 @@ def continue_to_play(data):
     if data == "y":
         user_input()
         system("clear")
+        print("BLANK5")
+        print("BLANK6")
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
+        print("BLANK7")
+        print("BLANK8")
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
         return execute_chapter1(option_choice())
@@ -271,10 +279,16 @@ def execute_chapter1(data):
     """
     if data == "1":
         sleep(3)
+        print("BLANK9")
+        print("     ---------------------------------     ")
+        print("BLANK9.1")
         generate_game_text(5)
         return restart_game(main)
     elif data == "2":
         sleep(3)
+        print("BLANK10")
+        print("     ---------------------------------     ")
+        print("BLANK10.1")
         generate_game_text(6)
         return execute_rumpel_section(option_choice())
 
@@ -285,11 +299,16 @@ def execute_rumpel_section(data):
     """
     if data == "1":
         sleep(3)
+        print("BLANK12")
+        print("BLANK13")
         generate_logos(story.ascii_dict["chapter2"])
         generate_game_text(8)
         return execute_baby_name_section(option_choice())
     if data == "2":
         sleep(3)
+        print("BLANK15")
+        print("     ---------------------------------     ")
+        print("BLANK15.1")
         generate_game_text(7)
         return restart_game(main)
 
@@ -300,10 +319,16 @@ def execute_baby_name_section(data):
     """
     if data == "1":
         sleep(3)
+        print("BLANK16")
+        print("     ---------------------------------     ")
+        print("BLANK16.1")
         generate_game_text(9)
         return restart_game(main)
     if data == "2":
         sleep(3)
+        print("BLANK17")
+        print("     ---------------------------------     ")
+        print("BLANK17.1")
         generate_game_text(10)
         return execute_secret_door_section(option_choice())
 
@@ -314,10 +339,16 @@ def execute_secret_door_section(data):
     """
     if data == "1":
         sleep(3)
+        print("BLANK18")
+        print("     ---------------------------------     ")
+        print("BLANK18.1")
         generate_game_text(11)
         return restart_game(main)
     if data == "2":
         sleep(3)
+        print("BLANK19")
+        print("     ---------------------------------     ")
+        print("BLANK20")
         generate_game_text(12)
         return execute_lock_door_section(option_choice())
 
@@ -329,10 +360,16 @@ def execute_lock_door_section(data):
     if data == "1":
         print("\nSuccess!")
         sleep(3)
+        print("BLANK22")
+        print("     ---------------------------------     ")
+        print("BLANK22.1")
         generate_game_text(13)
         return continue_to_chapter3()
     if data == "2":
         sleep(3)
+        print("BLANK23")
+        print("     ---------------------------------     ")
+        print("BLANK23.1")
         generate_game_text(11)
         return restart_game(main)
 
@@ -343,7 +380,7 @@ def continue_to_chapter3():
     based on user input.
     """
     question = proceed_to_game(
-               "Would you like to continue to Chapter 3 (y/n)? ")
+               "\nWould you like to continue to Chapter 3 (y/n)? ")
     if question == "y":
         print("\nComing soon - stay tuned, Deary!")
         return end_game()
