@@ -197,10 +197,11 @@ def generate_game_text(column_number):
     Replaces user data(name/gender) by passing 
     customise_story() function.
     """
-    test = SHEET.worksheet("story")
-    data = test.col_values(column_number)[1:]
+    text = SHEET.worksheet("story")
+    generated_text = text.col_values(column_number)[1:]
 
-    for line in data:
+    customized_text = customise_story(generated_text, story.user["name"])
+    for line in customized_text:
         print(line)
 
 
