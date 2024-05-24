@@ -5,7 +5,7 @@ Are you a fan of fairy tales, and even more so of Disney fairytales..?
 
 Then, you are in luck! 
 
-Join us and relive the beginning of the popular American TV show "Once Upon A Time".  It is a text-based game that recreates a pilot episode of the show, and allows the user to play out the sequence of events by choosing multiple options. 
+Join us and relive the beginning of the popular American TV show "Once Upon A Time".  It is a text-based game that recreates the pilot episode of the show, and allows the user to play out the sequence of events by choosing multiple options. 
 
 The game incorporates the user's data to make it more interactive and make the user part of story-telling.
 
