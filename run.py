@@ -67,10 +67,10 @@ def user_input():
         if input_data_validation(user_name):
             break
     while True:
-        user_gender = input("Please enter your gender: ")
+        user_gender = input("Please enter your gender(male/female/none): ")
         if input_data_validation(user_gender):
-            if user_gender != "male" and user_gender != "female":
-                print("Please enter 'male' or 'female'.")
+            if user_gender not in ["male", "female", "none"]:
+                print("Please enter 'male' or 'female' or 'none'.")
             else:
                 input_data_validation(user_gender)
                 break
@@ -173,17 +173,6 @@ def customise_story(story_text, user_name):
         updated_story.append(updated_line)
 
     return updated_story
-
-
-#def game_text_generator(story):
- #   """
-  #  Returns the text line by line for the game from the story.py.
-   # """
-    #text = ""
-    #for line in story:
-     #   text += line
-
-    #return text
 
 
 # This function replaced game_text_generator(story)
@@ -372,3 +361,4 @@ def continue_to_chapter3():
 
 # Runs the game:
 main()
+
