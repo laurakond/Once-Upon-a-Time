@@ -1,13 +1,15 @@
 # Once Upon a Time...
 (By Laura Kondrataite)
 
-Are you a fan of fairy tales, and even more so of Disney fairytales..?
+Are you a fan of fairy tales, and even more so of Disney..?
 
 Then, you are in luck! 
 
-Join us and relive the beginning of the popular American TV show "Once Upon A Time".  It is a text-based game that recreates the pilot episode of the show, and allows the user to play out the sequence of events by choosing multiple options. 
+Join us and relive the events of the popular American TV show "Once Upon A Time". 
 
-The game incorporates the user's data to make it more interactive and make the user part of story-telling.
+"Once Upon a Time..." is a text-based game that recreates the pilot episode of the show allowing the user to play out the sequence of events by choosing multiple options. 
+
+The game incorporates the user's data to make it more interactive and make the user part of story-telling, as if they were the hero of the show!
 
 The link to live gameplay can be found [here](https://once-upon-a-time-f214671524cd.herokuapp.com/).
 
