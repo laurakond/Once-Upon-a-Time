@@ -29,6 +29,8 @@ I tested the code against the Python linter validator throughout the development
 ![storypy-validation-image](documentation/testing/validation-images/storypy-linter.jpeg)
 
 
+[Return to Contents](#contents)
+
 
 ## Bugs
 ### Fixed bugs
@@ -100,6 +102,7 @@ I tested the code against the Python linter validator throughout the development
 - When trying to implement game restart once the end_game() function was triggered, it was throwing an error "NameError: name 'main' is not defined. Did you mean: 'min'?". This was because the main() function was defined at the bottom of the code, i.e. after it was called in the game.
     - I resolved this by moving the main() to the top of the code, and calling it inside the end_game() function.
 
+[Return to Contents](#contents)
 
 ## User stories testing
 
@@ -114,6 +117,9 @@ I tested the code against the Python linter validator throughout the development
 | As a user, I want to be able to proceed to the next stage of the game after the first part is finished.        | Yes       |                                                                                                                                                    |
 | As a user, I want to return to the main screen after the game has finished.                                    | Yes       |                                                                                                                                                    |
 
+
+[Return to Contents](#contents)
+
 ### User testing
 
 The game application was tested thoroughly during the development and deployment stages.
@@ -124,4 +130,9 @@ The game application was tested thoroughly during the development and deployment
     - I applied blank lines and a feature break line to indicate where the new content starts once it is loaded.    
         - This allowed a better user experience as it is easier to follow the text.
 
+[Return to Contents](#contents)
+
 ### Manual testing
+
+
+[Return to README.md](README.md)
