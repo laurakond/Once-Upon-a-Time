@@ -50,8 +50,9 @@ The main target audience for the game is anyone aged 16 and over, who enjoys tex
 **First Time User**
 
 - As a first time user, I want to clearly see what the application is about.
-- As a first time user, I want to be able to read instructions.
+- As a first time user, I want to be able to read instructions before progressing to the application.
 - As a first time user, I want to be able to decide whether to proceed with the game after reading instructions.
+- As a first time user, I want to be able to skip the instructions and proceed to the application straight away.
 
 <br>
 
