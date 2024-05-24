@@ -116,10 +116,10 @@ The following resources were used to help implement the website:
 ## Testing
 
 The game application went through extensive testing during the development and deployement stages. 
-
-See [testing.md](TESTING.md) for full testing and validation information.
+- See [testing.md](TESTING.md) file for full testing and validation information.
 
 [Return to Table of Contents](#table-of-contents)
+
 
 ## Deployment
 This website was deployed using GitHub pages an Heroku website. To deploy the project, follow the steps below:
@@ -161,12 +161,12 @@ To deploy to the Heroku website, follow the steps below:
     1. Click on "Reveal Config Vars" and enter the following:
         
         a. if you are using any APIs you will need to copy paste your creds.json details:
-        - in the "key" box type "CREDS" 
-        - in the "value" box copy the contents of your creds.json file 
-        - click "Add"
+        - in the "key" box type "CREDS". 
+        - in the "value" box copy the contents of your creds.json file: 
+        - click "Add".
 
         b. type in PORT to the "key" box, and 8000 to the "value" box:
-        - click "Add"
+        - click "Add".
 
     2. Add Buildpacks below Config Vars. Click on "Add buildpack":
 
