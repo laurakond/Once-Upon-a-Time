@@ -51,7 +51,7 @@ def option_choice():
     provided options for game play.
     """
     while True:
-        choice = input("\nType '1' or '2' to proceed: ")
+        choice = input("\nType 1 or 2 to proceed: ")
         if option_choice_validation(choice):
             break
 
@@ -99,13 +99,13 @@ def option_choice_validation(options):
     Checks that the user entry is a number.
     """
     try:
-        if options != "1" and options != "2":
+        if options not in ["1", "2"]:
             raise ValueError(
-                "Please enter either 1 or 2"
+                f"{options}. Please enter either '1' or '2'."
             )
     except ValueError as e:
         print(
-            f"Invalid input: {e}. Please try again."
+            f"Invalid input: {e} Try again."
         )
         return False
 
@@ -122,14 +122,14 @@ def input_data_validation(data):
     try:
         if data.isnumeric() or not data.isalpha():
             raise ValueError(
-                f" {data}. Please use letters only to fill in the fields.")
+                f"{data}. Please use letters only to fill in the fields.")
         elif len(data) < 3 or len(data) > 10:
             raise ValueError(
-                "Your entry must be between 3 to 10 characters long")
+                f"{len(data)}."
+                "Your entry must be between 3 to 10 characters long.")
     except ValueError as e:
         print(
-            f"Invalid input: {e}")
-        print("Try again")
+            f"Invalid input: {e} Try again.")
         return False
 
     return True
@@ -140,13 +140,13 @@ def yes_no_validation(data):
     This function validates y/n input field.
     """
     try:
-        if data != "y" and data !="n":
+        if data not in ["y", "n"]:
             raise ValueError(
-                "Please type either 'y' or 'n'"
+                f"{data}. Please type either 'y' or 'n'."
             )
     except ValueError as e:
         print(
-            f"Invalid input: {e}. Please try again."
+            f"Invalid input: {e} Try again."
         )
         return False
 
@@ -361,4 +361,3 @@ def continue_to_chapter3():
 
 # Runs the game:
 main()
-
