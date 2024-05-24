@@ -101,9 +101,8 @@ The following resources were used to help implement the website:
 - I used the following libraries for the project:
     - **gspread** allowed to access, edit and manipulate data stored in the Google worksheets  
     - **google.oauth2.service_account** allowed to set up the authentication needed to access my GOOGLE cloud project
-    - **time** module's sleep function allows to manipulate the timeframe when to display the game content 
-    - **os** library system method allowed to clear the screen for better user experience when displayin the game
-
+    - **time** module's sleep function allowed to manipulate the timeframe when to display the game content 
+    - **os** library system method allowed to clear the screen for better user experience when displaying the game
 
  [Return to Table of Contents](#table-of-contents)
 
