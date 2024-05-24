@@ -30,8 +30,6 @@ The link to live gameplay can be found [here](https://once-upon-a-time-f21467152
 - [Languages Used](#languages-used)
 - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 
-[Data Model](#data-model)
-
 [Testing](#testing)
 
 [Deployment](#deployment)
@@ -43,6 +41,8 @@ The link to live gameplay can be found [here](https://once-upon-a-time-f21467152
 [Credits](#credits)
 
 ## How to play
+
+
 
 ## Design
 ### Target Audience
@@ -86,24 +86,23 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 
 ### Languages Used
 
-- Python language was used for creating the gameplay. 
-- Markdown was used for creating the README file.
+- The primary language used for developing this project was Python.
+- Markdown was used for creating the README and TESTING files.
 
 ### Frameworks, Libraries and Programs Used
 
 The following resources were used to help implement the website:
 - [Lucidchart](https://lucid.app/) for creating flowchart of the game
 - [GitHub](https://github.com/) for creating and storing files and folders of the website
-- Git was used for version control
-- VScode editor for writing the code
-- [CI Python Linter](https://pep8ci.herokuapp.com/#) for checking best code practices 
+- **Git** was used for version control
+- **VScode** editor for writing the code
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) for validating and checking my code for best code practices 
+- [Heroku](https://www.heroku.com) for accessing and storing my application game
 - I used the following libraries for the project:
-    - gspread, 
-    - google.oauth2.service_account, 
-    - time and 
-    - os library
-    - individually list the library and explain what each did for it. 
-    - list ascii
+    - **gspread** allowed to access, edit and manipulate data stored in the Google worksheets  
+    - **google.oauth2.service_account** allowed to set up the authentication needed to access my GOOGLE cloud project
+    - **time** module's sleep function allows to manipulate the timeframe when to display the game content 
+    - **os** library system method allowed to clear the screen for better user experience when displayin the game
 
 
  [Return to Table of Contents](#table-of-contents)
