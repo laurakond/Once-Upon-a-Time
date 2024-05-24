@@ -72,18 +72,25 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 
 ![flowchart-mvp](documentation/flowcharts/mvp-flowchart.jpeg)
 
-
-- Future feature flowchart:
+- Future feature flowchart (Chapter 3):
 
 ![flowchart-mvp](documentation/flowcharts/chapter3.jpeg)
 
 ## Features
 ### Existing Features
+
+
 ### Features Left to Implement
 
-[Return to Table of Contents](#table-of-contents)
-## Tools and Technologies
+- The current gameplay set up only covers the first part of the pilot episode. Therefore, the next future feature will be implementing the second half of the game-play. The flowchart with a breakdown of steps is shown in [flowcharts](#flowcharts) section.
+- Customise pronouns in the game text based on the gender data provide by the user at the start of the game.
+- Similarly, there is potential to implement the user's age to further customise the story-telling of the game.
 
+These features would allow to make the game more relatable and enjoyable for the user. 
+
+[Return to Table of Contents](#table-of-contents)
+
+## Tools and Technologies
 ### Languages Used
 
 - The primary language used for developing this project was Python.
