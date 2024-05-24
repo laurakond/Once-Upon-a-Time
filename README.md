@@ -114,7 +114,10 @@ The following resources were used to help implement the website:
  [Return to Table of Contents](#table-of-contents)
 
 ## Testing
-[testing.md](TESTING.md)
+
+The game application went through extensive testing during the development and deployement stages. 
+
+See [testing.md](TESTING.md) for full testing and validation information.
 
 [Return to Table of Contents](#table-of-contents)
 
