@@ -51,8 +51,8 @@ def option_choice():
     provided options for game play.
     """
     while True:
-        choice = input("\nType 1 or 2 to proceed: ")
-        if option_choice_validation(choice):
+        choice = input("\nType '1' or '2' to proceed: ")
+        if validate_option_choice(choice):
             break
 
     return choice
@@ -64,15 +64,15 @@ def user_input():
     """
     while True:
         user_name = input("\nPlease enter your name: ").capitalize()
-        if input_data_validation(user_name):
+        if validate_user_input_data(user_name):
             break
     while True:
         user_gender = input("Please enter your gender(male/female/none): ")
-        if input_data_validation(user_gender):
+        if validate_user_input_data(user_gender):
             if user_gender not in ["male", "female", "none"]:
                 print("Please enter 'male' or 'female' or 'none'.")
             else:
-                input_data_validation(user_gender)
+                validate_user_input_data(user_gender)
                 break
 
     story.user["name"] = user_name
@@ -87,14 +87,14 @@ def proceed_to_game(prompt):
     """
     while True:
         question = input(prompt).lower()
-        if yes_no_validation(question):
+        if validate_yes_no_question_prompt(question):
             break
 
     return question
 
 
 # data validation functions
-def option_choice_validation(options):
+def validate_option_choice(options):
     """
     Checks that the user entry is a number.
     """
@@ -112,7 +112,7 @@ def option_choice_validation(options):
     return True
 
 
-def input_data_validation(data):
+def validate_user_input_data(data):
     """
     This function ensures that user input is correct,
     and throws an error if provided data is in different
@@ -135,7 +135,7 @@ def input_data_validation(data):
     return True
 
 
-def yes_no_validation(data):
+def validate_yes_no_question_prompt(data):
     """
     This function validates y/n input field.
     """
@@ -176,7 +176,7 @@ def customise_story(story_text, user_name):
 
 
 # This function replaced game_text_generator(story)
-# which was used when the content text was stored in 
+# which was used when the text content was stored in 
 # story.py
 def generate_game_text(column_number):
     """
