@@ -234,8 +234,6 @@ def choose_instruction_or_game(data):
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
-        print("BLANK3")
-        print("BLANK4")
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
         return execute_chapter1(option_choice())
