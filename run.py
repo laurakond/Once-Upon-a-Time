@@ -52,8 +52,6 @@ def option_choice():
     """
     while True:
         choice = input("\nType '1' or '2' to proceed: ")
-        print("BLANK0.1")
-        print("BLANK0.2")
         if option_choice_validation(choice):
             break
 
@@ -167,7 +165,7 @@ def generate_logos(logo):
 def customise_story(story_text, user_name):
     """
     Customises the storyline based on user provided data,
-    for example, name and (gender - future feature).
+    for example, name and gender (future feature).
     """
     updated_story = []
     for line in story_text:
@@ -189,7 +187,7 @@ def customise_story(story_text, user_name):
 
 
 # This function replaced game_text_generator(story)
-# which was used when the story text was stored in 
+# which was used when the content text was stored in 
 # story.py
 def generate_game_text(column_number):
     """
@@ -205,6 +203,16 @@ def generate_game_text(column_number):
     customized_text = customise_story(generated_text, story.user["name"])
     for line in customized_text:
         print(line)
+
+
+def generate_line_breaks():
+    """
+    Prints blank lines and a separator line for
+    the user to see story progression.
+    """
+    print("")
+    print("     ---------------------------------     ")
+    print("")
 
 
 # Gameplay functions
@@ -230,8 +238,6 @@ def choose_instruction_or_game(data):
         print("BLANK4")
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
-        print("BLANK4.1")
-        print("BLANK4.2")
         return execute_chapter1(option_choice())
 
 
@@ -243,13 +249,9 @@ def continue_to_play(data):
     if data == "y":
         user_input()
         system("clear")
-        print("BLANK5")
-        print("BLANK6")
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
-        print("BLANK7")
-        print("BLANK8")
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
         return execute_chapter1(option_choice())
@@ -281,16 +283,12 @@ def execute_chapter1(data):
     """
     if data == "1":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(5)
         return restart_game(main)
     elif data == "2":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(6)
         return execute_rumpel_section(option_choice())
 
@@ -306,9 +304,7 @@ def execute_rumpel_section(data):
         return execute_baby_name_section(option_choice())
     if data == "2":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(7)
         return restart_game(main)
 
@@ -319,16 +315,12 @@ def execute_baby_name_section(data):
     """
     if data == "1":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(9)
         return restart_game(main)
     if data == "2":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(10)
         return execute_secret_door_section(option_choice())
 
@@ -339,16 +331,12 @@ def execute_secret_door_section(data):
     """
     if data == "1":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(11)
         return restart_game(main)
     if data == "2":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(12)
         return execute_lock_door_section(option_choice())
 
@@ -360,16 +348,12 @@ def execute_lock_door_section(data):
     if data == "1":
         print("\nSuccess!")
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(13)
         return continue_to_chapter3()
     if data == "2":
         sleep(3)
-        print("")
-        print("     ---------------------------------     ")
-        print("")
+        generate_line_breaks()
         generate_game_text(11)
         return restart_game(main)
 
