@@ -29,8 +29,8 @@ def main():
     Main game function
     """
     welcome_screen()
-    option = option_choice()
-    choose_instruction_or_game(option)
+    number_choice = enter_numerical_choice()
+    choose_instruction_or_game(number_choice)
 
 
 def welcome_screen():
@@ -45,22 +45,22 @@ def welcome_screen():
 
 
 # User input functions
-def option_choice():
+def enter_numerical_choice():
     """
-    Runs every time the user has to choose
-    provided options for game play.
+    Prompts a question where user chooses to input numerical
+    values for the game to proceed.
     """
     while True:
         choice = input("\nType '1' or '2' to proceed: ")
-        if validate_option_choice(choice):
+        if validate_enter_numerical_choice(choice):
             break
 
     return choice
 
 
-def user_input():
+def input_user_data():
     """
-    Asks user to input relevant data and stores it for in game use.
+    Asks user to input their name/gender and stores them for in game use.
     """
     while True:
         user_name = input("\nPlease enter your name: ").capitalize()
@@ -80,7 +80,7 @@ def user_input():
     return story.user
 
 
-def proceed_to_game(prompt):
+def prompt_yes_no_question(prompt):
     """
     This function runs after instructions and asks if the
     user wants to continue to play the game.
@@ -94,14 +94,14 @@ def proceed_to_game(prompt):
 
 
 # data validation functions
-def validate_option_choice(options):
+def validate_enter_numerical_choice(number_choice):
     """
     Checks that the user entry is a number.
     """
     try:
-        if options not in ["1", "2"]:
+        if number_choice not in ["1", "2"]:
             raise ValueError(
-                f"{options}. Please enter either '1' or '2'."
+                f"{number_choice}. Please enter either '1' or '2'."
             )
     except ValueError as e:
         print(
@@ -215,17 +215,17 @@ def choose_instruction_or_game(data):
         generate_logos(story.ascii_dict["instructions"])
         generate_game_text(2)
         sleep(3)
-        return continue_to_play(proceed_to_game(
+        return continue_to_play(prompt_yes_no_question(
                                 "\nWould you like to play the game (y/n)? "))
     elif data == "2":
-        user_input()
+        input_user_data()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
-        return execute_chapter1(option_choice())
+        return execute_chapter1(enter_numerical_choice())
 
 
 def continue_to_play(data):
@@ -234,14 +234,14 @@ def continue_to_play(data):
     on user choice after reading instructions.
     """
     if data == "y":
-        user_input()
+        input_user_data()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
         generate_game_text(3)
         sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
-        return execute_chapter1(option_choice())
+        return execute_chapter1(enter_numerical_choice())
     elif data == "n":
         return end_game()
 
@@ -277,7 +277,7 @@ def execute_chapter1(data):
         sleep(3)
         generate_line_breaks()
         generate_game_text(6)
-        return execute_rumpel_section(option_choice())
+        return execute_rumpel_section(enter_numerical_choice())
 
 
 def execute_rumpel_section(data):
@@ -288,7 +288,7 @@ def execute_rumpel_section(data):
         sleep(3)
         generate_logos(story.ascii_dict["chapter2"])
         generate_game_text(8)
-        return execute_baby_name_section(option_choice())
+        return execute_baby_name_section(enter_numerical_choice())
     if data == "2":
         sleep(3)
         generate_line_breaks()
@@ -309,7 +309,7 @@ def execute_baby_name_section(data):
         sleep(3)
         generate_line_breaks()
         generate_game_text(10)
-        return execute_secret_door_section(option_choice())
+        return execute_secret_door_section(enter_numerical_choice())
 
 
 def execute_secret_door_section(data):
@@ -325,7 +325,7 @@ def execute_secret_door_section(data):
         sleep(3)
         generate_line_breaks()
         generate_game_text(12)
-        return execute_lock_door_section(option_choice())
+        return execute_lock_door_section(enter_numerical_choice())
 
 
 def execute_lock_door_section(data):
@@ -350,7 +350,7 @@ def continue_to_chapter3():
     Takes the user to Chapter 3 or executes end_game()
     based on user input.
     """
-    question = proceed_to_game(
+    question = prompt_yes_no_question(
                "\nWould you like to continue to Chapter 3 (y/n)? ")
     if question == "y":
         print("\nComing soon - stay tuned, Deary!")
