@@ -17,7 +17,7 @@ By Laura Kondrataite
 ## Testing
 
 ### PEP8 Linter validation(#pep8-linter)
-I tested the code against the Python linter validator throughout the development phase of the application. The final results for both, run.py and story.py returned without an error as per images below:
+I tested the code against the Python linter validator throughout the development phase of the application and once the code was finalised. The final results for both, run.py and story.py, returned without any errors as per images below:
 
 - run.py
 
@@ -114,8 +114,14 @@ I tested the code against the Python linter validator throughout the development
 | As a user, I want to be able to proceed to the next stage of the game after the first part is finished.        | Yes       |                                                                                                                                                    |
 | As a user, I want to return to the main screen after the game has finished.                                    | Yes       |                                                                                                                                                    |
 
-### Accessibility
-### Browser testing
-### Responsiveness testing
 ### User testing
+
+The game application was tested thoroughly during the development and deployment stages.
+- I have enlisted a number of friends and fellow CI students to test for functionality and user experience.
+    - Reviews received noted prolonging text display time in certain parts of the application to ensure that the user had enough time to read through the content.    
+    - I initially had the contents clear completely after a certain period of time. However, my mentor suggested that I only apply the feature to the beginning of the application, before entering the game content, and let the content of the gameplay scroll once the user has started the game.
+        - This ensured that, in case the user was unable to read all the content, they would be able to scroll up the screen and finish reading.    
+    - I applied blank lines and a feature break line to indicate where the new content starts once it is loaded.    
+        - This allowed a better user experience as it is easier to follow the text.
+
 ### Manual testing
