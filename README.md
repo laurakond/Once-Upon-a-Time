@@ -52,7 +52,6 @@ The main target audience for the game is anyone aged 16 and over, who enjoys tex
 - As a first time user, I want to clearly see what the application is about.
 - As a first time user, I want to be able to read instructions before progressing to the application.
 - As a first time user, I want to be able to decide whether to proceed with the game after reading instructions.
-- As a first time user, I want to be able to skip the instructions and proceed to the application straight away.
 
 <br>
 
@@ -63,7 +62,7 @@ As a user, I want to be able to proceed to the next stage of the game after the 
 - As a user, I want to return to the main screen after the game has finished.
 
 ### Flowcharts
-I used [Lucidchart](https://lucid.app/) for creating logic and structure of the game. The flowchart of the project were split between two screens due to limited use of blocks per one chart.
+I used [Lucidchart](https://lucid.app/) for creating the logic and structure for the game. The game flow/logic of the project was split to two flowcharts (minimum viable product & future feature) due to limited use of blocks per one chart. Chapter 3 flowchart is a future feature. 
 
 - MVP flowchart:
 
@@ -94,12 +93,17 @@ The following resources were used to help implement the website:
 - Git was used for version control
 - VScode editor for writing the code
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) for checking best code practices 
+- I used the following libraries for the project:
+    - gspread, 
+    - google.oauth2.service_account, 
+    - time and 
+    - os library
+    - individually list the library and explain what each did for it. 
+    - list ascii
+
 
  [Return to Table of Contents](#table-of-contents)
 
-## Data model
-
-[Return to Table of Contents](#table-of-contents)
 ## Testing
 [testing.md](TESTING.md)
 
