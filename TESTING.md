@@ -5,19 +5,37 @@ By Laura Kondrataite
 
 [Testing](#testing)
 
-- [PEP8 Linter](#pep8-linter)
+- [PEP8 Linter validation](#pep8-linter)
 - [Bugs](#bugs)
 	- [Fixed bugs](#fixed-bugs)
 	- [Unfixed bugs](#unfixed-bugs)
-- [Lighthouse](#lighthouse)
 - [User stories testing](#user-stories-testing)
-- [Accessibility](#accessibility)
 - [Browser testing](#browser-testing)
-- [Responsiveness testing](#responsiveness-testing)
 - [User testing](#user-testing)
 - [Manual testing](#manual-testing)
 
 ## Testing
+
+### PEP8 Linter validation(#pep8-linter)
+I tested the code against the Python linter validator throughout the development phase of the application. The final results for both, run.py and story.py returned without an error as per images below:
+
+- run.py
+
+![runpy-validation-image](documentation/testing/validation-images/runpy-linter.jpeg)
+
+
+- story.py
+
+![storypy-validation-image](documentation/testing/validation-images/storypy-linter.jpeg)
+
+
+
+## Bugs
+### Fixed bugs
+
+### Unfixed bugs
+
+
 - When working on user input data validation, I had to include an additional if clause for the gender data in order to validate specific words that the user required to enter. 
 
     In order to make it work, I had to change "or" to "and" statement, otherwise the code was continuously looping regardless if the correct input was provided.
@@ -27,7 +45,7 @@ By Laura Kondrataite
         for line in data:
     	print(line)
 
-    I resolved this by adding a new variable text and asigning each line iteration to it. However, the terminal then started returning each line without starting them on a new line. I resolved this by adding "\n" at the end of each line in the story.py file.
+    I resolved this by adding a new variable "text" and asigning each line iteration to it. However, the terminal then started returning each line without starting them on a new line. I resolved this by adding "\n" at the end of each line in the story.py file.
 
 - when testing the code after implementing run_chapter1() function, the code printed "None" output. This was because I used print() statement inside the function. 
     - I resolved this by changing print() with return statement. (see image - chapter1-None-error)
@@ -82,11 +100,6 @@ By Laura Kondrataite
 - When trying to implement game restart once the end_game() function was triggered, it was throwing an error "NameError: name 'main' is not defined. Did you mean: 'min'?". This was because the main() function was defined at the bottom of the code, i.e. after it was called in the game.
     - I resolved this by moving the main() to the top of the code, and calling it inside the end_game() function.
 
-## PEP8 Linter
-
-## Bugs
-### Fixed bugs
-### Unfixed bugs
 
 ## User stories testing
 
