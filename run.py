@@ -26,7 +26,7 @@ SHEET = GSPREAD_CLIENT.open('once-upon-a-time')
 # Main function to run the game
 def main():
     """
-    Main game function
+    Main game function.
     """
     welcome_screen()
     number_choice = enter_numerical_choice()
@@ -60,7 +60,8 @@ def enter_numerical_choice():
 
 def input_user_data():
     """
-    Asks user to input their name/gender and stores them for in game use.
+    Asks user to input their name/gender and stores them for 
+    later in game use.
     """
     while True:
         user_name = input("\nPlease enter your name: ").capitalize()
@@ -82,8 +83,8 @@ def input_user_data():
 
 def prompt_yes_no_question(prompt):
     """
-    This function runs after instructions and asks if the
-    user wants to continue to play the game.
+    Generates appropriate question based on gameplay that requires 
+    the user to enter yes/no answer.
     """
     while True:
         question = input(prompt).lower()
@@ -114,7 +115,7 @@ def validate_enter_numerical_choice(number_choice):
 
 def validate_user_input_data(data):
     """
-    This function ensures that user input is correct,
+    Checks that the user data input is correct,
     and throws an error if provided data is in different
     format.
     This part of code was appropriated from Love Sandwiches project.
@@ -137,7 +138,8 @@ def validate_user_input_data(data):
 
 def validate_yes_no_question_prompt(data):
     """
-    This function validates y/n input field.
+    Checks taht the input data is correct and prompts the user
+    to enter correct data if not.
     """
     try:
         if data not in ["y", "n"]:
@@ -156,7 +158,7 @@ def validate_yes_no_question_prompt(data):
 # Text/storyline generating functions
 def generate_logos(logo):
     """
-    Prints ascii art
+    Prints ascii art.
     """
     for line in logo:
         print(line)
@@ -164,8 +166,8 @@ def generate_logos(logo):
 
 def customise_story(story_text, user_name):
     """
-    Customises the storyline based on user provided data,
-    for example, name and gender (future feature).
+    Applies user provided data, i.e. name & gender (future feature),
+    to the appropriate text content to make the game more interactive.
     """
     updated_story = []
     for line in story_text:
@@ -208,7 +210,7 @@ def generate_line_breaks():
 def choose_instruction_or_game(data):
     """
     Takes the user to the instructions or
-    gameplay.
+    gameplay sections.
     """
     if data == "1":
         system("clear")
@@ -230,8 +232,8 @@ def choose_instruction_or_game(data):
 
 def continue_to_play(data):
     """
-    Generates appropriate game play functions based
-    on user choice after reading instructions.
+    Terminates or continues to the game play based
+    on the user's choice after reading instructions.
     """
     if data == "y":
         input_user_data()
@@ -256,8 +258,8 @@ def end_game():
 
 def restart_game(main_function):
     """
-    Restarts the gameplay & takes the user
-    to the beginning of the application.
+    Restarts the gameplay and takes the user
+    to the beginning of the application (main()).
     """
     sleep(10)
     system("clear")
@@ -266,7 +268,8 @@ def restart_game(main_function):
 
 def execute_chapter1(data):
     """
-    Generates appropriate game play based on option selection.
+    Generates appropriate story section based on user
+    gameplay selection.
     """
     if data == "1":
         sleep(3)
@@ -282,7 +285,8 @@ def execute_chapter1(data):
 
 def execute_rumpel_section(data):
     """
-    Returns appropriate result after chapter1 continued.
+    Generates appropriate story section based on user
+    gameplay selection.
     """
     if data == "1":
         sleep(3)
@@ -298,7 +302,8 @@ def execute_rumpel_section(data):
 
 def execute_baby_name_section(data):
     """
-    Returns appropriate result after chapter2.
+    Generates appropriate story section based on user
+    gameplay selection.
     """
     if data == "1":
         sleep(3)
@@ -314,7 +319,8 @@ def execute_baby_name_section(data):
 
 def execute_secret_door_section(data):
     """
-    Returns appropriate result after secret door section.
+    Generates appropriate story section based on user
+    gameplay selection.
     """
     if data == "1":
         sleep(3)
@@ -330,7 +336,8 @@ def execute_secret_door_section(data):
 
 def execute_lock_door_section(data):
     """
-    Returns appropriate result after locked door section.
+    Generates appropriate story section based on user
+    gameplay selection.
     """
     if data == "1":
         print("\nSuccess!")
