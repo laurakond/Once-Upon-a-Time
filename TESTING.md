@@ -103,6 +103,17 @@ I tested the code against the Python linter validator throughout the development
 
 ## User stories testing
 
+| User Story                                                                                                     | Completed | Action                                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| As a first time user, I want to clearly see what the application is about.                                     | Yes       |                                                                                                                                                    |
+| As a first time user, I want to be able to read instructions.                                                  | Yes       |                                                                                                                                                    |
+| As a first time user, I want to be able to decide whether to proceed with the game after reading instructions. | Yes       |                                                                                                                                                    |
+| As a user, I want to be able to skip the instructions and go straight to the game.                             | Yes       |                                                                                                                                                    |
+| As a user, I want to see the game customised based on my name and gender.                                      | Yes/No    | This feature has been partially implemented. Customisation of the pronouns based on the supplied gender data within the the game will be addressed at the nex development stage when building Chapter 3. |
+| As a user, I want to be able to decide to finish the game once reached a certain stage of the game.            | Yes       |                                                                                                                                                    |
+| As a user, I want to be able to proceed to the next stage of the game after the first part is finished.        | Yes       |                                                                                                                                                    |
+| As a user, I want to return to the main screen after the game has finished.                                    | Yes       |                                                                                                                                                    |
+
 ### Accessibility
 ### Browser testing
 ### Responsiveness testing
