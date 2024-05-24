@@ -8,8 +8,8 @@ from os import system
 # Georgina Carlisle project:
 # https://github.com/GeorginaCarlisle/detective-game-p3
 
-# Gspread part of code, including imports in lines 1-2 
-# was appropriated from Love Sandwiches walkthrough 
+# Gspread part of code, including imports in lines 1-2
+# was appropriated from Love Sandwiches walkthrough
 # project by Code Institute.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -60,7 +60,7 @@ def enter_numerical_choice():
 
 def input_user_data():
     """
-    Asks user to input their name/gender and stores them for 
+    Asks user to input their name/gender and stores them for
     later in game use.
     """
     while True:
@@ -83,7 +83,7 @@ def input_user_data():
 
 def prompt_yes_no_question(prompt):
     """
-    Generates appropriate question based on gameplay that requires 
+    Generates appropriate question based on gameplay that requires
     the user to enter yes/no answer.
     """
     while True:
@@ -153,7 +153,7 @@ def validate_yes_no_question_prompt(data):
         return False
 
     return True
-    
+
 
 # Text/storyline generating functions
 def generate_logos(logo):
@@ -178,14 +178,14 @@ def customise_story(story_text, user_name):
 
 
 # This function replaced game_text_generator(story)
-# which was used when the text content was stored in 
+# which was used when the text content was stored in
 # story.py
 def generate_game_text(column_number):
     """
     Retrieves story text from imported gspread
-    and returns it line by line for the user 
+    and returns it line by line for the user
     to read.
-    Replaces user data(name/gender) by passing 
+    Replaces user data(name/gender) by passing
     customise_story() function.
     """
     text = SHEET.worksheet("story")
@@ -254,7 +254,7 @@ def end_game():
     """
     bye_text = "\nThanks for playing! See you next time."
     print(bye_text)
-    
+
 
 def restart_game(main_function):
     """
