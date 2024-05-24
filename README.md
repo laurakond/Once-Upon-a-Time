@@ -108,6 +108,13 @@ The live link to the game can be found [here](https://once-upon-a-time-f21467152
 [Return to Table of Contents](#table-of-contents)
 ## Credits
 
+Refactoring:
+
+- I used the following discussion board for refactoring user_input() function as moving the code to a second line was raising an error:
+    - https://discuss.python.org/t/struggling-with-while-loops/20865/10
+- The following article has given an idea how to refactor option_choice() function:
+    - https://www.freecodecamp.org/news/best-practices-for-refactoring-code/
+
 Data Validation resources:
 https://www.w3schools.com/python/python_try_except.asp
 https://www.w3schools.com/python/ref_string_isalpha.asp
