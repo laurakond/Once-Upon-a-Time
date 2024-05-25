@@ -48,6 +48,12 @@ The link to live the game can be found [here](https://once-upon-a-time-f21467152
 
 ## How to play
 
+- Once the application is loaded, the user is shown a welcome screen that contains a logo written in Ascii art, with an introduction and a prompt to choose between reading the instructions or going straight to the gameplay.
+- If chosen to proceed to the game, the user needs to input appropriate data to move forward. The data will customise the gameplay.
+- When prompted, the user needs to select appropriate answers to progress.
+    - These are questions that require the user to type in either yes/no or '1'/'2' into the provided space.
+- If the user's choice is incorrect they are taken back to the main screen and they can restart the game again.
+- If the user completes the game successfully, they can choose whether to progress further or finish playing the game. 
 
 
 ## Design
