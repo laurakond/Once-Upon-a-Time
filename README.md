@@ -219,6 +219,7 @@ I used the following resources to better my understanding on various topics and 
         - string [is alpha](https://www.w3schools.com/python/ref_string_isalpha.asp)
         - string [is digit](https://docs.python.org/3/library/stdtypes.html#str.isdigit)
     - Stack overflow forum [thread](https://stackoverflow.com/questions/16399721/making-sure-no-integers-in-a-string) for validating yes/no or '1'/'2' inputs
+    - [Fabio Musanni - programming channel](https://www.youtube.com/watch?v=LUWyA3m_-r0) had a good example of try/except use for code validation.
 
 - Dictionary iteration:
     - [Geeks for geeks](https://www.geeksforgeeks.org/python-accessing-items-in-lists-within-dictionary/)
@@ -227,6 +228,7 @@ I used the following resources to better my understanding on various topics and 
 
 - Time delay for staggering content display:
     - [freeCodeCamp](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/) article was very useful in understanding how to implement sleep() function to my code.
+    - [Dan Leeman](https://www.youtube.com/watch?v=YT2rzhe_dRY) video was a good tool to see sleep() functio in action.
 
 - replace() method:
     - [W3Schools](https://www.w3schools.com/python/ref_string_replace.asp) for understanding/reminding myself how to apply it to text manipulation.
