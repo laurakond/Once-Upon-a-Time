@@ -10,14 +10,13 @@ By Laura Kondrataite
 	- [Fixed bugs](#fixed-bugs)
 	- [Unfixed bugs](#unfixed-bugs)
 - [User stories testing](#user-stories-testing)
-- [Browser testing](#browser-testing)
 - [User testing](#user-testing)
 - [Manual testing](#manual-testing)
 
 ## Testing
 
 ### PEP8 Linter validation(#pep8-linter)
-I tested the code against the Python linter validator throughout the development phase of the application and once the code was finalised. The final results for both, run.py and story.py, returned without any errors as per images below:
+I tested the code against the Python linter validator throughout the development stage of the application and once the code was finalised. The final results for both, run.py and story.py, were returned without any errors as per images below:
 
 - run.py
 
@@ -33,28 +32,37 @@ I tested the code against the Python linter validator throughout the development
 
 
 ## Bugs
+
+The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images do not correspond to the final code.
+
 ### Fixed bugs
 
-### Unfixed bugs
+**Input validation**
+- When working on user input data validation, I had to include an additional if-clause for the gender data in order to validate specific words that the user required to enter. 
+    - To make it work, I had to change "or" to "and" statement, otherwise the code was continuously looping regardless if the correct input was provided.
 
-
-- When working on user input data validation, I had to include an additional if clause for the gender data in order to validate specific words that the user required to enter. 
-
-    In order to make it work, I had to change "or" to "and" statement, otherwise the code was continuously looping regardless if the correct input was provided.
-
-- function def game_text_generator(data), was trowing a result "None" when the following code was used:
+- Function def game_text_generator(data), was throwing a result "None" when the following code was used:
 
         for line in data:
     	print(line)
 
-    I resolved this by adding a new variable "text" and asigning each line iteration to it. However, the terminal then started returning each line without starting them on a new line. I resolved this by adding "\n" at the end of each line in the story.py file.
+    - I resolved this by adding a new variable "text" and assigned an empty list to it. I then looped through each string in the list and appended to the text variable.
+        - The terminal then started returning each line without starting them on a new line. I resolved this by adding "\n" at the end of each line within the list in the story.py file.
 
-- when testing the code after implementing run_chapter1() function, the code printed "None" output. This was because I used print() statement inside the function. 
-    - I resolved this by changing print() with return statement. (see image - chapter1-None-error)
-    - this error came back again and to solve it temporarily I put return chapter1 below print(chapter1)
+**None error**
+- At the beginning of run_chapter1()(now execute_chapter1()) implementation, the code was producing "None" output when executing the application. This occurred because I used a print() statement inside the run_chapter1() instead of the return statement. 
 
-- I had difficulty to make the code generate appropriate text content and functionality. I realised that there was an error in proceed_go_game() function as it collated two separate steps in one. Therefore, I decided to separate into two functions, one responsible just for generating the user input and validating it using validation function. The other function, continue_to_play(data), I used to generate appropriate content based on user selection in the previous function.
-    - This part of the code proved challenging as I was still getting unintentional functionality. After trying multiple ways of displaying text, I finally managed to get the code working as intended by printing game text and returning another function to trigger user input in order to progress along the way. 
+![none-error](documentation/testing/error-images/none-error-chapter1.jpg)
+
+-   I resolved this by replacing the print() statement with the return statement. 
+    
+![none-error-chapter1](documentation/testing/error-images/chapter1-temp-resolve.jpg)
+
+- This error occurred because I confused the functionality of the return statement with the print statement. This was resolved once I implemented the following code inside run_chapter1() function. 
+
+**Text content display**
+- I had difficulty making the code generate appropriate text content and functionality. I realised that there was an error in proceed_go_game() function as it collated two separate steps into one. Therefore, I decided to separate it into two functions, one responsible just for generating the user input and validating it using validation function. The other function, continue_to_play(data), I used to generate appropriate content based on user selection in the previous function.
+    - This part of the code proved challenging as I was still getting unintentional functionality. After trying multiple ways to display the text, I finally managed to get the code working as intended by printing game text. The other function triggered user input in order to progress along the way: 
 
             def  proceed_to_game():
             """
@@ -94,13 +102,32 @@ I tested the code against the Python linter validator throughout the development
                 break
             return test(first_question)
 
-        - At this stage the game functionality seems to have worked. 
+        - At this stage the game functionality seemed to work. 
 
-- At the end of the game, the questions "Would you like to continue to Chapter 3 (y/n)?" was displaying twice if option "n" was selected. 
+**Continue to chapter 3**
+- At the end of the game, the question "Would you like to continue to Chapter 3 (y/n)?" displayed twice if option "n" was selected. 
     - I resolved this by putting user_input_chpt3 into a variable and using it in the if statement inside continue_chapter3() function.
 
-- When trying to implement game restart once the end_game() function was triggered, it was throwing an error "NameError: name 'main' is not defined. Did you mean: 'min'?". This was because the main() function was defined at the bottom of the code, i.e. after it was called in the game.
-    - I resolved this by moving the main() to the top of the code, and calling it inside the end_game() function.
+**Restarting the game**
+- When trying to implement the game restart once the end_game() function was triggered, it threw an error: 
+"NameError: name 'main' is not defined. Did you mean: 'min'?". 
+    - This was because the main() function was defined at the bottom of the code, i.e. after it was called in the game, inside end_game() function.
+    - I resolved this by moving the main() function to the top of the code, and calling it inside the end_game() function.
+
+**Updating text content with user_data**
+- In order to keep the main run.py file more readable, I decided to store the game text in the story.py file. I applied an f-string to the parts of the text that I needed to update with user-provided data. This proved to be a big challenge as I could not make the text update. There were a few reasons:
+    - I realised that the returned user data from user_input() (now called input_user_data()) function was kept in the main run.py file within user{} dictionary.
+        - I tried to import run.py file to story.py file, however, I then received a circular import error message. 
+        - I resolved this by moving user{} dictionary where the provided data was kept inside the story.py file.
+        - After some test runs I made sure that the returned data from the user was correctly stored inside the dictionary and returned when called inside the run.py file. 
+    - Trying to return the game text with an f-string was throwing an error which I realised was because I was using the f-string in the list incorrectly, so I decided to leave that approach.
+        - After some research, I found a solution by applying replace() method to update the text with user provided data. 
+
+
+### Unfixed bugs
+
+- No unfixed bugs were left in the code. 
+
 
 [Return to Contents](#contents)
 
