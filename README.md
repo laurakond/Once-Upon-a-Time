@@ -1,4 +1,7 @@
 # Once Upon a Time...
+
+![once-upon-a-time](documentation/images/feature-screenshots/once-upon-a-time-logo.jpeg)
+
 (By Laura Kondrataite)
 
 Are you a fan of the fairy tales, and even more so of Disney...?
@@ -82,14 +85,15 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 
 - MVP flowchart:
 
-![flowchart-mvp](documentation/flowcharts/mvp-flowchart.jpeg)
+![flowchart-mvp](documentation/images/flowcharts/mvp-flowchart.jpeg)
 
 - Future feature flowchart (Chapter 3):
 
-![flowchart-mvp](documentation/flowcharts/chapter3.jpeg)
+![flowchart-mvp](documentation/images/flowcharts/chapter3.jpeg)
 
 ## Features
 ### Existing Features
+
 
 
 ### Features Left to Implement
