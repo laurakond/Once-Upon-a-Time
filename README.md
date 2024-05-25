@@ -39,6 +39,12 @@ The link to live the game can be found [here](https://once-upon-a-time-f21467152
 - [Heroku](#heroku)
 
 [Credits](#credits)
+- [Content](#content)
+- [Ascii art](#ascii-art)
+- [Refactoring](#refactoring)
+- [General resources](#general-resources)
+- [Acknowledgments](#acknowledgments)
+- [Code inspiration](#code-inspiration)
 
 ## How to play
 
