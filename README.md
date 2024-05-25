@@ -196,7 +196,7 @@ To deploy to the Heroku website, follow the steps below:
 ### Content
 The text content for the gameplay was primarily written by me. 
 
-I used Once Upon a Time [Wikipedia](https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time) page for reference and for creating the future feature (Chapter 3) content. 
+I used Once Upon a Time [Wikipedia](https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time)) page for reference and for creating the future feature (Chapter 3) content. 
 
 ### Ascii art
 I used [patorjk](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) website for generating logos within the game. The credit line is also noted in the code.
@@ -211,19 +211,27 @@ I did additional research on best coding/refactoring practices:
 - The following [discussion board](https://discuss.python.org/t/struggling-with-while-loops/20865/10) was helpful for refactoring if statements in the user input/validation functions, more specifically, for using "**not in [list]**" statement. 
 
 ### General resources:
-I used the following resources to better understand various topics and how to apply specific aspects to my code:
+I used the following resources to better my understanding on various topics and how to apply specific functionality to my code:
 - Data validation:
     - W3Schools:
         - [try/except](https://www.w3schools.com/python/python_try_except.asp)
-        - string is [is numeric](https://www.w3schools.com/python/ref_string_isnumeric.asp)
-        - string is [is alpha](https://www.w3schools.com/python/ref_string_isalpha.asp)
-        - string is [is digit](https://docs.python.org/3/library/stdtypes.html#str.isdigit)
+        - string [is numeric](https://www.w3schools.com/python/ref_string_isnumeric.asp)
+        - string [is alpha](https://www.w3schools.com/python/ref_string_isalpha.asp)
+        - string [is digit](https://docs.python.org/3/library/stdtypes.html#str.isdigit)
     - Stack overflow forum [thread](https://stackoverflow.com/questions/16399721/making-sure-no-integers-in-a-string) for validating yes/no or '1'/'2' inputs
 
 - Dictionary iteration:
     - [Geeks for geeks](https://www.geeksforgeeks.org/python-accessing-items-in-lists-within-dictionary/)
     - [Real Python](https://realpython.com/iterate-through-dictionary-python/
     )
+
+- Time delay for staggering content display:
+    - [freeCodeCamp](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/) article was very useful in understanding how to implement sleep() function to my code.
+
+- replace() method:
+    - [W3Schools](https://www.w3schools.com/python/ref_string_replace.asp) for understanding/reminding myself how to apply it to text manipulation.
+
+- [Medium](https://towardsdatascience.com/common-mistakes-when-dealing-with-multiple-python-files-b4f4dc4d5643) article on how to manage multiple python files.
 
 ### Acknowledgments
 
