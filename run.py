@@ -3,13 +3,13 @@ from google.oauth2.service_account import Credentials
 import story
 from time import sleep
 from os import system
-# The idea of using the above system from os import and
-# system("clear") module was taken from fellow student's
-# Georgina Carlisle project:
+# The idea of using the above from os import system and
+# system("clear") module was taken from a fellow student
+# Georgina Carlisle's project:
 # https://github.com/GeorginaCarlisle/detective-game-p3
 
-# Gspread part of code, including imports in lines 1-2
-# was appropriated from Love Sandwiches walkthrough
+# Gspread part of the code, including imports in lines 1-2,
+# was appropriated from the Love Sandwiches walkthrough
 # project by Code Institute.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -26,7 +26,7 @@ SHEET = GSPREAD_CLIENT.open('once-upon-a-time')
 # Main function to run the game
 def main():
     """
-    Main game function.
+    Main game function displayed upon loading.
     """
     welcome_screen()
     number_choice = enter_numerical_choice()
@@ -35,7 +35,8 @@ def main():
 
 def welcome_screen():
     """
-    Runs the Game logo and starts the application.
+    Runs the Game logo and displays 
+    the game introduction text.
     """
     # prints main logo
     generate_logos(story.ascii_dict["title_logo"])
@@ -47,8 +48,8 @@ def welcome_screen():
 # User input functions
 def enter_numerical_choice():
     """
-    Prompts a question where user chooses to input numerical
-    values for the game to proceed.
+    Prompts a question where the user chooses to input
+    numerical values for the game to proceed.
     """
     while True:
         choice = input("\nType '1' or '2' to proceed: ")
@@ -60,8 +61,8 @@ def enter_numerical_choice():
 
 def input_user_data():
     """
-    Asks user to input their name/gender and stores them for
-    later in game use.
+    Asks the user to input their name/gender and stores them
+    for later in-game use.
     """
     while True:
         user_name = input("\nPlease enter your name: ").capitalize()
@@ -83,8 +84,8 @@ def input_user_data():
 
 def prompt_yes_no_question(prompt):
     """
-    Generates appropriate question based on gameplay that requires
-    the user to enter yes/no answer.
+    Generates appropriate question based on the gameplay that
+    requires the user to enter yes/no answer.
     """
     while True:
         question = input(prompt).lower()
@@ -116,9 +117,11 @@ def validate_enter_numerical_choice(number_choice):
 def validate_user_input_data(data):
     """
     Checks that the user data input is correct,
-    and throws an error if provided data is in different
-    format.
+    and throws an error if the provided data is in different
+    format than it should be.
     This part of code was appropriated from Love Sandwiches project.
+    The concept was also applied to other validation functions in
+    this project.
     """
     try:
         if data.isnumeric() or not data.isalpha():
@@ -138,8 +141,8 @@ def validate_user_input_data(data):
 
 def validate_yes_no_question_prompt(data):
     """
-    Checks taht the input data is correct and prompts the user
-    to enter correct data if not.
+    Checks that the input data is correct and prompts the user
+    to enter the correct data if not.
     """
     try:
         if data not in ["y", "n"]:
@@ -185,7 +188,7 @@ def generate_game_text(column_number):
     Retrieves story text from imported gspread
     and returns it line by line for the user
     to read.
-    Replaces user data(name/gender) by passing
+    Replaces user data(name/gender) inside the text by passing
     customise_story() function.
     """
     text = SHEET.worksheet("story")
@@ -199,7 +202,7 @@ def generate_game_text(column_number):
 def generate_line_breaks():
     """
     Prints blank lines and a separator line for
-    the user to see story progression.
+    the user to better see/follow the story progression.
     """
     print("")
     print("     ---------------------------------     ")
@@ -210,7 +213,7 @@ def generate_line_breaks():
 def choose_instruction_or_game(data):
     """
     Takes the user to the instructions or
-    gameplay sections.
+    the gameplay sections.
     """
     if data == "1":
         system("clear")
@@ -232,8 +235,8 @@ def choose_instruction_or_game(data):
 
 def continue_to_play(data):
     """
-    Terminates or continues to the game play based
-    on the user's choice after reading instructions.
+    Terminates the application or continues with the gameplay based
+    on the user's choice after reading the instructions.
     """
     if data == "y":
         input_user_data()
@@ -268,7 +271,7 @@ def restart_game(main_function):
 
 def execute_chapter1(data):
     """
-    Generates appropriate story section based on user
+    Generates an appropriate story section based on the user's
     gameplay selection.
     """
     if data == "1":
@@ -285,7 +288,7 @@ def execute_chapter1(data):
 
 def execute_rumpel_section(data):
     """
-    Generates appropriate story section based on user
+    Generates an appropriate story section based on the user's
     gameplay selection.
     """
     if data == "1":
@@ -302,7 +305,7 @@ def execute_rumpel_section(data):
 
 def execute_baby_name_section(data):
     """
-    Generates appropriate story section based on user
+    Generates an appropriate story section based on the user's
     gameplay selection.
     """
     if data == "1":
@@ -319,7 +322,7 @@ def execute_baby_name_section(data):
 
 def execute_secret_door_section(data):
     """
-    Generates appropriate story section based on user
+    Generates an appropriate story section based on the user's
     gameplay selection.
     """
     if data == "1":
@@ -336,7 +339,7 @@ def execute_secret_door_section(data):
 
 def execute_lock_door_section(data):
     """
-    Generates appropriate story section based on user
+    Generates an appropriate story section based on the user's
     gameplay selection.
     """
     if data == "1":
@@ -354,8 +357,8 @@ def execute_lock_door_section(data):
 
 def continue_to_chapter3():
     """
-    Takes the user to Chapter 3 or executes end_game()
-    based on user input.
+    Takes the user to Chapter 3 or executes the end_game()
+    function based on the user input.
     """
     question = prompt_yes_no_question(
                "\nWould you like to continue to Chapter 3 (y/n)? ")
