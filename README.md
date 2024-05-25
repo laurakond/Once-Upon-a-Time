@@ -94,6 +94,77 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 ## Features
 ### Existing Features
 
+**Welcome screen**
+- Upon loading the application, a Welcome screen is shown containing the game logo "Once Upon a Time" in Ascii art and a brief introduction what the game is about.
+    - the user is then prompted to select between two options: proceed to the game or view instructions' page.
+
+![welcome-screen](documentation/images/feature-screenshots/welcome-screen.jpeg)
+
+**Instructions**
+- Instruction page has an Ascii art logo "How to play" that clearly indicates to the user where they are in the application.
+    - The page lists steps of how to play the game, and asks the user if they want to play the game or if they want to quit the application.
+
+![instructions](documentation/images/feature-screenshots/instructions.jpeg)
+
+**Game exit**
+- If the user selects "n" as an answer, then the screen displays "Thank you for playing! see you next time." 
+    - the game then terminates and the user needs to click on the "Run program" button at the top if they wish to reload the program.
+
+![exit-game-1](documentation/images/feature-screenshots/exit-game-1.jpeg)
+
+**User data input**
+
+- If the user chooses to proceed to the gameplay, they are prompted to enter their name and gender. 
+- By providing this information the game customises the game play, which makes the game more relatable and interactive for the user.
+**To note**: the gender input is not implemented in the current MVP product. 
+    - The gender input will customise pronouns, which will be adjusted at the later stage of the project.  
+
+![user-data-input](documentation/images/feature-screenshots/user-data-input.jpeg)
+
+**Story introduction**
+- Once the user data is provided the screen clears the previous content, loads the Ascii art of the main logo, and generates the beginning of the story. 
+    - The user will see that their provided username is generated within the storyline at the end of the first introduction paragraph. 
+
+![story-intro](documentation/images/feature-screenshots/story-intro-feature.jpeg)
+
+**Chapter 1**
+- Chapter 1 section loads straight after the story introduction. 
+- The Ascii art logo provides a clear indication which area within the game play the user is at. 
+- Here the user is prompted to choose between two possible outcomes to proceed with the gameplay. 
+
+![chapter-1](documentation/images/feature-screenshots/chapter-1-feature.jpeg)
+
+**Chapter 2**
+- If the user is successful and progresses to Chapter 2, the screen will, like in Chapter 1, load the Ascii art logo, clearly indicating the game progression.
+- This section of the game provides a few more scenarios, which will take the user to the end of the game, if the user's answers are correct. 
+
+![chapter-2](documentation/images/feature-screenshots/chapter-2.jpeg)
+
+**Winning page**
+
+**Chapter 3 prompt**
+
+**Final end of game section**
+
+**Division of sections**
+- Throughout the gameplay, each stage of the story is indicated by the question prompt. 
+- Furthermore, the story progression is clearly indicated by line breaks that allow the user to follow the content intuitively. 
+    - the answers were deliberately removed so that the correct answers are not visible.
+
+![section-indication](documentation/images/feature-screenshots/chapter2-progression.jpeg)
+
+**Incorrect choice**
+- If the user selects incorrect answer, the relevant text to each chosen option prints after a few moments, and indicates that the user's choice was incorrect.
+- After a few seconds, the screen will automatically return to the main Welcome page, where the user will be able to restart the program again. 
+
+![incorrect-answer](documentation/images/feature-screenshots/incorrect-answer-outcome.jpeg)
+
+**Time progression**
+
+**Clearing the screen**
+
+**User input validation**
+
 
 
 ### Features Left to Implement
