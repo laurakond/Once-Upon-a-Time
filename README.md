@@ -224,7 +224,9 @@ I used the following resources to better understand various topics and how to ap
 - My thanks goes to my mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code, giving suggestions how to troubleshoot and providing reassurance when my confidence stumbled.
 - Also thank you goes to [Richard Wells](https://github.com/D0nni387) who helped with original project idea development and troubleshooting code errors.
 - Thank you also to student tutor support for more troubleshooting assistance, and the CI slack community for sharing their experiences, giving advice and suggestions.
-- CI Love Sandwiches walkthrough project has provided a valuable insight on how to start working on the code and what to look out for when creating a Python project. 
-    - credits to the project are also noted within the code.
+
+### Code Inspiration
+CI Love Sandwiches walkthrough project has provided valuable insight and inspiration on how to start working on the code and what to look out for when creating a Python project. 
+- credits to the project are also noted within the code.
 
 [Return to Table of Contents](#table-of-contents)
