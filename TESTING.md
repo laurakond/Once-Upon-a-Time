@@ -123,6 +123,9 @@ The below mentioned bugs occured early in the development stage before refactori
     - Trying to return the game text with an f-string was throwing an error which I realised was because I was using the f-string in the list incorrectly, so I decided to leave that approach.
         - After some research, I found a solution by applying replace() method to update the text with user provided data. 
 
+**Crashing application**
+- During the testing phase with my mentor, it seemed that the user input prompt "Would you like to play the game (y/n)?" crashed the application when a single letter (not y or n) was entered. 
+    - I resolved this by addapting the yes/no question validation code to the one I used for validate_enter_numerical_choice() function. 
 
 ### Unfixed bugs
 
