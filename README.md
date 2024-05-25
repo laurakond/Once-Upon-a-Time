@@ -122,7 +122,7 @@ The game application went through extensive testing during the development and d
 
 
 ## Deployment
-This website was deployed using GitHub pages an Heroku website. To deploy the project, follow the steps below:
+This website was deployed using GitHub pages and Heroku website. To deploy the project, follow the steps below:
 
 ### Github
 1. Login to GitHub and navigate to the main repository page.
@@ -187,34 +187,44 @@ To deploy to the Heroku website, follow the steps below:
 
 ## Credits
 
-Refactoring:
+### Content
+The text content for the gameplay was primarily written by me. 
 
-- I used the following discussion board for refactoring user_input() function as moving the code to a second line was raising an error:
-    - https://discuss.python.org/t/struggling-with-while-loops/20865/10
-- The following article has given an idea how to refactor option_choice() function:
-    - https://www.freecodecamp.org/news/best-practices-for-refactoring-code/
+I used Once Upon a Time [Wikipedia](https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time) page for reference and for creating the future feature (Chapter 3) content. 
 
-Data Validation resources:
-https://www.w3schools.com/python/python_try_except.asp
-https://www.w3schools.com/python/ref_string_isalpha.asp
-https://www.w3schools.com/python/ref_string_isnumeric.asp
-https://docs.python.org/3/library/exceptions.html
-https://docs.python.org/3/library/stdtypes.html#str.isdigit
-https://stackoverflow.com/questions/16399721/making-sure-no-integers-in-a-string
-https://p-kane.medium.com/input-validation-with-python-570953d5d297
+### Ascii art
+I used [patorjk](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) website for generating logos within the game. The credit line is also noted in the code.
 
+I referred to the following discussion forum and a video to help me implement Ascii art into the code correctly:
+- [Stackoverflow](https://stackoverflow.com/questions/23623288/print-full-ascii-art) discussion thread.
+- [The Grimes Teacher](https://www.youtube.com/watch?v=arcFqEuV_XQ) video content on how to print ascii art. 
 
-Acsii resources:
+### Refactoring
+I did additional research on best coding/refactoring practices:
+- [FreeCodeCamp](https://www.freecodecamp.org/news/best-practices-for-refactoring-code/) article game me an idea how to refactor prompt_yes_no_question() function and apply it more than once in the code.
+- The following [discussion board](https://discuss.python.org/t/struggling-with-while-loops/20865/10) was helpful for refactoring if statements in the user input/validation functions, more specifically, for using "**not in [list]**" statement. 
 
-discussion thread that helped to make the design print: https://stackoverflow.com/questions/23623288/print-full-ascii-art
+### General resources:
+I used the following resources to better understand various topics and how to apply specific aspects to my code:
+- Data validation:
+    - W3Schools:
+        - [try/except](https://www.w3schools.com/python/python_try_except.asp)
+        - string is [is numeric](https://www.w3schools.com/python/ref_string_isnumeric.asp)
+        - string is [is alpha](https://www.w3schools.com/python/ref_string_isalpha.asp)
+        - string is [is digit](https://docs.python.org/3/library/stdtypes.html#str.isdigit)
+    - Stack overflow forum [thread](https://stackoverflow.com/questions/16399721/making-sure-no-integers-in-a-string) for validating yes/no or '1'/'2' inputs
 
-Information on how to print ascii art: https://www.youtube.com/watch?v=arcFqEuV_XQ
+- Dictionary iteration:
+    - [Geeks for geeks](https://www.geeksforgeeks.org/python-accessing-items-in-lists-within-dictionary/)
+    - [Real Python](https://realpython.com/iterate-through-dictionary-python/
+    )
 
-Once Upon a time TV show information and some of the content borrowed from there:
-https://en.wikipedia.org/wiki/Pilot_(Once_Upon_a_Time)
+### Acknowledgments
 
-Dictionary iteration:
-https://www.geeksforgeeks.org/python-accessing-items-in-lists-within-dictionary/
-https://realpython.com/iterate-through-dictionary-python/
+- My thanks goes to my mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code, giving suggestions how to troubleshoot and providing reassurance when my confidence stumbled.
+- Also thank you goes to [Richard Wells](https://github.com/D0nni387) who helped with original project idea development and troubleshooting code errors.
+- Thank you also to student tutor support for more troubleshooting assistance, and the CI slack community for sharing their experiences, giving advice and suggestions.
+- CI Love Sandwiches walkthrough project has provided a valuable insight on how to start working on the code and what to look out for when creating a Python project. 
+    - credits to the project are also noted within the code.
 
 [Return to Table of Contents](#table-of-contents)
