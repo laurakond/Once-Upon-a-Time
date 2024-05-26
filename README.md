@@ -59,6 +59,8 @@ The game can be accessed [here](https://once-upon-a-time-f214671524cd.herokuapp.
 - If the user completes the game successfully, they can choose whether to progress further or finish playing the game. 
 
 
+[Return to Table of Contents](#table-of-contents)
+
 ## Design
 ### Target Audience
 
@@ -90,6 +92,8 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 - Future feature flowchart (Chapter 3):
 
 ![flowchart-mvp](assets/documentation/images/flowcharts/chapter3.jpeg)
+
+[Return to Table of Contents](#table-of-contents)
 
 ## Features
 ### Existing Features
