@@ -5,7 +5,7 @@ By Laura Kondrataite
 
 [Testing](#testing)
 
-- [PEP8 Linter validation](#pep8-linter)
+- [PEP8 Linter validation](#pep8-linter-validation)
 - [User input validation](#user-input-validation)
 - [Bugs](#bugs)
 	- [Fixed bugs](#fixed-bugs)
@@ -16,7 +16,7 @@ By Laura Kondrataite
 
 ## Testing
 
-### PEP8 Linter validation(#pep8-linter)
+### PEP8 Linter validation
 I tested the code against the Python linter validator throughout the development stage of the application and once the code was finalised. The final results for both, run.py and story.py, were returned without any errors as per images below:
 
 - run.py
