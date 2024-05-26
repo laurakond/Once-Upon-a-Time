@@ -346,7 +346,10 @@ I used the following resources to better my understanding on various topics and 
 - Thank you also to student tutor support for more troubleshooting assistance, and the CI slack community for sharing their experiences, giving advice and suggestions.
 
 ### Code Inspiration
-CI Love Sandwiches walkthrough project has provided valuable insight and inspiration on how to start working on the code and what to look out for when creating a Python project. 
-- credits to the project are also noted within the code.
+- CI Love Sandwiches walkthrough project has provided valuable insight and inspiration on how to start working on the code and what to look out for when creating a Python project. 
+    - Credits to the project are also noted within the code.
+- Fellow student, Georgina Carlisle's, PP3 work, especially for the idea on how to clear the content.
+    - Credit is also noted within the code.
+
 
 [Return to Table of Contents](#table-of-contents)
