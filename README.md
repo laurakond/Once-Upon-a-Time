@@ -10,11 +10,11 @@ Then, you are in luck!
 
 Join us and relive the events of the popular American TV show "Once Upon A Time". 
 
-"Once Upon a Time..." is a text-based game that recreates the pilot episode of the show, allowing the user to play out the sequence of events by choosing multiple options. 
+"Once Upon a Time..." is a text-based game that recreates the pilot episode of the show, allowing the user to play out the sequence of events by choosing from multiple scenarios. 
 
 The game incorporates the user's data to make it more interactive and make the user part of the story-telling, as if they were the hero of the show!
 
-The link to live the game can be found [here](https://once-upon-a-time-f214671524cd.herokuapp.com/).
+The game can be accessed [here](https://once-upon-a-time-f214671524cd.herokuapp.com/).
 
 ## Table of Contents
 
@@ -51,10 +51,10 @@ The link to live the game can be found [here](https://once-upon-a-time-f21467152
 
 ## How to play
 
-- Once the application is loaded, the user is shown a welcome screen that contains a logo written in Ascii art, with an introduction and a prompt to choose between reading the instructions or going straight to the gameplay.
+- Once the application is loaded, the Welcome screen is displayed. It contains an Ascii Art logo, an introduction and a prompt to choose between reading the instructions or going straight to the gameplay.
 - If chosen to proceed to the game, the user needs to input appropriate data to move forward. The data will customise the gameplay.
 - When prompted, the user needs to select appropriate answers to progress.
-    - These are questions that require the user to type in either yes/no or '1'/'2' into the provided space.
+    - These are questions that require the user to type in either yes/no or '1'/'2' into the provided fields.
 - If the user's choice is incorrect they are taken back to the main screen and they can restart the game again.
 - If the user completes the game successfully, they can choose whether to progress further or finish playing the game. 
 
