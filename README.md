@@ -1,6 +1,6 @@
 # Once Upon a Time...
 
-![once-upon-a-time](documentation/images/feature-screenshots/once-upon-a-time-logo.jpeg)
+![once-upon-a-time](assets/documentation/images/feature-screenshots/once-upon-a-time-logo.jpeg)
 
 (By Laura Kondrataite)
 
@@ -85,11 +85,11 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 
 - MVP flowchart:
 
-![flowchart-mvp](documentation/images/flowcharts/mvp-flowchart.jpeg)
+![flowchart-mvp](assets/documentation/images/flowcharts/mvp-flowchart.jpeg)
 
 - Future feature flowchart (Chapter 3):
 
-![flowchart-mvp](documentation/images/flowcharts/chapter3.jpeg)
+![flowchart-mvp](assets/documentation/images/flowcharts/chapter3.jpeg)
 
 ## Features
 ### Existing Features
@@ -98,73 +98,92 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 - Upon loading the application, a Welcome screen is shown containing the game logo "Once Upon a Time" in Ascii art and a brief introduction what the game is about.
     - the user is then prompted to select between two options: proceed to the game or view instructions' page.
 
-![welcome-screen](documentation/images/feature-screenshots/welcome-screen.jpeg)
+![welcome-screen](assets/documentation/images/feature-screenshots/welcome-screen.jpeg)
 
 **Instructions**
 - Instruction page has an Ascii art logo "How to play" that clearly indicates to the user where they are in the application.
     - The page lists steps of how to play the game, and asks the user if they want to play the game or if they want to quit the application.
 
-![instructions](documentation/images/feature-screenshots/instructions.jpeg)
+![instructions](assets/documentation/images/feature-screenshots/instructions.jpeg)
 
 **Game exit**
-- If the user selects "n" as an answer, then the screen displays "Thank you for playing! see you next time." 
-    - the game then terminates and the user needs to click on the "Run program" button at the top if they wish to reload the program.
+- If the user wishes to leave the game after reading the instructions, they can do so by selecting "n" as an answer. The screen then displays "Thank you for playing! see you next time." 
+    - The user needs to click on the "Run program" button at the top if they wish to reload the program.
 
-![exit-game-1](documentation/images/feature-screenshots/exit-game-1.jpeg)
+![exit-game-1](assets/documentation/images/feature-screenshots/exit-game-1.jpeg)
 
 **User data input**
 
 - If the user chooses to proceed to the gameplay, they are prompted to enter their name and gender. 
 - By providing this information the game customises the game play, which makes the game more relatable and interactive for the user.
+    - The username is visible within the introduction of the storyline and at the end of the game if the user wins the game. 
 **To note**: the gender input is not implemented in the current MVP product. 
-    - The gender input will customise pronouns, which will be adjusted at the later stage of the project.  
+    - The gender input is set to customise pronouns that will be adjusted at the next stage of the project development.  
 
-![user-data-input](documentation/images/feature-screenshots/user-data-input.jpeg)
+![user-data-input](assets/documentation/images/feature-screenshots/user-data-input.jpeg)
 
 **Story introduction**
 - Once the user data is provided the screen clears the previous content, loads the Ascii art of the main logo, and generates the beginning of the story. 
     - The user will see that their provided username is generated within the storyline at the end of the first introduction paragraph. 
 
-![story-intro](documentation/images/feature-screenshots/story-intro-feature.jpeg)
+![story-intro](assets/documentation/images/feature-screenshots/story-intro-feature.jpeg)
 
 **Chapter 1**
 - Chapter 1 section loads straight after the story introduction. 
 - The Ascii art logo provides a clear indication which area within the game play the user is at. 
 - Here the user is prompted to choose between two possible outcomes to proceed with the gameplay. 
 
-![chapter-1](documentation/images/feature-screenshots/chapter-1-feature.jpeg)
+![chapter-1](assets/documentation/images/feature-screenshots/chapter-1-feature.jpeg)
 
 **Chapter 2**
 - If the user is successful and progresses to Chapter 2, the screen will, like in Chapter 1, load the Ascii art logo, clearly indicating the game progression.
 - This section of the game provides a few more scenarios, which will take the user to the end of the game, if the user's answers are correct. 
 
-![chapter-2](documentation/images/feature-screenshots/chapter-2.jpeg)
+![chapter-2](assets/documentation/images/feature-screenshots/chapter-2.jpeg)
 
-**Winning page**
+**Winning section**
+- Once the user won, a winning paragraph will appear after a small pause. 
+- The user will be asked if they wish to proceed to Chapter 3 or if they wish to terminate the game. 
+    - upon selection the terminal will display appropriate message to the user. 
+    <details>
+    <summary>Winning content screenshot</summary>
 
-**Chapter 3 prompt**
+    ![winning-text](assets/documentation/images/feature-screenshots/winning-text.jpeg)
+    </details>
 
-**Final end of game section**
+    <details>
+    <summary>Goodbye message screenshot</summary>
 
-**Division of sections**
+    ![end-game-prompt](assets/documentation/images/feature-screenshots/end-game.jpeg)
+    </details>
+
+    <details>
+    <summary>Chapter 3 message screenshot</summary>
+
+    ![chapter-3](assets/documentation/images/feature-screenshots/chapter-3.jpeg)
+    </details>
+
+
+**Sections' division**
 - Throughout the gameplay, each stage of the story is indicated by the question prompt. 
-- Furthermore, the story progression is clearly indicated by line breaks that allow the user to follow the content intuitively. 
-    - the answers were deliberately removed so that the correct answers are not visible.
+- The story progression, dependent on the user's selection, is clearly indicated by line breaks that allow the user to follow the content intuitively. 
+    - (the answers were deliberately removed from the screenshots).
 
-![section-indication](documentation/images/feature-screenshots/chapter2-progression.jpeg)
+![section-indication](assets/documentation/images/feature-screenshots/chapter2-progression.jpeg)
 
 **Incorrect choice**
 - If the user selects incorrect answer, the relevant text to each chosen option prints after a few moments, and indicates that the user's choice was incorrect.
 - After a few seconds, the screen will automatically return to the main Welcome page, where the user will be able to restart the program again. 
 
-![incorrect-answer](documentation/images/feature-screenshots/incorrect-answer-outcome.jpeg)
+![incorrect-answer](assets/documentation/images/feature-screenshots/incorrect-answer-outcome.jpeg)
 
 **Time progression**
-
+- To ensure better user experience, the game has a time lag installed. This allows for the game to load the content in stages, and ensures a better flow of the game. 
+ 
 **Clearing the screen**
-
-**User input validation**
-
+- Similarly to the above point, all the content that proceeds the gameplay will be removed from the screen. This allows better content progression in the terminal window.
+    - This feature is only added to the welcome screen and the instruction section. 
+    - Once inside the gameplay, the content will be available for the user to scroll back up in case the time lag is too fast for the user.
 
 
 ### Features Left to Implement
