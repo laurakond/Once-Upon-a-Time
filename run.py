@@ -194,8 +194,8 @@ def generate_game_text(column_number):
     text = SHEET.worksheet("story")
     generated_text = text.col_values(column_number)[1:]
 
-    customized_text = customise_story(generated_text, story.user["name"])
-    for line in customized_text:
+    customised_text = customise_story(generated_text, story.user["name"])
+    for line in customised_text:
         print(line)
 
 
