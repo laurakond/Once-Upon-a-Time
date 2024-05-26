@@ -6,6 +6,7 @@ By Laura Kondrataite
 [Testing](#testing)
 
 - [PEP8 Linter validation](#pep8-linter)
+- [User input validation](#user-input-validation)
 - [Bugs](#bugs)
 	- [Fixed bugs](#fixed-bugs)
 	- [Unfixed bugs](#unfixed-bugs)
@@ -30,6 +31,38 @@ I tested the code against the Python linter validator throughout the development
 
 [Return to Contents](#contents)
 
+
+### User input validation
+
+There are several user inputs throughout the application, therefore, validating the provided data was crucial for the functionality of the application. 
+- Each part of user input was tested during and after the development stage.
+- The below screenshots display all viable entries and responses to incorrect data.
+
+    <details>
+    <summary>Username input validation</summary>
+
+    ![username-validation](assets/documentation/images/testing/validation-images/user-name-validation.jpeg)
+    </details>
+
+    <details>
+    <summary>Gender input validation</summary>
+
+    ![username-validation](assets/documentation/images/testing/validation-images/gender-validation.jpeg)
+    </details>
+
+    <details>
+    <summary>Numerical input validation</summary>
+
+    ![username-validation](assets/documentation/images/testing/validation-images/validation-1-2.jpeg)
+    </details>
+
+    <details>
+    <summary>Yes/No input validation</summary>
+
+    ![username-validation](assets/documentation/images/testing/validation-images/validation-y-n.jpeg)
+    </details>
+
+[Return to Contents](#contents)
 
 ## Bugs
 
