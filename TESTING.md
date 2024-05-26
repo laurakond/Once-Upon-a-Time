@@ -29,7 +29,7 @@ I tested the code against the Python linter validator throughout the development
 ![storypy-validation-image](assets/documentation/images/testing/validation-images/storypy-linter.jpeg)
 
 
-[Return to Contents](#contents)
+[Return to Table of Contents](#contents)
 
 
 ### User input validation
@@ -62,7 +62,7 @@ There are several user inputs throughout the application, therefore, validating 
     ![username-validation](assets/documentation/images/testing/validation-images/validation-y-n.jpeg)
     </details>
 
-[Return to Contents](#contents)
+[Return to Table of Contents](#contents)
 
 ## Bugs
 
@@ -165,7 +165,7 @@ The below mentioned bugs occured early in the development stage before refactori
 - No unfixed bugs were left in the code. 
 
 
-[Return to Contents](#contents)
+[Return to Table of Contents](#contents)
 
 ## User stories testing
 
@@ -181,7 +181,7 @@ The below mentioned bugs occured early in the development stage before refactori
 | As a user, I want to return to the main screen after the game has finished.                                    | Yes       |                                                                                                                                                    |
 
 
-[Return to Contents](#contents)
+[Return to Table of Contents](#contents)
 
 ### User testing
 
@@ -193,7 +193,7 @@ The game application was tested thoroughly during the development and deployment
     - I applied blank lines and a feature break line to indicate where the new content starts once it is loaded.    
         - This provides better user experience, and the text is is easier to follow.
 
-[Return to Contents](#contents)
+[Return to Table of Contents](#contents)
 
 ### Manual testing
 After the development stage of the application, I went through each feature/section of the gameplay ensuring that is working as intended.
