@@ -188,7 +188,7 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure for
 
 ### Features Left to Implement
 
-- The current gameplay set up only covers the first part of the pilot episode. Therefore, the next future feature will be implementing the second half of the game-play. The flowchart with a breakdown of steps is shown in [flowcharts](#flowcharts) section.
+- The current gameplay set up only covers the first part of the pilot episode. Therefore, the next future feature will be implementing the second half of the game-play. The flowchart with a breakdown of steps is shown in the [flowcharts](#flowcharts) section.
 - Customise pronouns in the game text based on the gender data provide by the user at the start of the game.
 - Similarly, there is potential to implement the user's age to further customise the story-telling of the game.
 
