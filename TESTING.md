@@ -20,12 +20,12 @@ I tested the code against the Python linter validator throughout the development
 
 - run.py
 
-![runpy-validation-image](documentation/images/testing/validation-images/runpy-linter.jpeg)
+![runpy-validation-image](assets/documentation/images/testing/validation-images/runpy-linter.jpeg)
 
 
 - story.py
 
-![storypy-validation-image](documentation/images/testing/validation-images/storypy-linter.jpeg)
+![storypy-validation-image](assets/documentation/images/testing/validation-images/storypy-linter.jpeg)
 
 
 [Return to Contents](#contents)
@@ -52,11 +52,11 @@ The below mentioned bugs occured early in the development stage before refactori
 **None error**
 - At the beginning of run_chapter1()(now execute_chapter1()) implementation, the code was producing "None" output when executing the application. This occurred because I used a print() statement inside the run_chapter1() instead of the return statement. 
 
-![none-error](documentation/images/testing/error-images/none-error-chapter1.jpg)
+![none-error](assets/documentation/images/testing/error-images/none-error-chapter1.jpg)
 
 -   I resolved this by replacing the print() statement with the return statement. 
     
-![none-error-chapter1](documentation/images/testing/error-images/chapter1-temp-resolve.jpg)
+![none-error-chapter1](assets/documentation/images/testing/error-images/chapter1-temp-resolve.jpg)
 
 - This error occurred because I confused the functionality of the return statement with the print statement. This was resolved once I implemented the following code inside run_chapter1() function. 
 
