@@ -169,13 +169,14 @@ def generate_logos(logo):
 
 def customise_story(story_text, user_name):
     """
-    Applies user provided data, i.e. name & gender (future feature),
-    to the appropriate text content to make the game more interactive.
+    Loops through original text and replaces specific words with
+    user provided data, i.e. name & gender (future feature), and
+    returns a new text to display in the terminal. 
     """
-    updated_story = []
+    updated_story_list = []
     for line in story_text:
         updated_line = line.replace("{user_name}", user_name)
-        updated_story.append(updated_line)
+        updated_story_list.append(updated_line)
 
     return updated_story
 
