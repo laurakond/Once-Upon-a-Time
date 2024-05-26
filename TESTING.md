@@ -20,12 +20,12 @@ I tested the code against the Python linter validator throughout the development
 
 - run.py
 
-![runpy-validation-image](documentation/testing/validation-images/runpy-linter.jpeg)
+![runpy-validation-image](documentation/images/testing/validation-images/runpy-linter.jpeg)
 
 
 - story.py
 
-![storypy-validation-image](documentation/testing/validation-images/storypy-linter.jpeg)
+![storypy-validation-image](documentation/images/testing/validation-images/storypy-linter.jpeg)
 
 
 [Return to Contents](#contents)
@@ -52,11 +52,11 @@ The below mentioned bugs occured early in the development stage before refactori
 **None error**
 - At the beginning of run_chapter1()(now execute_chapter1()) implementation, the code was producing "None" output when executing the application. This occurred because I used a print() statement inside the run_chapter1() instead of the return statement. 
 
-![none-error](documentation/testing/error-images/none-error-chapter1.jpg)
+![none-error](documentation/images/testing/error-images/none-error-chapter1.jpg)
 
 -   I resolved this by replacing the print() statement with the return statement. 
     
-![none-error-chapter1](documentation/testing/error-images/chapter1-temp-resolve.jpg)
+![none-error-chapter1](documentation/images/testing/error-images/chapter1-temp-resolve.jpg)
 
 - This error occurred because I confused the functionality of the return statement with the print statement. This was resolved once I implemented the following code inside run_chapter1() function. 
 
@@ -158,7 +158,7 @@ The game application was tested thoroughly during the development and deployment
     - I initially had the contents clear completely after a certain period of time. However, my mentor suggested that I only apply the feature to the beginning of the application, before entering the game content, and let the content of the gameplay scroll once the user has started the game.
         - This ensured that, in case the user was unable to read all the content, they would be able to scroll up the screen and finish reading.    
     - I applied blank lines and a feature break line to indicate where the new content starts once it is loaded.    
-        - This allowed a better user experience as it is easier to follow the text.
+        - This provides better user experience, and the text is is easier to follow.
 
 [Return to Contents](#contents)
 
