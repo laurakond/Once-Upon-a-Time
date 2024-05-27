@@ -162,8 +162,17 @@ The below mentioned bugs occured early in the development stage before refactori
 
 ### Unfixed bugs
 
-- No unfixed bugs were left in the code. 
+- Sometimes, after the system("clr") code is executed, it leaves residue lines/code when scrolling back up the code.
 
+    ![system-clear-error](assets/documentation/images/testing/error-images/clear-error.jpeg)
+
+    - This appears to be sporadic, as when I tried to recreate the error a few times it was working, but other times it would not. I noticed this error to be occuring more when the user selected instruction page first and then proceeded to the gameplay.
+    - This will be addressed at the next development stage. 
+- The terminal allows to type anything into the terminal while the game progression is loading. 
+    
+    ![typing-error](assets/documentation/images/testing/error-images/typing-error.jpeg)
+    - However, it seems that the entry is then being regarded as the next user input entry (if the enter key is pressed), which throws an error if the incorrect input is provided.
+    - This will be addressed at the next development stage.
 
 [Return to Table of Contents](#contents)
 
