@@ -17,7 +17,7 @@ By Laura Kondrataite
 ## Testing
 
 ### PEP8 Linter validation
-I tested the code against the Python linter validator throughout the development stage of the application and once the code was finalised. The final results for both, run.py and story.py, were returned without any errors as per images below:
+The code was run past CI Python Linter program throughout the development stage of the application and once the code was finalised. The final results for both, run.py and story.py, were returned without any errors as per images below:
 
 - run.py
 
@@ -34,7 +34,7 @@ I tested the code against the Python linter validator throughout the development
 
 ### User input validation
 
-There are several user inputs throughout the application, therefore, validating the provided data was crucial for the functionality of the application. 
+There are several user inputs throughout the application, therefore, validating data was crucial for the functionality of the application. 
 - Each part of user input was tested during and after the development stage.
 - The below screenshots display all viable entries and responses to incorrect data.
 
@@ -66,13 +66,13 @@ There are several user inputs throughout the application, therefore, validating 
 
 ## Bugs
 
-The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images do not correspond to the final code.
+**To Note**: The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images do not correspond to the final code.
 
 ### Fixed bugs
 
 **Input validation**
-- When working on user input data validation, I had to include an additional if-clause for the gender data in order to validate specific words that the user required to enter. 
-    - To make it work, I had to change "or" to "and" statement, otherwise the code was continuously looping regardless if the correct input was provided.
+- When working on the user input data validation, I had to include an additional if-clause for the gender data input in order to validate specific words that the user required to enter. 
+    - I had to change "or" to "and" statement, otherwise the code was looping continuously, regardless if the correct input was provided or not.
 
 - Function def game_text_generator(data), was throwing a result "None" when the following code was used:
 
@@ -91,12 +91,12 @@ The below mentioned bugs occured early in the development stage before refactori
     
 ![none-error-chapter1](assets/documentation/images/testing/error-images/chapter1-temp-resolve.jpg)
 
-- This error occurred because I confused the functionality of the return statement with the print statement. This was resolved once I implemented the following code inside run_chapter1() function. 
+- This error occurred because I confused the functionality of the return statement with the print statement. 
 
 **Text content display**
-- I had difficulty making the code generate appropriate text content and functionality. I realised that there was an error in proceed_go_game() function as it collated two separate steps into one. Therefore, I decided to separate it into two functions, one responsible just for generating the user input and validating it using validation function. The other function, continue_to_play(data), I used to generate appropriate content based on user selection in the previous function.
-    - This part of the code proved challenging as I was still getting unintentional functionality. After trying multiple ways to display the text, I finally managed to get the code working as intended by printing game text. The other function triggered user input in order to progress along the way: 
-
+- I had difficulty making the code generate appropriate text content and provide intended functionality. 
+- I realised that there was an error in proceed_go_game() function as it collated two separate steps into one. Therefore, I decided to separate it into two functions, one responsible for generating the user input and validating it using validation function. The other function, continue_to_play(data), I used to generate appropriate content based on user selection in the previous function.
+    - This part of the code proved challenging as I was still getting unintentional functionality. After multiple attempts to display the text, I finally managed to get the code working as intended: 
             def  proceed_to_game():
             """
             This function runs after instructions and asks if the
@@ -151,13 +151,13 @@ The below mentioned bugs occured early in the development stage before refactori
 - In order to keep the main run.py file more readable, I decided to store the game text in the story.py file. I applied an f-string to the parts of the text that I needed to update with user-provided data. This proved to be a big challenge as I could not make the text update. There were a few reasons:
     - I realised that the returned user data from user_input() (now called input_user_data()) function was kept in the main run.py file within user{} dictionary.
         - I tried to import run.py file to story.py file, however, I then received a circular import error message. 
-        - I resolved this by moving user{} dictionary where the provided data was kept inside the story.py file.
+        - I resolved this by moving user{} dictionary to the story.py file.
         - After some test runs I made sure that the returned data from the user was correctly stored inside the dictionary and returned when called inside the run.py file. 
     - Trying to return the game text with an f-string was throwing an error which I realised was because I was using the f-string in the list incorrectly, so I decided to leave that approach.
         - After some research, I found a solution by applying replace() method to update the text with user provided data. 
 
 **Crashing application**
-- During the testing phase with my mentor, it seemed that the user input prompt "Would you like to play the game (y/n)?" crashed the application when a single letter (not y or n) was entered. 
+- During the testing phase with my mentor, it seemed that the user input prompt "Would you like to play the game (y/n)?" crashed the application when a single letter (not 'y' or 'n') was entered. 
     - I resolved this by addapting the yes/no question validation code to the one I used for validate_enter_numerical_choice() function. 
 
 ### Unfixed bugs
@@ -165,13 +165,13 @@ The below mentioned bugs occured early in the development stage before refactori
 - Sometimes, after the system("clr") code is executed, it leaves residue lines/code when scrolling back up the code.
 
     ![system-clear-error](assets/documentation/images/testing/error-images/clear-error.jpeg)
-
-    - This appears to be sporadic, as when I tried to recreate the error a few times it was working, but other times it would not. I noticed this error to be occuring more when the user selected instruction page first and then proceeded to the gameplay.
+    - This appears to be sporadic. When I tried to recreate the error a few times in a row, it was working, but other times it was not. I noticed this error to be occurring more often when the user selected instruction page first and then proceeded to the gameplay.
     - This will be addressed at the next development stage. 
-- The terminal allows to type anything into the terminal while the game progression is loading. 
+
+- The program allows entering data into the terminal while the game progression is loading. 
     
     ![typing-error](assets/documentation/images/testing/error-images/typing-error.jpeg)
-    - However, it seems that the entry is then being regarded as the next user input entry (if the enter key is pressed), which throws an error if the incorrect input is provided.
+    - However, it seems that the entry is then being treated as the next user input entry (if the enter key is pressed), which throws an error if an incorrect data is typed.
     - This will be addressed at the next development stage.
 
 [Return to Table of Contents](#contents)
@@ -196,34 +196,34 @@ The below mentioned bugs occured early in the development stage before refactori
 
 The game application was tested thoroughly during the development and deployment stages.
 - I have enlisted a number of friends and fellow CI students to test for functionality and user experience.
-    - Reviews received noted prolonging text display time in certain parts of the application to ensure that the user had enough time to read through the content.    
-    - I initially had the contents clear completely after a certain period of time. However, my mentor suggested that I only apply the feature to the beginning of the application, before entering the game content, and let the content of the gameplay scroll once the user has started the game.
-        - This ensured that, in case the user was unable to read all the content, they would be able to scroll up the screen and finish reading.    
-    - I applied blank lines and a feature break line to indicate where the new content starts once it is loaded.    
-        - This provides better user experience, and the text is is easier to follow.
+    - Reviews received noted prolonging text display time in certain parts of the application to ensure that the user has enough time to read through the content.    
+    - I initially had the contents clear completely after a certain period of time. However, my mentor suggested that I only apply the feature to the beginning of the application, before entering the game content.
+        - This ensures that the user is be able to go back up and down the text.    
+    - I applied blank lines and a feature break line to indicate where the new content starts once it loads.    
+        - This provides better user experience, and the text is easier to follow.
 
 [Return to Table of Contents](#contents)
 
 ### Manual testing
-After the development stage of the application, I went through each feature/section of the gameplay ensuring that is working as intended.
+After the development stage of the application, I went through each feature/section of the gameplay ensuring that it is working as intended.
 
 | Feature                                                    | Test performed                                                                 | Expected outcome                                                                                                                                                                                                                                                                                      | Pass/Fail |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | User input field requiring numerical data entry            | Type in '1' or '2'                                                             | Redirects to the instruction area or the main gameplay.                                                                                                                                                                                                                                               | Pass      |
-| User input field requiring yes/no data entry               | Type in 'y' or 'n'                                                             | Calls the program to carry out appropriate action. If the selection was 'n', the program terminates. If the selection was 'y', the program continues. This entry is not case-sensitive.                                                                                                               | Pass      |
+| User input field requiring yes/no data entry               | Type in 'y' or 'n'                                                             | Calls the program to carry out appropriate action. If the selection is 'n', the program terminates. If the selection is 'y', the program continues. This entry is not case-sensitive.                                                                                                               | Pass      |
 | User input field requiring numerical data entry validation | Type in wrong entry where '1' or '2' were the options                          | When any other number, letter, combination of letters, numbers and/or characters are typed, the following message appears: "Invalid input (user's input). Please enter either '1' or '2'. Try again." This line is repeated until the user provides correct entry.                                    | Pass      |
 | User input field requiring yes/no data entry validation    | Type in wrong entry where 'y' or 'n' were the options                          | When any other number, letter, combination of letters, numbers and/or characters are typed, the following message appears: "Invalid input (user's input). Please type either 'y' or 'n'. Try again." This line is repeated until the user provides correct entry.                                     | Pass      |
-| User input field requiring username                        | Type in the username                                                           | Captures the user's entry and stores for future in-game use as part of game customisation. Provided data's first letter is capitalised if the entry was in small letters. The entry triggers the user's gender input field to show up.                                                                | Pass      |
+| User input field requiring username                        | Type in the username                                                           | Captures the user's entry and stores it for future in-game use as part of game customisation. Provided data's first letter is capitalised if the entry was in small letters. The entry triggers the user's gender input field to show up.                                                                | Pass      |
 | User input field requiring username entry validation       | Type in the numerical value in username input field                            | When a number is entered into the username field, the following message appears: "Invalid input (user's input). Please use letters only to fill in the fields. Try again." This line is repeated until the user provides correct entry.                                                               | Pass      |
 | User input field requiring username entry validation       | Type in one, two or more than ten letters                                      | When only one, two letters or more than 10 characters are input into the username field, the following message appears: "Invalid input (number of user's input letters). Your entry must be between 3 to 10 characters long. Try again." This line is repeated until the user provides correct entry. | Pass      |
 | User input field requiring username entry validation       | Type in a combination of letters, numbers, characters or any of the variations | When a combination of letters/numbers/special characters are input into the username field, the following message appears: "Invalid input (user's input). Please use letters only to fill in the fields. Try again." This line is repeated until the user provides correct entry.                     | Pass      |
-| User input field requiring user gender entry validation    | Type in the gender                                                             | Captures the user's entry and stores for future in-game use as part of game customisation. This feature is not implemented in the MVP. This entry is caps lock sensitive. This entry triggers the gameplay. Previous data is cleared and the story section is loaded.                                 | Pass      |
+| User input field requiring user gender entry validation    | Type in the gender                                                             | Captures the user's entry and stores it for future in-game use as part of game customisation. This feature is not implemented in the MVP. This entry is caps lock sensitive. This entry triggers the gameplay. Previous data is cleared and the story section is loaded.                                 | Pass      |
 | User input field requiring user gender entry validation    | Type in numerical value in gender input field                                  | When a number is entered into the gender input field, the following message appears: "Invalid input (user's input). Please use letters only to fill in the fields. Try again." This line is repeated until the user provides correct entry.                                                           | Pass      |
 | User input field requiring user gender entry validation    | Type in any letter combination                                                 | When any letter combination or word  are input into the gender input field, the following message appears: "Please enter 'male', 'female' or 'none'." This line is repeated until the user provides correct entry.                                                                                    | Pass      |
 | User input field requiring user gender entry validation    | Type in a combination of letters, numbers, characters or any of the variations | When a combination of letters/numbers/special characters are input into the user gender field, the following message appears: "Invalid input (user's input). Please use letters only to fill in the fields. Try again." This line is repeated until the user provides correct entry.                  | Pass      |
 | Select the wrong possible scenario                         | Type in the incorrect option number                                            | A screen divider appears, signaling story progression. Appropriate story continuation appears, followed by "You were unsuccessful! Try again." line. After 5 seconds, the screen will clear and the user is taken back to the beginning of the application.                                           | Pass      |
 | Select the right scenario                                  | Type in the correct option number                                              | A screen divider or an ascii art logo appears, signaling story progression. After a short pause appropriate story continuation appears, followed by the next scenario choice.                                                                                                                         | Pass      |
-| Winning scenario choice                                    | Select the last correct scenario option                                        | The winning sentence 'Success!' appears. A line divider appears, followed by the final story continuation. The last question asking the user if they want to continue to Chapter 3 appears.                                                                                                           | Pass      |
+| Winning scenario choice                                    | Select the last correct scenario option                                        | The winning sentence 'Success!' appears. A line divider appears, followed by the final story paragraph. The question asking the user if they want to continue to Chapter 3 appears.                                                                                                           | Pass      |
 | User input field requiring y/n input                       | Type in 'y'                                                                    | The user is shown a 'Coming soon - stay tuned, Deary!' line followed by a goodbye message. This terminates the game.                                                                                                                                                                                  | Pass      |
 | User input field requiring y/n input                       | Type in 'n'                                                                    | A goodbye message message is displayed to the user. This terminates the game.                                                                                                                                                                                                                         | Pass      |
 
