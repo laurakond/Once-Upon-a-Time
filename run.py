@@ -22,6 +22,21 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('once-upon-a-time')
 
+# Reused variables
+WELCOME_SCREEN_INTRO_TEXT_COLUMN = 1
+GAME_INSTRUCTION_TEXT_COLUMN = 2
+STORY_INTRODUCTION_TEXT_COLUMN = 3
+CHAPTER_ONE_TEXT_COLUMN = 4
+CONFRONT_QUEEN_OUTCOME_TEXT_COLUMN = 5
+RUMPEL_SECTION_TEXT_COLUMN = 6
+NO_NAME_OUTCOME_TEXT_COLUMN = 7
+CHAPTER_TWO_TEXT_COLUMN = 8
+FIGHT_ARMY_OUTCOME_TEXT_COLUMN = 9
+SECRET_DOOR_SECTION_TEXT_COLUMN = 10
+FIGHT_SOLDIER_OUTCOME_TEXT_COLUMN = 11
+LOCK_DOOR_TEXT_COLUMN = 12
+WARDROBE_TEXT_COLUMN = 13
+
 
 # Main function to run the game
 def main():
@@ -42,7 +57,7 @@ def welcome_screen():
     generate_logos(story.ascii_dict["title_logo"])
 
     # prints game introduction with options
-    generate_game_text(1)
+    generate_game_text(WELCOME_SCREEN_INTRO_TEXT_COLUMN)
 
 
 # User input functions
@@ -219,7 +234,7 @@ def choose_instruction_or_game(user_entry):
     if user_entry == "1":
         system("clear")
         generate_logos(story.ascii_dict["instructions"])
-        generate_game_text(2)
+        generate_game_text(GAME_INSTRUCTION_TEXT_COLUMN)
         sleep(3)
         return continue_to_play(prompt_yes_no_question(
                                 "\nWould you like to play the game (y/n)? "))
@@ -227,10 +242,10 @@ def choose_instruction_or_game(user_entry):
         input_user_data()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
-        generate_game_text(3)
+        generate_game_text(STORY_INTRODUCTION_TEXT_COLUMN)
         sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
-        generate_game_text(4)
+        generate_game_text(CHAPTER_ONE_TEXT_COLUMN)
         return execute_chapter1(enter_numerical_choice())
 
 
@@ -243,10 +258,10 @@ def continue_to_play(user_entry):
         input_user_data()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
-        generate_game_text(3)
+        generate_game_text(STORY_INTRODUCTION_TEXT_COLUMN)
         sleep(10)
         generate_logos(story.ascii_dict["chapter1"])
-        generate_game_text(4)
+        generate_game_text(CHAPTER_ONE_TEXT_COLUMN)
         return execute_chapter1(enter_numerical_choice())
     elif user_entry == "n":
         return end_game()
@@ -278,12 +293,12 @@ def execute_chapter1(user_entry):
     if user_entry == "1":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(5)
+        generate_game_text(CONFRONT_QUEEN_OUTCOME_TEXT_COLUMN)
         return restart_game(main)
     elif user_entry == "2":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(6)
+        generate_game_text(RUMPEL_SECTION_TEXT_COLUMN)
         return execute_rumpel_section(enter_numerical_choice())
 
 
@@ -295,12 +310,12 @@ def execute_rumpel_section(user_entry):
     if user_entry == "1":
         sleep(3)
         generate_logos(story.ascii_dict["chapter2"])
-        generate_game_text(8)
+        generate_game_text(CHAPTER_TWO_TEXT_COLUMN)
         return execute_baby_name_section(enter_numerical_choice())
     if user_entry == "2":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(7)
+        generate_game_text(NO_NAME_OUTCOME_TEXT_COLUMN)
         return restart_game(main)
 
 
@@ -312,12 +327,12 @@ def execute_baby_name_section(user_entry):
     if user_entry == "1":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(9)
+        generate_game_text(FIGHT_ARMY_OUTCOME_TEXT_COLUMN)
         return restart_game(main)
     if user_entry == "2":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(10)
+        generate_game_text(SECRET_DOOR_SECTION_TEXT_COLUMN)
         return execute_secret_door_section(enter_numerical_choice())
 
 
@@ -329,12 +344,12 @@ def execute_secret_door_section(user_entry):
     if user_entry == "1":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(11)
+        generate_game_text(FIGHT_SOLDIER_OUTCOME_TEXT_COLUMN)
         return restart_game(main)
     if user_entry == "2":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(12)
+        generate_game_text(LOCK_DOOR_TEXT_COLUMN)
         return execute_lock_door_section(enter_numerical_choice())
 
 
@@ -347,12 +362,12 @@ def execute_lock_door_section(user_entry):
         print("\nSuccess!")
         sleep(3)
         generate_line_breaks()
-        generate_game_text(13)
+        generate_game_text(WARDROBE_TEXT_COLUMN)
         return continue_to_chapter3()
     if user_entry == "2":
         sleep(3)
         generate_line_breaks()
-        generate_game_text(11)
+        generate_game_text(FIGHT_SOLDIER_OUTCOME_TEXT_COLUMN)
         return restart_game(main)
 
 
