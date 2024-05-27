@@ -56,7 +56,7 @@ The game can be accessed [here](https://once-upon-a-time-f214671524cd.herokuapp.
 - When prompted, select appropriate answers to progress.
     - These are questions that require to type in either yes/no or '1'/'2' into the provided fields.
 - If the choice is incorrect, the main screen load and the game restarts.
-- If you are successful, choose whether to progress further the storyline or finish playing the game. 
+- If you are successful, choose whether to progress further or finish playing the game. 
 
 
 [Return to Table of Contents](#table-of-contents)
