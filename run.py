@@ -35,7 +35,7 @@ def main():
 
 def welcome_screen():
     """
-    Runs the Game logo and displays 
+    Runs the Game logo and displays
     the game introduction text.
     """
     # prints main logo
@@ -171,7 +171,7 @@ def customise_story(story_text, user_name):
     """
     Loops through original text and replaces specific words with
     user provided data, i.e. name & gender (future feature), and
-    returns a new text to display in the terminal. 
+    returns a new text to display in the terminal.
     """
     updated_story_text_list = []
     for line in story_text:
