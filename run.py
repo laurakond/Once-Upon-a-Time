@@ -139,15 +139,15 @@ def validate_user_input_data(data):
     return True
 
 
-def validate_yes_no_question_prompt(data):
+def validate_yes_no_question_prompt(user_entry):
     """
     Checks that the input data is correct and prompts the user
     to enter the correct data if not.
     """
     try:
-        if data not in ["y", "n"]:
+        if user_entry not in ["y", "n"]:
             raise ValueError(
-                f"{data}. Please type either 'y' or 'n'."
+                f"{user_entry}. Please type either 'y' or 'n'."
             )
     except ValueError as e:
         print(
@@ -173,12 +173,12 @@ def customise_story(story_text, user_name):
     user provided data, i.e. name & gender (future feature), and
     returns a new text to display in the terminal. 
     """
-    updated_story_list = []
+    updated_story_text_list = []
     for line in story_text:
         updated_line = line.replace("{user_name}", user_name)
-        updated_story_list.append(updated_line)
+        updated_story_text_list.append(updated_line)
 
-    return updated_story
+    return updated_story_text_list
 
 
 # This function replaced game_text_generator(story)
@@ -211,19 +211,19 @@ def generate_line_breaks():
 
 
 # Gameplay functions
-def choose_instruction_or_game(data):
+def choose_instruction_or_game(user_entry):
     """
     Takes the user to the instructions or
     the gameplay sections.
     """
-    if data == "1":
+    if user_entry == "1":
         system("clear")
         generate_logos(story.ascii_dict["instructions"])
         generate_game_text(2)
         sleep(3)
         return continue_to_play(prompt_yes_no_question(
                                 "\nWould you like to play the game (y/n)? "))
-    elif data == "2":
+    elif user_entry == "2":
         input_user_data()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
@@ -234,12 +234,12 @@ def choose_instruction_or_game(data):
         return execute_chapter1(enter_numerical_choice())
 
 
-def continue_to_play(data):
+def continue_to_play(user_entry):
     """
     Terminates the application or continues with the gameplay based
     on the user's choice after reading the instructions.
     """
-    if data == "y":
+    if user_entry == "y":
         input_user_data()
         system("clear")
         generate_logos(story.ascii_dict["title_logo"])
@@ -248,7 +248,7 @@ def continue_to_play(data):
         generate_logos(story.ascii_dict["chapter1"])
         generate_game_text(4)
         return execute_chapter1(enter_numerical_choice())
-    elif data == "n":
+    elif user_entry == "n":
         return end_game()
 
 
@@ -260,96 +260,96 @@ def end_game():
     print(bye_text)
 
 
-def restart_game(main_function):
+def restart_game(pass_main_function):
     """
     Restarts the gameplay and takes the user
     to the beginning of the application (main()).
     """
     sleep(10)
     system("clear")
-    return main_function()
+    return pass_main_function()
 
 
-def execute_chapter1(data):
+def execute_chapter1(user_entry):
     """
     Generates an appropriate story section based on the user's
     gameplay selection.
     """
-    if data == "1":
+    if user_entry == "1":
         sleep(3)
         generate_line_breaks()
         generate_game_text(5)
         return restart_game(main)
-    elif data == "2":
+    elif user_entry == "2":
         sleep(3)
         generate_line_breaks()
         generate_game_text(6)
         return execute_rumpel_section(enter_numerical_choice())
 
 
-def execute_rumpel_section(data):
+def execute_rumpel_section(user_entry):
     """
     Generates an appropriate story section based on the user's
     gameplay selection.
     """
-    if data == "1":
+    if user_entry == "1":
         sleep(3)
         generate_logos(story.ascii_dict["chapter2"])
         generate_game_text(8)
         return execute_baby_name_section(enter_numerical_choice())
-    if data == "2":
+    if user_entry == "2":
         sleep(3)
         generate_line_breaks()
         generate_game_text(7)
         return restart_game(main)
 
 
-def execute_baby_name_section(data):
+def execute_baby_name_section(user_entry):
     """
     Generates an appropriate story section based on the user's
     gameplay selection.
     """
-    if data == "1":
+    if user_entry == "1":
         sleep(3)
         generate_line_breaks()
         generate_game_text(9)
         return restart_game(main)
-    if data == "2":
+    if user_entry == "2":
         sleep(3)
         generate_line_breaks()
         generate_game_text(10)
         return execute_secret_door_section(enter_numerical_choice())
 
 
-def execute_secret_door_section(data):
+def execute_secret_door_section(user_entry):
     """
     Generates an appropriate story section based on the user's
     gameplay selection.
     """
-    if data == "1":
+    if user_entry == "1":
         sleep(3)
         generate_line_breaks()
         generate_game_text(11)
         return restart_game(main)
-    if data == "2":
+    if user_entry == "2":
         sleep(3)
         generate_line_breaks()
         generate_game_text(12)
         return execute_lock_door_section(enter_numerical_choice())
 
 
-def execute_lock_door_section(data):
+def execute_lock_door_section(user_entry):
     """
     Generates an appropriate story section based on the user's
     gameplay selection.
     """
-    if data == "1":
+    if user_entry == "1":
         print("\nSuccess!")
         sleep(3)
         generate_line_breaks()
         generate_game_text(13)
         return continue_to_chapter3()
-    if data == "2":
+    if user_entry == "2":
         sleep(3)
         generate_line_breaks()
         generate_game_text(11)
