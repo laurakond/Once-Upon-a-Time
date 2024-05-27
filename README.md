@@ -264,27 +264,26 @@ To deploy to the Heroku website, follow the steps below:
 1. Navigate to https://www.heroku.com platform website.
 2. Create or log in to your account.
 3. Once on your dashboard:
-    a. if you don't have any projects created yet, there should be a "Create a new app" prompt in the middle of the screen.
-    b. if you have some projects already, click on the "New" tab on the top right corner of the screen just below the profile bauble. 
+    1) if you don't have any projects created yet, there should be a "Create a new app" prompt in the middle of the screen.
+    2) if you have some projects already, click on the "New" tab on the top right corner of the screen just below the profile bauble. 
 4.  Enter a unique application name for your project and select the region you are based in. Click "create app".
 5. Once insde the app, select "Settings" button from the menu in the middle. It's important to edit the "Settings" tab before deploying the project: 
     1. Click on "Reveal Config Vars" and enter the following:
         
-        a. if you are using any APIs you will need to copy paste your creds.json details:
-        - in the "key" box type "CREDS". 
-        - in the "value" box copy the contents of your creds.json file: 
-        - click "Add".
+        1) if you are using any APIs you will need to copy paste your creds.json details:
+            - in the "key" box type "CREDS". 
+            - in the "value" box copy the contents of your creds.json file: 
+            - click "Add".
 
-        b. type in PORT to the "key" box, and 8000 to the "value" box:
-        - click "Add".
+        2) type in PORT to the "key" box, and 8000 to the "value" box:
+            - click "Add".
 
     2. Add Buildpacks below Config Vars. Click on "Add buildpack":
 
-        a. First, select Python and click "Add buildpack".
- 
-        b. Second, select node.js and click "Add buildpack".
+        1) First, select Python and click "Add buildpack".
+        2) Second, select node.js and click "Add buildpack".
         
-        **Note:** Python has to be positioned first (at the top) of the two packs.
+        **Note:** Python has to be listed first (at the top) of the two packs.
 6. Once step 5 is done, navigate to the "Deploy" tab a the top of the screen to the left of where the Settings tab is located.
 7. Click on "Github" icon under "Deployment method", and connect Heroku to your Github account. 
 8. Once the accounts are connected you can choose between automatic or manual deployment:
