@@ -5,7 +5,7 @@ user = {
 
 
 # The logos were generated from https://patorjk.com/.
-# Style used was 'Small'.
+# Chosen style was 'Small'.
 ascii_dict = {
     "title_logo": [r"""
   ___                _   _
