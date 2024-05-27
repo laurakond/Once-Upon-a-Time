@@ -51,12 +51,12 @@ The game can be accessed [here](https://once-upon-a-time-f214671524cd.herokuapp.
 
 ## How to play
 
-- Once the application is loaded, the Welcome screen is displayed. It contains an Ascii Art logo, an introduction and a prompt to choose between reading the instructions or going straight to the gameplay.
-- If chosen to proceed to the game, the user needs to input appropriate data to move forward. The data will customise the gameplay.
-- When prompted, the user needs to select appropriate answers to progress.
-    - These are questions that require the user to type in either yes/no or '1'/'2' into the provided fields.
-- If the user's choice is incorrect they are taken back to the main screen and they can restart the game again.
-- If the user completes the game successfully, they can choose whether to progress further or finish playing the game. 
+- Once the application is loaded, the Welcome screen is displayed. Choose whether to read the instructions or go straight to the gameplay.
+- If chosen to proceed to the game, enter appropriate data (name and gender) to move forward. The data will customise the gameplay.
+- When prompted, select appropriate answers to progress.
+    - These are questions that require to type in either yes/no or '1'/'2' into the provided fields.
+- If the choice is incorrect, the main screen load and the game restarts.
+- If you are successful, choose whether to progress further the storyline or finish playing the game. 
 
 
 [Return to Table of Contents](#table-of-contents)
