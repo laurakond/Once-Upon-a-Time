@@ -76,21 +76,22 @@ def enter_numerical_choice():
 
 def input_user_data():
     """
-    Asks the user to input their name/gender and stores them
-    for later in-game use.
+    Asks the user to input their name/gender, validates the
+    input and stores them for later in-game use.
+    The gender data input is not used at the MVP stage.
+    It will implemented properly at the next development stage.
     """
     while True:
         user_name = input("\nPlease enter your name: ").capitalize()
         if validate_user_input_data(user_name):
             break
     while True:
-        user_gender = input("Please enter your gender(male/female/none): ")
-        if validate_user_input_data(user_gender):
-            if user_gender not in ["male", "female", "none"]:
-                print("Please enter 'male' or 'female' or 'none'.")
-            else:
-                validate_user_input_data(user_gender)
-                break
+        user_gender = input(
+                      "Please enter your gender(male/female/none): ").lower()
+        option_list = ["male", "female", "none"]
+        prompt = "'male' or 'female' or 'none'."
+        if validate_exact_phrase_prompt(user_gender, option_list, prompt):
+            break
 
     story.user["name"] = user_name
     story.user["gender"] = user_gender
