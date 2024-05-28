@@ -162,13 +162,13 @@ There are several user inputs throughout the application, therefore, validating 
 
 **Validating gender user input**
 - At the final testing stages of the application, I noticed that the user input for gender data returned unintended validation functionality (see image below).
-    ![gender-validation-error](assets/documentation/images/testing/validation-images/gender-validation.jpeg)
-    - When 1 or two letters were entered the prompt was "Invalid input (lenght of the input). Your entry must be between 3 to 10 characters long."
+
+    ![gender-validation-error](assets/documentation/images/testing/error-images/gender-validation.jpeg)
+
+    - When 1 or two letters were entered the prompt was "Invalid input (length of the input). Your entry must be between 3 to 10 characters long."
     - Once the input was 3 letters, the prompt was "Please enter 'male' or 'female' or 'none'."
         - This was caused because I applied the same data validation to the user gender as to the username. However, the former required specific data entry.
-        - To resolve this I applied refactored yes_no_question validation function so that the validation function would target specific user input (see image below).
-    
-    ![gender-validation](assets/documentation/images/testing/error-images/correct-gender-validation.jpeg)
+        - To resolve this I applied a refactored yes_no_question validation function so that the validation function would target specific user input (correct validation image can be seen in [user input validation section](#user-input-validation)).
 
 ### Unfixed bugs
 
