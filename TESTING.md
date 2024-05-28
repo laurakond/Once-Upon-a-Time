@@ -47,7 +47,7 @@ There are several user inputs throughout the application, therefore, validating 
     <details>
     <summary>Gender input validation</summary>
 
-    ![username-validation](assets/documentation/images/testing/validation-images/gender-validation.jpeg)
+    ![username-validation](assets/documentation/images/testing/validation-images/correct-gender-validation.jpeg)
     </details>
 
     <details>
