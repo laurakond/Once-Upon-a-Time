@@ -107,7 +107,7 @@ def prompt_yes_no_question(prompt):
     while True:
         question = input(prompt).lower()
         option_list = ["y", "n"]
-        message = "'y' or 'n'"
+        message = "'y' or 'n'."
         if validate_exact_phrase_prompt(question, option_list, message):
             break
 
