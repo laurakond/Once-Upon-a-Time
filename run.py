@@ -100,11 +100,14 @@ def input_user_data():
 def prompt_yes_no_question(prompt):
     """
     Generates appropriate question based on the gameplay that
-    requires the user to enter yes/no answer.
+    requires the user to enter yes/no answer and keeps looping
+    if the input is incorrect.
     """
     while True:
         question = input(prompt).lower()
-        if validate_yes_no_question_prompt(question):
+        option_list = ["y", "n"]
+        message = "'y' or 'n'"
+        if validate_exact_phrase_prompt(question, option_list, message):
             break
 
     return question
