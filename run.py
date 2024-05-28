@@ -154,15 +154,15 @@ def validate_user_input_data(data):
     return True
 
 
-def validate_yes_no_question_prompt(user_entry):
+def validate_exact_phrase_prompt(user_entry, option_list, error_prompt):
     """
     Checks that the input data is correct and prompts the user
     to enter the correct data if not.
     """
     try:
-        if user_entry not in ["y", "n"]:
+        if user_entry not in option_list:
             raise ValueError(
-                f"{user_entry}. Please type either 'y' or 'n'."
+                f"{user_entry}. Please type either {error_prompt}"
             )
     except ValueError as e:
         print(
