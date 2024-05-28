@@ -160,7 +160,7 @@ There are several user inputs throughout the application, therefore, validating 
 - During the testing phase with my mentor, it seemed that the user input prompt "Would you like to play the game (y/n)?" crashed the application when a single letter (not 'y' or 'n') was entered. 
     - I resolved this by addapting the yes/no question validation code to the one I used for validate_enter_numerical_choice() function. 
 
-**Validating gender user input**
+**Validating user gender data input**
 - At the final testing stages of the application, I noticed that the user input for gender data returned unintended validation functionality (see image below).
 
     ![gender-validation-error](assets/documentation/images/testing/error-images/gender-validation.jpeg)
