@@ -68,7 +68,11 @@ def enter_numerical_choice():
     """
     while True:
         choice = input("\nType '1' or '2' to proceed: ")
-        if validate_enter_numerical_choice(choice):
+        option_list = ["1", "2"]
+        message = "'1' or '2'."
+        #if validate_enter_numerical_choice(choice):
+         #   break
+        if validate_exact_phrase_prompt(choice, option_list, message):
             break
 
     return choice
