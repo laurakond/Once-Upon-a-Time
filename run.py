@@ -119,24 +119,6 @@ def prompt_yes_no_question(prompt):
 
 
 # data validation functions
-def validate_enter_numerical_choice(number_choice):
-    """
-    Checks that the user entry is a number.
-    """
-    try:
-        if number_choice not in ["1", "2"]:
-            raise ValueError(
-                f"{number_choice}. Please enter either '1' or '2'."
-            )
-    except ValueError as e:
-        print(
-            f"Invalid input: {e} Try again."
-        )
-        return False
-
-    return True
-
-
 def validate_user_input_data(data):
     """
     Checks that the user data input is correct,
