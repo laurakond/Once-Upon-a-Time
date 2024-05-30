@@ -135,8 +135,7 @@ def validate_user_input_data(data):
                 f"{len(data)}."
                 "Your entry must be between 3 to 10 characters long.")
     except ValueError as e:
-        print(
-            f"Invalid input: {e} Try again.")
+        print(f"Invalid input: {e} Try again.")
         return False
 
     return True
@@ -150,12 +149,9 @@ def validate_exact_phrase_prompt(user_entry, option_list, error_prompt):
     try:
         if user_entry not in option_list:
             raise ValueError(
-                f"{user_entry}. Please type either {error_prompt}"
-            )
+                f"{user_entry}. Please type either {error_prompt}")
     except ValueError as e:
-        print(
-            f"Invalid input: {e} Try again."
-        )
+        print(f"Invalid input: {e} Try again.")
         return False
 
     return True
