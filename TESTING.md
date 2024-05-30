@@ -159,7 +159,7 @@ There are several user inputs throughout the application, therefore, validating 
 **Crashing application**
 - During the testing phase with my mentor, it seemed that the user input prompt "Would you like to play the game (y/n)?" crashed the application when a single letter (not 'y' or 'n') was entered. 
     - I resolved this by adapting the yes/no question validation code to the one I used for validate_enter_numerical_choice() function.
-        - **To note**: at the later stages of application development, I realised that I can apply the same validating functionality to two user input functions that ask the user to input either numerical values or y/n values. Validate_enter_numerical_choice() function has become redundant and it was removed from the code. The code that I used to validate the said two user inputs is below: 
+        - **To note**: at the later stages of application development, I realised that I could apply the same validating functionality to two user input functions that ask the user to input either numerical values or y/n values. Validate_enter_numerical_choice() function has become redundant, and it was removed from the code. The code that I used to validate the said two user inputs is below: 
             ```
             def validate_exact_phrase_prompt(user_entry, option_list, error_prompt):
             """
